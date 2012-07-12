@@ -11,8 +11,8 @@ run lambda { |env|
     ]
 }
 use ::Rack::TryStatic,
-  :root => "public",
+    :root => "public",
     :urls => ["/"],
-      :try  => [".html", "index.html"]
+    :try  => [".html", "index.html"]
 
-      run lambda { [404, {"Content-Type" => "text/plain"}, ["File not found!"]] }
+    run lambda { [404, {"Content-Type" => "text/plain"}, ["File not found!"]] }
