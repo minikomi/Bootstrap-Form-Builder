@@ -3,7 +3,7 @@ $(document).ready(function(){
     $(".popover").hide();
 
     md.preventDefault();
-    var tops;
+    var tops = [];
     var mouseX = md.pageX;
     var mouseY = md.pageY;
     var $temp;
@@ -95,7 +95,7 @@ $(document).ready(function(){
             if(tops.length > 0){
               $($temp.html()).insertBefore(tops[0]);
             } else {
-              $("#target fieldset").append($temp.html());
+              $("#target fieldset").append($temp.append("\n\n\ \ \ \ ").html());
             }
           } else {
             // no add
