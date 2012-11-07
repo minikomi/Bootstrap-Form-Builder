@@ -207,8 +207,12 @@ $(document).ready(function(){
       inputs.push($(".popover textarea")[0]);
       $.each(inputs, function(i,e){
       var vartype = $(e).attr("id");
-      var value = $active_component.find('[data-valtype="'+vartype+'"]')
-      if(vartype==="placeholder"){
+      var value = $active_component.find('[data-valtype="'+vartype+'"]');
+      if(vartype==="id"){
+		value = $active_component.find('[data-valtype="placeholder"]');
+        $(value).attr("id", $(e).val());
+		$(value).attr("name", $(e).val());
+      } else if(vartype==="placeholder"){
         $(value).attr("placeholder", $(e).val());
       } else if (vartype==="checkbox"){
         if($(e).is(":checked")){
