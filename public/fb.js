@@ -152,8 +152,11 @@ $(document).ready(function(){
       var valID ="#" + $(e).attr("data-valtype");
       var val;
       if(valID ==="#placeholder"){
-        val = $(e).attr("placeholder");
+        val = $(e).attr("placeholder");		
         $(".popover " + valID).val(val);
+		val_id = $(e).attr("id");
+		$(".popover #id").val(val_id);
+		$(".popover #name").val(val_id);
       } else if(valID==="#checkbox"){
         val = $(e).attr("checked");
         $(".popover " + valID).attr("checked",val);
