@@ -1,4 +1,6 @@
-## Updated 20121108:
+## Updated Notes by jiji262
+
+### 20121108:
 
 Add id and name settings to all input elements
 
