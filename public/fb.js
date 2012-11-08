@@ -152,8 +152,11 @@ $(document).ready(function(){
       var valID ="#" + $(e).attr("data-valtype");
       var val;
       if(valID ==="#placeholder"){
-        val = $(e).attr("placeholder");
+        val = $(e).attr("placeholder");		
         $(".popover " + valID).val(val);
+		val_id = $(e).attr("id");
+		$(".popover #id").val(val_id);
+		$(".popover #name").val(val_id);
       } else if(valID==="#checkbox"){
         val = $(e).attr("checked");
         $(".popover " + valID).attr("checked",val);
@@ -207,8 +210,12 @@ $(document).ready(function(){
       inputs.push($(".popover textarea")[0]);
       $.each(inputs, function(i,e){
       var vartype = $(e).attr("id");
-      var value = $active_component.find('[data-valtype="'+vartype+'"]')
-      if(vartype==="placeholder"){
+      var value = $active_component.find('[data-valtype="'+vartype+'"]');
+      if(vartype==="id"){
+		value = $active_component.find('[data-valtype="placeholder"]');
+        $(value).attr("id", $(e).val());
+		$(value).attr("name", $(e).val());
+      } else if(vartype==="placeholder"){
         $(value).attr("placeholder", $(e).val());
       } else if (vartype==="checkbox"){
         if($(e).is(":checked")){
