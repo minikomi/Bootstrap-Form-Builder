@@ -1,0 +1,389 @@
+<div class="control-group component" data-type="search" rel="popover" title="Search Input" trigger="manual"
+  data-content="<%=
+  popoverTemplate({items: [
+  {label: 'Label Text'  , type: 'text' , id: 'label'       , value: label },
+  {label: 'Placeholder' , type: 'text' , id: 'placeholder' , value: placeholder },
+  {label: 'Name / ID' , type: 'text' , id: 'nameid' , value: nameid },
+  {label: 'Help Text'   , type: 'text' , id: 'help'        , value: helptext }
+  ]})                      
+  %>"
+  >
+  <!-- Text input-->
+  <label class="control-label" for="input01" data-valtype='label'><%= label %></label>
+  <div class="controls">
+    <input type="text" placeholder="<%= placeholder %>" class="input-xlarge" data-valtype="placeholder" >
+    <p class="help-block" data-valtype='help'><%= helptext %></p>
+  </div>
+</div>
+
+<div class="control-group component" data-type="search" rel="popover" title="Search Input" trigger="manual"
+  data-content="<%=
+  popoverTemplate({items: [
+  {label: 'Label Text'  , type: 'text' , id: 'label'},
+  {label: 'Placeholder' , type: 'text' , id: 'placeholder'},
+  {label: 'Name / ID' , type: 'text' , id: 'nameid' , value: nameid },
+  {label: 'Help Text'   , type: 'text' , id: 'help'}
+  ]})
+  %>"
+  >
+  <!-- Search input-->
+  <label class="control-label" data-valtype="label"><%= label %></label>
+  <div class="controls">
+    <input type="text" placeholder="<%= placeholder %>" class="input-xlarge search-query" data-valtype="placeholder">
+    <p class="help-block" data-valtype="help"><%= helptext %></p>
+  </div>
+</div>
+
+<div class="control-group component" data-type="prep-text" rel="popover" title="Prepended Text Input" trigger="manual"
+  data-content="<%=
+  popoverTemplate({items: [
+  {label: 'Label Text'  , type: 'text' , id: 'label'},
+  {label: 'Prepend'     , type: 'text' , id: 'prepend'},
+  {label: 'Placeholder' , type: 'text' , id: 'placeholder'}, 
+  {label: 'Help Text'   , type: 'text' , id: 'help'}
+  ]})
+  %>"
+  >
+  <!-- Prepended text-->
+  <label class="control-label" data-valtype="label"><%= label %></label>
+  <div class="controls">
+    <div class="input-prepend">
+      <span class="add-on" data-valtype="prepend"><%= prepend %></span>
+      <input class="span2" placeholder="<%= placeholder %>" type="text" data-valtype="placeholder">
+    </div>
+    <p class="help-block" data-valtype="help"><%= helptext %></p>
+  </div>
+</div>
+
+<div class="control-group component" data-type="app-text" rel="popover" title="Appended Text Input" trigger="manual"
+  data-content="<%=
+  popoverTemplate({items: [
+  {label: 'Label Text', type: 'text', id: 'label'},
+  {label: 'Appepend', type: 'text', id: 'append'},
+  {label: 'Placeholder', type: 'text', id: 'placeholder'},
+  {label: 'Help Text', type: 'text', id: 'help'}
+  ]})
+  %>"
+  >
+  <!-- Appended input-->
+  <label class="control-label" data-valtype="label"><%= label %></label>
+  <div class="controls">
+    <div class="input-append">
+      <input class="span2" data-valtype="placeholder" placeholder="<%= placeholder %>" type="text">
+      <span class="add-on" data-valtype="append"><%= append %></span>
+    </div>
+    <p class="help-block" data-valtype="help"><%= help %></p>
+  </div>
+</div>
+
+<div class="control-group component" rel="popover" title="Search Input" trigger="manual"
+  data-content="
+<%=
+ popoverTemplate({ items: [    <div class='controls'>
+      {label: 'Label Text', type: 'text', id: 'label'}
+      {label: 'Placeholder', type: 'text', id: 'placeholder'}
+      {label: 'Help Text', type: 'text', id: 'help'}
+      <label class='checkbox'><input type='checkbox' class='input-inline' name='checked' id='checkbox'>Checked</label>
+      <hr/>
+      <button class='btn btn-info'>Save</button><button class='btn btn-danger'>Cancel</button>
+    </div>
+  </form>"
+  >
+
+  <!-- Prepended checkbox -->
+  <label class="control-label" data-valtype="label">Prepended checkbox</label>
+  <div class="controls">
+    <div class="input-prepend">
+      <span class="add-on">
+        <label class="checkbox">
+          <input type="checkbox" class="valtype" data-valtype="checkbox">
+        </label>
+      </span>
+      <input class="span2" placeholder="placeholder" type="text" data-valtype="placeholder">
+    </div>
+    <p class="help-block" data-valtype="help">Supporting help text</p>
+  </div>
+
+</div>
+
+<div class="control-group component" rel="popover" title="Search Input" trigger="manual"
+  data-content="
+<%=
+ popoverTemplate({ items: [    <div class='controls'>
+      {label: 'Label Text', type: 'text', id: 'label'}
+      {label: 'Placeholder', type: 'text', id: 'placeholder'}
+      {label: 'Help Text', type: 'text', id: 'help'}
+      <label class='checkbox'><input type='checkbox' class='input-inline' name='checked' id='checkbox'>Checked</label>
+      <hr/>
+      <button class='btn btn-info'>Save</button><button class='btn btn-danger'>Cancel</button>
+    </div>
+  </form>"
+  >
+
+  <!-- Appended checkbox -->
+  <label class="control-label" data-valtype="label">Append checkbox</label>
+  <div class="controls">
+    <div class="input-append">
+      <input class="span2" placeholder="placeholder" type="text" data-valtype="placeholder">
+      <span class="add-on">
+        <label class="checkbox" for="appendedCheckbox">
+          <input type="checkbox" class="valtype" data-valtype="checkbox">
+        </label>
+      </span>
+    </div>
+    <p class="help-block" data-valtype="help">Supporting help text</p>
+  </div>
+</div>
+
+<div class="control-group component" rel="popover" title="Search Input" trigger="manual"
+  data-content="
+<%=
+ popoverTemplate({ items: [    <div class='controls'>
+      {label: 'Label Text', type: 'text', id: 'label'}
+      <hr/>
+      <button class='btn btn-info'>Save</button><button class='btn btn-danger'>Cancel</button>
+    </div>
+  </form>"
+  >
+
+  <!-- Textarea -->
+  <label class="control-label" data-valtype="label">Textarea</label>
+  <div class="controls">
+    <div class="textarea">
+      <textarea type="" class="valtype" data-valtype="checkbox" /> </textarea>
+    </div>
+  </div>
+</div>
+
+                  </div>
+
+
+    <div class="control-group component" rel="popover" title="Search Input" trigger="manual"
+      data-content="
+    <%=
+ popoverTemplate({ items: [        <div class='controls'>
+          {label: 'Label Text', type: 'text', id: 'label'}
+          <label class='control-label'>Options: </label>
+          <textarea style='min-height: 200px' id='option'> </textarea>
+          <hr/>
+          <button class='btn btn-info'>Save</button><button class='btn btn-danger'>Cancel</button>
+        </div>
+      </form>"
+      >
+
+      <!-- Select Basic -->
+      <label class="control-label" data-valtype="label">Select - Basic</label>
+      <div class="controls">
+        <select class="input-xlarge" data-valtype="option">
+          <option>Enter</option>
+          <option>Your</option>
+          <option>Options</option>
+          <option>Here!</option>
+        </select>
+      </div>
+
+    </div>
+
+    <div class="control-group component" rel="popover" title="Search Input" trigger="manual"
+      data-content="
+    <%=
+ popoverTemplate({ items: [        <div class='controls'>
+          {label: 'Label Text', type: 'text', id: 'label'}
+          <label class='control-label'>Options: </label>
+          <textarea style='min-height: 200px' id='option'></textarea>
+          <hr/>
+          <button class='btn btn-info'>Save</button><button class='btn btn-danger'>Cancel</button>
+        </div>
+      </form>"
+      >
+
+      <!-- Select Multiple -->
+      <label class="control-label" data-valtype="label">Select - Multiple</label>
+      <div class="controls">
+        <select class="input-xlarge" multiple="multiple" data-valtype="option">
+          <option>Enter</option>
+          <option>Your</option>
+          <option>Options</option>
+          <option>Here!</option>
+        </select>
+      </div>
+    </div>
+
+  </div>
+
+  <div class="tab-pane" id="3">
+
+    <div class="control-group component" rel="popover" title="Multiple Checkboxes" trigger="manual"
+      data-content="
+    <%=
+ popoverTemplate({ items: [        <div class='controls'>
+          {label: 'Label Text', type: 'text', id: 'label'}
+          <label class='control-label'>Options: </label>
+          <textarea style='min-height: 200px' id='checkboxes'> </textarea>
+          <hr/>
+          <button class='btn btn-info'>Save</button><button class='btn btn-danger'>Cancel</button>
+        </div>
+      </form>"
+      >
+      <label class="control-label" data-valtype="label">Checkboxes</label>
+      <div class="controls" data-valtype="checkboxes">
+
+        <!-- Multiple Checkboxes -->
+        <label class="checkbox">
+          <input type="checkbox" value="Option one">
+          Option one
+        </label>
+        <label class="checkbox">
+          <input type="checkbox" value="Option two">
+          Option two
+        </label>
+      </div>
+
+    </div>
+
+    <div class="control-group component" rel="popover" title="Multiple Radios" trigger="manual"
+      data-content="
+    <%=
+ popoverTemplate({ items: [        <div class='controls'>
+          {label: 'Label Text', type: 'text', id: 'label'}
+          {label: 'Group Name Attribute', type: 'text', id: 'name'}
+          <label class='control-label'>Options: </label>
+          <textarea style='min-height: 200px' id='radios'></textarea>
+          <hr/>
+          <button class='btn btn-info'>Save</button><button class='btn btn-danger'>Cancel</button>
+        </div>
+      </form>"
+      >
+      <label class="control-label" data-valtype="label">Radio buttons</label>
+      <div class="controls" data-valtype="radios">
+
+        <!-- Multiple Radios -->
+        <label class="radio">
+          <input type="radio" value="Option one" name="group" checked="checked">
+          Option one
+        </label>
+        <label class="radio">
+          <input type="radio" value="Option two" name="group">
+          Option two
+        </label>
+      </div>
+
+    </div>
+
+    <div class="control-group component" rel="popover" title="Inline Checkboxes" trigger="manual"
+      data-content="
+    <%=
+ popoverTemplate({ items: [        <div class='controls'>
+          {label: 'Label Text', type: 'text', id: 'label'}
+          <textarea style='min-height: 200px' id='inline-checkboxes'></textarea>
+          <hr/>
+          <button class='btn btn-info'>Save</button><button class='btn btn-danger'>Cancel</button>
+        </div>
+      </form>"
+      >
+      <label class="control-label" data-valtype="label">Inline Checkboxes</label>
+
+      <!-- Multiple Checkboxes -->
+      <div class="controls" data-valtype="inline-checkboxes">
+        <label class="checkbox inline">
+          <input type="checkbox" value="1"> 1
+        </label>
+        <label class="checkbox inline">
+          <input type="checkbox" value="2"> 2
+        </label>
+        <label class="checkbox inline">
+          <input type="checkbox" value="3"> 3
+        </label>
+      </div>
+
+    </div>
+
+    <div class="control-group component" rel="popover" title="Inline radioes" trigger="manual"
+      data-content="
+    <%=
+ popoverTemplate({ items: [        <div class='controls'>
+          {label: 'Label Text', type: 'text', id: 'label'}
+          {label: 'Group Name Attribute', type: 'text', id: 'name'}
+          <textarea style='min-height: 200px' id='inline-radios'></textarea>
+          <hr/>
+          <button class='btn btn-info'>Save</button><button class='btn btn-danger'>Cancel</button>
+        </div>
+      </form>"
+      >
+      <label class="control-label" data-valtype="label">Inline radios</label>
+      <div class="controls" data-valtype="inline-radios">
+
+        <!-- Inline Radios -->
+        <label class="radio inline">
+          <input type="radio" value="1" checked="checked" name="group">
+          1
+        </label>
+        <label class="radio inline">
+          <input type="radio" value="2" name="group">
+          2
+        </label>
+        <label class="radio inline">
+          <input type="radio" value="3">
+          3
+        </label>
+      </div>
+    </div>
+
+  </div>
+
+  <div class="tab-pane" id="4">
+    <div class="control-group component" rel="popover" title="File Upload" trigger="manual"
+      data-content="
+    <%=
+ popoverTemplate({ items: [        <div class='controls'>
+          {label: 'Label Text', type: 'text', id: 'label'}
+          <hr/>
+          <button class='btn btn-info'>Save</button><button class='btn btn-danger'>Cancel</button>
+        </div>
+      </form>"
+      >
+      <label class="control-label" data-valtype="label">File Button</label>
+
+      <!-- File Upload -->
+      <div class="controls">
+        <input class="input-file" id="fileInput" type="file">
+      </div>
+    </div>
+
+    <div class="control-group component" rel="popover" title="Search Input" trigger="manual"
+      data-content="
+    <%=
+    popoverTemplate({ items: [
+          {label: 'Label Text', type: 'text', id: 'label'}
+          {label: 'Button Text', type: 'text', id: 'label'}
+          <label class='control-label' id=''>Type: </label>
+          <select class='input' id='color'>
+            <option id='btn-default'>Default</option>
+            <option id='btn-primary'>Primary</option>
+            <option id='btn-info'>Info</option>
+            <option id='btn-success'>Success</option>
+            <option id='btn-warning'>Warning</option>
+            <option id='btn-danger'>Danger</option>
+            <option id='btn-inverse'>Inverse</option>
+          </select>
+          <hr/>
+          <button class='btn btn-info'>Save</button><button class='btn btn-danger'>Cancel</button>
+        </div>
+      </form>"
+      >
+      <label class="control-label" data-valtype="label">Button</label>
+
+      <!-- Button -->
+      <div class="controls"  data-valtype="button">
+        <button class='btn btn-success'>Button</button>
+      </div>
+    </div>
+  </div>
+
+
+  <div class="tab-pane" id="5">
+    <textarea id="source" class="span6"></textarea>
+  </div>
+</fieldset>
+</form>
+
