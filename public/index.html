@@ -94,18 +94,6 @@
             <div id="build">
               <form id="target" class="form-horizontal">
                 <fieldset>
-                  <div id="legend" class="component" rel="popover" title="Form Title" trigger="manual"
-                    data-content="
-                    <form class='form'>
-                      <div class='controls'>
-                        <label class='control-label'>Title</label> <input class='input-large' type='text' name='title' id='text'>
-                        <hr/>
-                        <button class='btn btn-info'>Save</button><button class='btn btn-danger'>Cancel</button>
-                      </div>
-                    </form>"
-                    >
-                    <legend class="valtype" data-valtype="text">Form Name</legend>
-                  </div>
                 </fieldset>
               </form>
             </div>
@@ -116,9 +104,13 @@
           <h2>Drag & Drop components</h2>
           <hr>
           <div class="tabbable">
+            <ul class="nav nav-tabs" id="navtab">
+              <!-- Tab nav -->
+            </ul>
             <form class="form-horizontal" id="components">
               <fieldset>
                 <div class="tab-content">
+                  <!-- Tabs of snippets go here -->
                 </div>
               </fieldset>
             </form>
@@ -144,9 +136,9 @@
     <script src="underscore-min.js" type="text/javascript"></script>
     <script src="backbone.js" type="text/javascript"></script>
 
-    <!-- templates -->
+    <!-- [templates] -->
 
-    <!-- popover -->
+    <!-- Popover -->
     <script type="text/html" id="popover-input">
       <label class='control-label'> <%= label %> </label> <input class='input-large' type='text' name='<%= id %>' id='<%= id %>' value ='<%= value %>' />
     </script>
@@ -171,12 +163,9 @@
       </form>
     </script>
 
-    <!-- tab  -->
-    <script type="text/html" id="tab-main">
-      <ul class="nav nav-tabs" id="navtab">
-        <li class="active"><a href="#1" data-toggle="tab">Input</a></li>
-        <li class><a id="sourcetab" href="#<%= lastTab =%>" data-toggle="tab">Generated Source</a></li>
-      </ul>
+    <!-- Tab  -->
+    <script type="text/html" id="tab-nav">
+      <li><a href="#<%= id %>" data-toggle="tab"><%= title %></a></li>
     </script>
 
     <!-- snippet -->
@@ -211,18 +200,18 @@
     </script>
 
     <script>
-      var popoverInputTemplate = _.template($("#popover-input").html());
+      // Set up templates
+      var popoverInputTemplate    = _.template($("#popover-input").html());
       var popoverTextareaTemplate = _.template($("#popover-textarea").html());
-      var popoverTemplate = _.template($("#popover-main").html());
-      var popoverItemTemplates = {
+      var popoverTemplate         = _.template($("#popover-main").html());
+      var popoverItemTemplates    = {
         "text" : popoverInputTemplate,
         "textarea" : popoverTextareaTemplate,
       }
+      var tabnavTemplate         = _.template($("#tab-nav").html());
 
+      // Snippet Model / View
       var Snippet  = Backbone.Model.extend({});
-
-      var Tab = Backbone.Collection.extend({});
-
       var SnippetView = Backbone.View.extend({
         tagName: "div",
         className: "control-group",
@@ -230,25 +219,96 @@
         render: function(){
           return this.$el.html(this.template(
           _.reduce(this.model.toJSON(), function(o, v, k){
-            if (k !== "type" || k !== "title") { o[k] = v["value"] }
+            if (k !== "type" || k !== "title") {o[k] = v["value"];}
             return o;
           },{})
           )).attr({
-            "data-content": popoverTemplate({items: _.omit(this.model.toJSON(), "title", "type")})
-            , "data-title": this.model.get("title")
-            , "data-html": true
+            "data-content"   : popoverTemplate({"items" : _.omit(this.model.toJSON(), "title", "type")})
+            , "data-title"   : this.model.get("title")
+            , "data-trigger" : "manual"
+            , "data-html"    : true
           }).popover()
         }
       });
 
+      // Tab Collection / View
+      var TabSnippetsCollection = Backbone.Collection.extend({
+        model: Snippet
+      });
+      var Tab = Backbone.View.extend({
+        tagName: "div"
+        , className: "tab-pane"
+
+        , initialize: function(obj){
+          var that = this;
+          that._snippetViews = [];
+          this.collection.each(function(snippet){
+            that._snippetViews.push(new SnippetView({model: snippet}));
+          });
+        }
+
+        , render: function(){
+
+          //Render Snippet Views
+          var that = this;
+          _.each(this._snippetViews, function(snippetView){
+            that.$el.append(snippetView.render())
+          });
+          this.$el.attr("id", this.id)
+
+          //render & append nav
+          $(".nav.nav-tabs").append(tabnavTemplate({title: this._title, id: this.id}))
+
+          //append tab pane
+          this.$el.appendTo(".tab-content");
+          this.delegateEvents();
+        }
+
+        , events:{
+          "click .control-group" : "clicked"
+        }
+        , clicked: function(){console.log("hi")} // test for events
+
+        // Set title text for nav.
+        , setTitle: function(title){
+          this._title = title;
+          this.id     = this._title.toLowerCase().replace(/\W/g,'');
+        }
+      });
+
+      // Convinience functions
+      var tabMaker = function(title, snippetCollection){
+        var tab = new Tab({collection : snippetCollection})
+        tab.setTitle(title);
+        tab.render();
+      }
+      
+      //--- App Setup ---
+
+      // Create Snippets
       var textInput = new Snippet({
         "type"    : "textInput"
         , "title" : "Text Input"
-        , "label"       : {"label"    : 'Label Text'  , "type" : 'text' , "value" : 'label'}
-        , "prepend"     : {"label"    : 'Prepend'     , "type" : 'text' , "value" : 'prepend'}
-        , "placeholder" : {"label"    : 'Placeholder' , "type" : 'text' , "value" : 'placeholder'}
-        , "helptext"    : {"label"    : 'Help Text'   , "type" : 'text' , "value" : 'help'}
+
+        , "label"       : {"label"    : "Label Text"  , "type" : "text" , "value" : "label"}
+        , "prepend"     : {"label"    : "Prepend"     , "type" : "text" , "value" : "prepend"}
+        , "placeholder" : {"label"    : "Placeholder" , "type" : "text" , "value" : "placeholder"}
+        , "helptext"    : {"label"    : "Help Text"   , "type" : "text" , "value" : "help"}
       });
+
+      // Bundle snippets for tabs
+      var textInputSnippets = new TabSnippetsCollection([
+        textInput
+      ]);
+  
+      // Make tabs
+      tabMaker("Text Inputs", textInputSnippets)
+      tabMaker("banana", textInputSnippets)
+
+      //Make the first tab active!
+      $(".tab-pane").first().addClass("active");
+      $("ul.nav li").first().addClass("active");
+
     </script>
   </body>
 </html>
