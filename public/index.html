@@ -13,17 +13,17 @@
         padding-top: 60px; /* 60px to make the container go all the way to the bottom of the topbar */
         padding-bottom: 10px;
       }
-      #components{
-        min-height: 600px;
-      }
+
       #target{
         min-height: 200px;
         border: 1px solid #ccc;
         padding: 5px;
       }
+
       #target .component{
         border: 1px solid #fff;
       }
+
       #temp{
         width: 500px;
         background: white;
@@ -31,21 +31,17 @@
         border-radius: 10px;
       }
 
-      .popover-content form {
-        margin: 0 auto;
-        width: 213px;
-      }
       .popover-content form .btn{
         margin-right: 10px
       }
+
       #source{
         min-height: 500px;
       }
 
-      form .popover {
-        width: auto;
-      }
-
+      /* Popovers now are appended to their parent rather
+         than to the body/main document as they once were. 
+         We need to over-ride some inherited stuff.. */
       form .popover .controls {
         margin-left: 0;
       }
@@ -87,6 +83,10 @@
     </div>
     <div class="container">
       <div class="row clearfix">
+
+
+
+        <!-- Building Form. -->
         <div class="span6">
           <div class="clearfix">
             <h2>Your Form</h2>
@@ -99,7 +99,9 @@
             </div>
           </div>
         </div>
+        <!-- / Building Form. -->
 
+        <!-- Components -->
         <div class="span6">
           <h2>Drag & Drop components</h2>
           <hr>
@@ -116,15 +118,18 @@
             </form>
           </div>
         </div>
+        <!-- / Components -->
+
       </div>
 
       <div class="row clearfix">
         <div class="span12">
           <hr>
           By Adam Moore (<a href="http://twitter.com/minikomi" >@minikomi</a>).<br/>
-          Source on (<a href="http://github.com/minikomi" >Github</a>).
+          Source on (<a href="https://github.com/minikomi/Bootstrap-Form-Builder" >Github</a>).
         </div>
       </div>
+
     </div> <!-- /container -->
 
     <!-- general js -->
@@ -169,7 +174,11 @@
     </script>
 
     <!-- snippet -->
-    <script type="text/html" id="snippet-textInput">
+    <script type="text/html" id="snippet-formname">
+      <legend data-valtype="text"><%= name %></legend>
+    </script>
+
+    <script type="text/html" id="snippet-textinput">
       <!-- Text input-->
       <label class="control-label" for="input01" data-valtype='label'><%= label %></label>
       <div class="controls">
@@ -215,7 +224,7 @@
       var SnippetView = Backbone.View.extend({
         tagName: "div",
         className: "control-group",
-        initialize: function(){ this.template = _.template($("#snippet-"+ this.model.get("type")).html())},
+        initialize: function(){ this.template = _.template($("#snippet-"+ mungText(this.model.get("title"))).html())},
         render: function(){
           return this.$el.html(this.template(
           _.reduce(this.model.toJSON(), function(o, v, k){
@@ -223,7 +232,7 @@
             return o;
           },{})
           )).attr({
-            "data-content"   : popoverTemplate({"items" : _.omit(this.model.toJSON(), "title", "type")})
+            "data-content"   : popoverTemplate({"items" : _.omit(this.model.toJSON(), "title")})
             , "data-title"   : this.model.get("title")
             , "data-trigger" : "manual"
             , "data-html"    : true
@@ -231,28 +240,46 @@
         }
       });
 
-      // Tab Collection / View
-      var TabSnippetsCollection = Backbone.Collection.extend({
+      //Common Snippet Collection
+      var SnippetsCollection = Backbone.Collection.extend({
         model: Snippet
+        , renderAll: function(){
+          return this.map(function(snippet){
+            return new SnippetView({model: snippet}).render();
+          });
+        }
       });
+
+      var MyForm = Backbone.View.extend({
+        tagName: "fieldset"
+        , render: function(){
+          //Render Snippet Views
+          this.$el.empty();
+          var that = this;
+          _.each(this.collection.renderAll(), function(snippet){
+            that.$el.append(snippet);
+          });
+          $("#build form").html(this.$el);
+        }
+        , initialize: function(){        
+          this.collection.on('add', this.render, this);
+          this.collection.on('remove', this.render, this);
+          this.collection.on('change', this.render, this);
+          this.render();
+        }
+      })
+
+      // Tab Collection / View
       var Tab = Backbone.View.extend({
         tagName: "div"
         , className: "tab-pane"
 
-        , initialize: function(obj){
-          var that = this;
-          that._snippetViews = [];
-          this.collection.each(function(snippet){
-            that._snippetViews.push(new SnippetView({model: snippet}));
-          });
-        }
-
-        , render: function(){
+        , render: function(){            
 
           //Render Snippet Views
           var that = this;
-          _.each(this._snippetViews, function(snippetView){
-            that.$el.append(snippetView.render())
+          _.each(this.collection.renderAll(), function(snippet){
+           that.$el.append(snippet);
           });
           this.$el.attr("id", this.id)
 
@@ -272,7 +299,7 @@
         // Set title text for nav.
         , setTitle: function(title){
           this._title = title;
-          this.id     = this._title.toLowerCase().replace(/\W/g,'');
+          this.id     = mungText(title)
         }
       });
 
@@ -282,13 +309,23 @@
         tab.setTitle(title);
         tab.render();
       }
+      var mungText = function(str){
+       return str.toLowerCase().replace(/\W/g,'')
+      }
       
-      //--- App Setup ---
+      //--- App Setup ---//
 
       // Create Snippets
+
+      // Form Name
+      var formName = new Snippet({
+        "title" : "Form Name"
+        , "name"       : {"label"    : "Form Name"  , "type" : "text" , "value" : "Form Name"}
+      });
+
+      //Text Input Snippets
       var textInput = new Snippet({
-        "type"    : "textInput"
-        , "title" : "Text Input"
+        "title" : "Text Input"
 
         , "label"       : {"label"    : "Label Text"  , "type" : "text" , "value" : "label"}
         , "prepend"     : {"label"    : "Prepend"     , "type" : "text" , "value" : "prepend"}
@@ -297,17 +334,21 @@
       });
 
       // Bundle snippets for tabs
-      var textInputSnippets = new TabSnippetsCollection([
+      var textInputSnippets = new SnippetsCollection([
         textInput
       ]);
-  
       // Make tabs
       tabMaker("Text Inputs", textInputSnippets)
-      tabMaker("banana", textInputSnippets)
 
       //Make the first tab active!
       $(".tab-pane").first().addClass("active");
       $("ul.nav li").first().addClass("active");
+
+      myFormCollection = new SnippetsCollection([formName]);
+      //Set up form with title element.
+      var myForm = new MyForm({
+        collection: myFormCollection
+      })
 
     </script>
   </body>
