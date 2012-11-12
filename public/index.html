@@ -54,6 +54,22 @@
         width: 224px;
       }
 
+      /* Drag & Drop */
+      #build .control-group{
+        border-top: 1px solid #fff;
+        border-bottom: 1px solid #fff;
+      }
+
+      #build .control-group.dropzone {
+        border-top: 1px dotted #aaf;
+      }
+
+      #build .control-group.dropzone.bottom{                 
+        border-top: 1px solid #fff;
+        border-bottom: 1px dotted #aaf;
+      }
+
+
     </style>
     <link href="assets/css/bootstrap-responsive.css" rel="stylesheet">
 
@@ -83,8 +99,6 @@
     </div>
     <div class="container">
       <div class="row clearfix">
-
-
 
         <!-- Building Form. -->
         <div class="span6">
@@ -138,8 +152,8 @@
     <script src="assets/js/bootstrap-tab.js"></script>
 
     <!-- backbone -->
-    <script src="underscore-min.js" type="text/javascript"></script>
-    <script src="backbone.js" type="text/javascript"></script>
+    <script src="assets/appjs/underscore-min.js" type="text/javascript"></script>
+    <script src="assets/appjs/backbone.js" type="text/javascript"></script>
 
     <!-- [templates] -->
 
@@ -219,6 +233,10 @@
       }
       var tabnavTemplate         = _.template($("#tab-nav").html());
 
+      //global vars used for drag & drop. TODO: Don't use global vars, silly!
+      var $temp; 
+      var $build = $("#build");
+
       // Snippet Model / View
       var Snippet  = Backbone.Model.extend({});
       var SnippetView = Backbone.View.extend({
@@ -238,9 +256,94 @@
             , "data-html"    : true
           }).popover()
         }
+        , events:{
+          "mousedown" : "mouseDownHandler",
+        }
+        , mouseDownHandler: function(mouseEvent){
+          mouseEvent.preventDefault();                                             
+          //hide all popovers
+          $(".popover").hide();
+
+          $temp = $("<form class='form-horizontal span6' id='temp'>").append(new TempSnippetView({model: this.model.clone()}).render());
+          $("body").append($temp).show();
+
+          centerOnMouse($temp, mouseEvent);
+        }
+
       });
 
-      //Common Snippet Collection
+      var MyformSnippetView = SnippetView.extend({
+        mouseDownHandler: function(mouseEvent){
+          console.log("moo");
+        }
+      })
+
+      var TempSnippetView = SnippetView.extend({
+
+        events:{
+          "mouseup" : "mouseUpHandler",
+          "mousemove": "mouseMoveHandler",
+        }  
+
+        , mouseUpHandler: function(mouseEvent){
+          if($(".dropzone").length > 0){
+            myFormCollection.add(this.model)
+          }
+
+          $("#build .control-group").removeClass("dropzone bottom")
+          $temp.remove();
+          $("body").off("mousemove");
+          $("body").off("mouseup");
+        }
+        , mouseMoveHandler: function(mouseEvent){
+          centerOnMouse($temp, mouseEvent);
+        }
+
+      })
+
+      var centerOnMouse = function($el, mouseEvent){
+        var mouseX = mouseEvent.pageX;
+        var mouseY = mouseEvent.pageY;
+        var halfHeight = $el.height()/2;
+        var halfWidth  = $el.width()/2;
+
+        var buildPosition = $build.position();
+        var $myFormBits = $("#build form .control-group");
+
+        //TODO: use a real drag & drop lib?
+        $el.css({"position" : "absolute",
+          "top"      : mouseY - ($el.height()/2) + "px",
+          "left"     : mouseX - ($el.width()/2) + "px",
+          "opacity"  : "0.8"})
+
+        if (mouseX > buildPosition.left &&
+            mouseX < buildPosition.left + $build.width() + $temp.width()/2 &&
+            mouseY > buildPosition.top &&
+            mouseY < buildPosition.top + $build.height() + $temp.height()/2
+            ){
+          $build.css("background-color", "#fafafa");
+          $myFormBits.removeClass("dropzone bottom");
+
+          var tops = $.grep($myFormBits, function(e){
+            return ($(e).position().top -  mouseY + halfHeight > 0 && $(e).attr("data-title") !== "Form Name");
+          });
+
+          if (tops.length > 0){
+            $(tops[0]).addClass("dropzone")
+            } else {
+            if($myFormBits.length > 0){
+              $($myFormBits[$myFormBits.length - 1]).addClass("dropzone bottom");
+            } else {
+            $("legend").addClass("dropzone bottom")
+          }
+          }
+          } else{
+          $("#target").css("background-color", "#fff");
+          $build.css("background-color", "#fff");
+        }
+      }
+
+      //Snippet Collection
       var SnippetsCollection = Backbone.Collection.extend({
         model: Snippet
         , renderAll: function(){
@@ -250,6 +353,17 @@
         }
       });
 
+      //Snippet Collection for MyForm
+      var MyformSnippetsCollection = SnippetsCollection.extend({
+        model: Snippet
+        , renderAll: function(){
+          return this.map(function(snippet){
+            return new MyformSnippetView({model: snippet}).render();
+          });
+        }
+      });
+
+      // My Form View
       var MyForm = Backbone.View.extend({
         tagName: "fieldset"
         , render: function(){
@@ -291,16 +405,19 @@
           this.delegateEvents();
         }
 
-        , events:{
-          "click .control-group" : "clicked"
-        }
-        , clicked: function(){console.log("hi")} // test for events
 
         // Set title text for nav.
         , setTitle: function(title){
           this._title = title;
           this.id     = mungText(title)
         }
+      });
+
+      // General App View
+      var SnippetApp = Backbone.View.extend({
+
+
+
       });
 
       // Convinience functions
@@ -344,7 +461,7 @@
       $(".tab-pane").first().addClass("active");
       $("ul.nav li").first().addClass("active");
 
-      myFormCollection = new SnippetsCollection([formName]);
+      myFormCollection = new MyformSnippetsCollection([formName]);
       //Set up form with title element.
       var myForm = new MyForm({
         collection: myFormCollection
