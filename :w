@@ -40,7 +40,7 @@
       }
 
       /* Popovers now are appended to their parent rather
-         than to the body/main document as they once were.
+         than to the body/main document as they once were. 
          We need to over-ride some inherited stuff.. */
       form .popover .controls {
         margin-left: 0;
@@ -64,7 +64,7 @@
         border-top: 1px solid #7ae;
       }
 
-      #build .control-group.dropzone.bottom{
+      #build .control-group.dropzone.bottom{                 
         border-top: 1px solid #fff;
         border-bottom: 1px solid #7ae;
       }
@@ -252,26 +252,36 @@
             , "data-trigger" : "manual"
             , "data-html"    : true
           }).popover()
-          this.delegateEvents();
         }
         , events:{
           "mousedown" : "mouseDownHandler"
         }
         , mouseDownHandler: function(mouseEvent){
-          mouseEvent.preventDefault();
+          mouseEvent.preventDefault();                                             
           //hide all popovers
           $(".popover").hide();
+
           $temp = $("<form class='form-horizontal span6' id='temp'>").append(new TempSnippetView({model: this.model.clone()}).render());
-          $("body").append($temp).show();
           centerOnMouse($temp, mouseEvent);
+          $("body").append($temp).show();
           $("body").on("mousemove", function(mouseEvent){centerOnMouse($temp, mouseEvent);});
         }
       });
 
+      var MyformSnippetView = SnippetView.extend({
+        events: {
+          "mousedown" : "mouseDownHandler"
+          "mouseover" : "function(){console.log('hi')}"
+        }
+        , mouseDownHandler : function(mouseEvent){
+          console.log("moo");
+        }
+      })
+
       var TempSnippetView = SnippetView.extend({
         events:{
           "mouseup" : "mouseUpHandler",
-        }
+        }  
         , mouseUpHandler: function(mouseEvent){
           if($(".dropzone").length > 0){
             myFormCollection.add(this.model)
@@ -280,84 +290,7 @@
           $temp.remove();
           $("body").off("mousemove");
         }
-      });
-
-      var MyFormSnippetView = SnippetView.extend({
-        events:{
-          "mousedown" : "mouseDownHandler"
-        }
-        , mouseDownHandler : function(mouseEvent){
-          mouseEvent.preventDefault();
-          $(".popover").hide();
-          this.$el.popover("show");
-        }
-      });
-
-      //Snippet Collection
-      var SnippetsCollection = Backbone.Collection.extend({
-        model: Snippet
-        , renderAll: function(){
-          return this.map(function(snippet){
-            return new SnippetView({model: snippet}).render();
-          });
-        }
-      });
-
-      //Snippet Collection for MyForm
-      var MyFormSnippetsCollection = SnippetsCollection.extend({
-        model: Snippet
-        , renderAll: function(){
-          return this.map(function(snippet){
-            return new MyFormSnippetView({model: snippet}).render();
-          });
-        }
-      });
-
-      // My Form View
-      var MyForm = Backbone.View.extend({
-        tagName: "fieldset"
-        , render: function(){
-          //Render Snippet Views
-          this.$el.empty();
-          var that = this;
-          _.each(this.collection.renderAll(), function(snippet){
-            that.$el.append(snippet);
-          });
-          this.$el.appendTo("#build form");
-          this.delegateEvents();
-        }
-        , initialize: function(){
-          this.collection.on('add', this.render, this);
-          this.collection.on('remove', this.render, this);
-          this.collection.on('change', this.render, this);
-          this.render();
-        }
       })
-
-      // Tab Collection / View
-      var Tab = Backbone.View.extend({
-        tagName: "div"
-        , className: "tab-pane"
-        , render: function(){
-          //Render Snippet Views
-          var that = this;
-          _.each(this.collection.renderAll(), function(snippet){
-           that.$el.append(snippet);
-          });
-          this.$el.attr("id", this.id)
-          //render & append nav
-          $(".nav.nav-tabs").append(tabnavTemplate({title: this._title, id: this.id}))
-          //append tab pane
-          this.$el.appendTo(".tab-content");
-          this.delegateEvents();
-        }
-
-        // Set title text for nav.
-        , setTitle: function(title){
-          this._title = title;
-          this.id     = mungText(title)
-        }
-      });
 
       var $build = $("#build");
       var centerOnMouse = function($temp, mouseEvent){
@@ -375,7 +308,7 @@
           "left"      : mouseX - ($temp.width()/2) + "px",
           "opacity"   : "0.75",
           "box-shadow": "0px 0px 15px #666"})
-
+        
         //drop position indication
         $myFormBits.removeClass("dropzone bottom");
         if (
@@ -401,6 +334,80 @@
         }
       }
 
+      //Snippet Collection
+      var SnippetsCollection = Backbone.Collection.extend({
+        model: Snippet
+        , renderAll: function(){
+          return this.map(function(snippet){
+            return new SnippetView({model: snippet}).render();
+          });
+        }
+      });
+
+      //Snippet Collection for MyForm
+      var MyformSnippetsCollection = SnippetsCollection.extend({
+        model: Snippet
+        , renderAll: function(){
+          return this.map(function(snippet){
+            return new MyformSnippetView({model: snippet}).render();
+          });
+        }
+      });
+
+      // My Form View
+      var MyForm = Backbone.View.extend({
+        tagName: "fieldset"
+        , render: function(){
+          //Render Snippet Views
+          this.$el.empty();
+          var that = this;
+          _.each(this.collection.renderAll(), function(snippet){
+            that.$el.append(snippet);
+          });
+          $("#build form").html(this.$el);
+        }
+        , initialize: function(){        
+          this.collection.on('add', this.render, this);
+          this.collection.on('remove', this.render, this);
+          this.collection.on('change', this.render, this);
+          this.render();
+        }
+      })
+
+      // Tab Collection / View
+      var Tab = Backbone.View.extend({
+        tagName: "div"
+        , className: "tab-pane"
+        , render: function(){            
+          //Render Snippet Views
+          var that = this;
+          _.each(this.collection.renderAll(), function(snippet){
+           that.$el.append(snippet);
+          });
+          this.$el.attr("id", this.id)
+
+          //render & append nav
+          $(".nav.nav-tabs").append(tabnavTemplate({title: this._title, id: this.id}))
+
+          //append tab pane
+          this.$el.appendTo(".tab-content");
+          this.delegateEvents();
+        }
+
+        // Set title text for nav.
+        , setTitle: function(title){
+          this._title = title;
+          this.id     = mungText(title)
+        }
+      });
+
+      // General App View
+      var SnippetApp = Backbone.View.extend({
+
+
+
+      });
+
       // Convinience functions
       var tabMaker = function(title, snippetCollection){
         var tab = new Tab({collection : snippetCollection})
@@ -409,8 +416,8 @@
       }
       var mungText = function(str){
        return str.toLowerCase().replace(/\W/g,'')
-     }
-
+      }
+      
       //--- App Setup ---//
 
       // Create Snippets
@@ -441,8 +448,8 @@
       $(".tab-pane").first().addClass("active");
       $("ul.nav li").first().addClass("active");
 
+      myFormCollection = new MyformSnippetsCollection([formName]);
       //Set up form with title element.
-      var myFormCollection = new MyFormSnippetsCollection([formName]);
       var myForm = new MyForm({
         collection: myFormCollection
       })
