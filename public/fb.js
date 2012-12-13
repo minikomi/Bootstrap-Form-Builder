@@ -23,10 +23,10 @@ $(document).ready(function(){
 
     var delayed = setTimeout(function(){
       if(type === "main"){
-        $temp = $("<form class='form-horizontal span6' id='temp'>").append($this.clone());
+        $temp = $("<form class='form-horizontal span6' id='temp'></form>").append($this.clone());
       } else {
         if($this.attr("id") !== "legend"){
-          $temp = $("<form class='form-horizontal span6' id='temp'>").append($this);
+          $temp = $("<form class='form-horizontal span6' id='temp'></form>").append($this);
         }
       }
 
