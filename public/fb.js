@@ -1,6 +1,6 @@
 $(document).ready(function(){
   $("form").delegate(".component", "mousedown", function(md){
-    $(".popover").hide();
+    $(".popover").remove();
 
     md.preventDefault();
     var tops = [];
