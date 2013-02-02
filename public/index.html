@@ -24,11 +24,23 @@
         border: 1px solid #fff;
       }
 
-      #temp{
-        width: 500px;
-        background: white;
+      .temp{
+        width: 100%;
+        height: 100%;
+        background: transparent;
+        position: absolute;
+        top: 0;
+        left: 0;
+        -webkit-transition: background-color 2s ease-in-out;
+      }
+
+      .temp form {
+        padding: 8px 4px;
         border: 1px dotted #ccc;
-        border-radius: 10px;
+        position: absolute;
+        background: white;
+        box-shadow: 0px 0px 40px #666;
+        -webkit-transition: -webkit-transform 0.1s ease-out;
       }
 
       .popover-content form .btn{
@@ -60,15 +72,12 @@
         border-bottom: 1px solid #fff;
       }
 
-      #build .control-group.dropzone {
-        border-top: 1px solid #7ae;
+      #build .control-group.target:after{
+        height: 80px; 
+        background: #f6f6f6;
+        width: 100%;
+        border: 1px dashed #ccc;
       }
-
-      #build .control-group.dropzone.bottom{
-        border-top: 1px solid #fff;
-        border-bottom: 1px solid #7ae;
-      }
-
 
     </style>
     <link href="assets/css/bootstrap-responsive.css" rel="stylesheet">
@@ -146,34 +155,44 @@
 
     </div> <!-- /container -->
 
+    <!-- jquery -->
+      <script src="assets/js/lib/jquery.min.js"></script>
+
     <!-- general js -->
-    <script src="assets/js/jquery.js"></script>
-    <script src="assets/js/bootstrap.js"></script>
-    <script src="assets/js/bootstrap-tab.js"></script>
+    <script src="assets/js/lib/bootstrap.min.js"></script>
+
 
     <!-- backbone -->
-    <script src="assets/appjs/underscore-min.js" type="text/javascript"></script>
-    <script src="assets/appjs/backbone.js" type="text/javascript"></script>
+    <script src="assets/js/lib/underscore-min.js" type="text/javascript"></script>
+    <script src="assets/js/lib/backbone.js" type="text/javascript"></script>
 
     <!-- [templates] -->
 
     <!-- Popover -->
     <script type="text/html" id="popover-input">
-      <label class='control-label'> <%= label %> </label> <input class='input-large' type='text' name='<%= id %>' id='<%= id %>' value ='<%= value %>' />
+      <label class='control-label'> <%= label %> </label> <input class='input-large' type='text' name='<%= name %>' id='<%= name %>' value ='<%= value %>' />
     </script>
 
     <script type="text/html" id="popover-textarea">
       <label class='control-label'> <%= label %> </label>
-      <textarea style='min-height: 200px' id='<%= id %>'>
+      <textarea style='min-height: 200px' id='<%= name %>'>
         <% for ( var i = 0; i < value.length ; i++ ) { %><%= value[i] + "\n" %><% } %>
       </textarea>
+    </script>
+
+    <script type="text/html" id="popover-select">
+      <label class='control-label'> <%= label %> </label>
+      <select style='min-height: 200px' id='<%= name %>'>
+        <% for ( var i = 0; i < value.length ; i++ ) { %>
+          <option><%= value[i] %></option> 
+        <% } %>
+      </select>
     </script>
 
     <script type="text/html" id="popover-main">
       <form class='form'>
         <div class='controls'>
-          <% _.reduce(items, function(str, v, k){  %>
-            <% v["id"] = k; %>
+          <% _.reduce(items, function(str, v){  %>
             <%= popoverItemTemplates[v["type"]](v) %>
             <% }, "") %>
           <hr/>
@@ -185,6 +204,13 @@
     <!-- Tab  -->
     <script type="text/html" id="tab-nav">
       <li><a href="#<%= id %>" data-toggle="tab"><%= title %></a></li>
+    </script>
+
+    <!-- Temp  -->
+    <script type="text/html" id="temp-template">
+      <form class='form-horizontal span6' id='temp'>
+        <%= text %>
+      </form>
     </script>
 
     <!-- snippet -->
@@ -222,231 +248,6 @@
       </div>
     </script>
 
-    <script>
-      // Set up templates
-      var popoverTemplate         = _.template($("#popover-main").html());
-
-      var popoverItemTemplates    = {
-        "text" :   _.template($("#popover-input").html()),
-        "textarea" :  _.template($("#popover-textarea").html())
-      }
-
-      var tabnavTemplate         = _.template($("#tab-nav").html());
-
-      // Snippet Model / View
-      var Snippet  = Backbone.Model.extend({});
-
-      var SnippetView = Backbone.View.extend({
-        tagName: "div",
-        className: "control-group",
-        initialize: function(){ this.template = _.template($("#snippet-"+ mungText(this.model.get("title"))).html())},
-        render: function(){
-          return this.$el.html(this.template(
-          _.reduce(this.model.toJSON(), function(o, v, k){
-            if (k !== "type" || k !== "title") {o[k] = v["value"];}
-            return o;
-          },{})
-          )).attr({
-            "data-content"   : popoverTemplate({"items" : _.omit(this.model.toJSON(), "title")})
-            , "data-title"   : this.model.get("title")
-            , "data-trigger" : "manual"
-            , "data-html"    : true
-          }).popover()
-          this.delegateEvents();
-        }
-        , events:{
-          "mousedown" : "mouseDownHandler"
-        }
-        , mouseDownHandler: function(mouseEvent){
-          mouseEvent.preventDefault();
-          //hide all popovers
-          $(".popover").hide();
-          $temp = $("<form class='form-horizontal span6' id='temp'>").append(new TempSnippetView({model: this.model.clone()}).render());
-          $("body").append($temp).show();
-          centerOnMouse($temp, mouseEvent);
-          $("body").on("mousemove", function(mouseEvent){centerOnMouse($temp, mouseEvent);});
-        }
-      });
-
-      var TempSnippetView = SnippetView.extend({
-        events:{
-          "mouseup" : "mouseUpHandler",
-        }
-        , mouseUpHandler: function(mouseEvent){
-          if($(".dropzone").length > 0){
-            myFormCollection.add(this.model)
-          }
-          $("#build .control-group").removeClass("dropzone bottom")
-          $temp.remove();
-          $("body").off("mousemove");
-        }
-      });
-
-      var MyFormSnippetView = SnippetView.extend({
-        events:{
-          "mousedown" : "mouseDownHandler"
-        }
-        , mouseDownHandler : function(mouseEvent){
-          mouseEvent.preventDefault();
-          $(".popover").hide();
-          this.$el.popover("show");
-        }
-      });
-
-      //Snippet Collection
-      var SnippetsCollection = Backbone.Collection.extend({
-        model: Snippet
-        , renderAll: function(){
-          return this.map(function(snippet){
-            return new SnippetView({model: snippet}).render();
-          });
-        }
-      });
-
-      //Snippet Collection for MyForm
-      var MyFormSnippetsCollection = SnippetsCollection.extend({
-        model: Snippet
-        , renderAll: function(){
-          return this.map(function(snippet){
-            return new MyFormSnippetView({model: snippet}).render();
-          });
-        }
-      });
-
-      // My Form View
-      var MyForm = Backbone.View.extend({
-        tagName: "fieldset"
-        , render: function(){
-          //Render Snippet Views
-          this.$el.empty();
-          var that = this;
-          _.each(this.collection.renderAll(), function(snippet){
-            that.$el.append(snippet);
-          });
-          this.$el.appendTo("#build form");
-          this.delegateEvents();
-        }
-        , initialize: function(){
-          this.collection.on('add', this.render, this);
-          this.collection.on('remove', this.render, this);
-          this.collection.on('change', this.render, this);
-          this.render();
-        }
-      })
-
-      // Tab Collection / View
-      var Tab = Backbone.View.extend({
-        tagName: "div"
-        , className: "tab-pane"
-        , render: function(){
-          //Render Snippet Views
-          var that = this;
-          _.each(this.collection.renderAll(), function(snippet){
-           that.$el.append(snippet);
-          });
-          this.$el.attr("id", this.id)
-          //render & append nav
-          $(".nav.nav-tabs").append(tabnavTemplate({title: this._title, id: this.id}))
-          //append tab pane
-          this.$el.appendTo(".tab-content");
-          this.delegateEvents();
-        }
-
-        // Set title text for nav.
-        , setTitle: function(title){
-          this._title = title;
-          this.id     = mungText(title)
-        }
-      });
-
-      var $build = $("#build");
-      var centerOnMouse = function($temp, mouseEvent){
-        //mouse centering
-        var mouseX = mouseEvent.pageX;
-        var mouseY = mouseEvent.pageY;
-        var halfHeight = $temp.height()/2;
-        var halfWidth  = $temp.width()/2;
-
-        var buildPosition = $build.position();
-        var $myFormBits = $("#build form .control-group");
-
-        $temp.css({"position" : "absolute",
-          "top"       : mouseY - ($temp.height()/2) + "px",
-          "left"      : mouseX - ($temp.width()/2) + "px",
-          "opacity"   : "0.75",
-          "box-shadow": "0px 0px 15px #666"})
-
-        //drop position indication
-        $myFormBits.removeClass("dropzone bottom");
-        if (
-        mouseX > buildPosition.left &&
-        mouseX < buildPosition.left + $build.width() + $temp.width()/2 &&
-        mouseY > buildPosition.top  &&
-        mouseY < buildPosition.top + $build.height() + $temp.height()/2
-        ){
-          var tops = $.grep($myFormBits, function(e){
-            return ($(e).position().top -  mouseY + halfHeight > 0 && $(e).attr("data-title") !== "Form Name");
-          });
-
-          if(tops.length > 0){
-            $(tops[0]).addClass("dropzone")
-            return;
-          } else if ($myFormBits.length > 0) {
-            $($myFormBits[$myFormBits.length - 1]).addClass("dropzone bottom");
-            return;
-          } else {
-            $("legend").addClass("dropzone bottom");
-            return;
-          }
-        }
-      }
-
-      // Convinience functions
-      var tabMaker = function(title, snippetCollection){
-        var tab = new Tab({collection : snippetCollection})
-        tab.setTitle(title);
-        tab.render();
-      }
-      var mungText = function(str){
-       return str.toLowerCase().replace(/\W/g,'')
-     }
-
-      //--- App Setup ---//
-
-      // Create Snippets
-
-      // Form Name
-      var formName = new Snippet({
-        "title" : "Form Name"
-        , "name"       : {"label"    : "Form Name"  , "type" : "text" , "value" : "Form Name"}
-      });
-
-      //Text Input Snippets
-      var textInput = new Snippet({
-        "title" : "Text Input"
-        , "label"       : {"label"    : "Label Text"  , "type" : "text" , "value" : "label"}
-        , "prepend"     : {"label"    : "Prepend"     , "type" : "text" , "value" : "prepend"}
-        , "placeholder" : {"label"    : "Placeholder" , "type" : "text" , "value" : "placeholder"}
-        , "helptext"    : {"label"    : "Help Text"   , "type" : "text" , "value" : "help"}
-      });
-
-      // Bundle snippets for tabs
-      var textInputSnippets = new SnippetsCollection([
-        textInput
-      ]);
-      // Make tabs
-      tabMaker("Text Inputs", textInputSnippets)
-
-      //Make the first tab active!
-      $(".tab-pane").first().addClass("active");
-      $("ul.nav li").first().addClass("active");
-
-      //Set up form with title element.
-      var myFormCollection = new MyFormSnippetsCollection([formName]);
-      var myForm = new MyForm({
-        collection: myFormCollection
-      })
-
-    </script>
+    <script src="assets/appjs/app.js"> </script>
   </body>
 </html>
