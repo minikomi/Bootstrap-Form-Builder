@@ -1,0 +1,11 @@
+#!/bin/ruby
+
+require "json"
+require "yaml"
+
+yamlfiles = Dir.glob("./*.yaml")
+
+yamlfiles.each{ |file|
+  json = YAML.file_open(file).to_json
+  File.open(file.gsub("yaml", "json"), 'w') { |out| out.write(json) }
+}

@@ -1,0 +1,23 @@
+-
+  title  : Text Input
+  fields : 
+    -
+      name   : label
+      label  : Label Text
+      type   : text
+      value  : label}
+    -
+      name   : prepend
+      label  : Prepend
+      type   : text
+      value  : prepend}
+    -
+      name   : placeholder
+      label  : Placeholder
+      type   : text
+      value  : placeholder
+    -
+      name   : helptext
+      label  : Help Text
+      type   : text
+      value  : help
