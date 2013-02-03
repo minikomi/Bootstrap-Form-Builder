@@ -1,0 +1,70 @@
+body {
+  padding-top: 60px; /* 60px to make the container go all the way to the bottom of the topbar */
+  padding-bottom: 10px;
+}
+
+#target{
+  min-height: 200px;
+  border: 1px solid #ccc;
+  padding: 5px;
+}
+
+#target .component{
+  border: 1px solid #fff;
+}
+
+.temp{
+  width: 100%;
+  height: 100%;
+  background: transparent;
+  position: absolute;
+  top: 0;
+  left: 0;
+  -webkit-transition: background-color 2s ease-in-out;
+}
+
+.temp form {
+  padding: 8px 4px;
+  border: 1px dotted #ccc;
+  position: absolute;
+  background: white;
+  box-shadow: 0px 0px 40px #666;
+  -webkit-transition: -webkit-transform 0.1s ease-out;
+}
+
+.popover-content form .btn{
+  margin-right: 10px
+}
+
+#source{
+  min-height: 500px;
+}
+
+/* Popovers now are appended to their parent rather
+than to the body/main document as they once were.
+We need to over-ride some inherited stuff.. */
+  form .popover .controls {
+    margin-left: 0;
+  }
+
+  form .popover .control-label {
+    text-align: left;
+  }
+
+  form .popover form {
+    width: 224px;
+  }
+
+  /* Drag & Drop */
+  #build .control-group{
+    border-top: 1px solid #fff;
+    border-bottom: 1px solid #fff;
+  }
+
+  #build .control-group.target:after{
+    height: 80px; 
+    background: #f6f6f6;
+    width: 100%;
+    border: 1px dashed #ccc;
+  }
+

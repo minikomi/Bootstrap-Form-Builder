@@ -1,14 +1,14 @@
+// Snippet Model / View
 var TabSnippetView = SnippetView.extend({
   events:{
     "mousedown" : "mouseDownHandler"
   }
-  , mouseDownHandler: function(mouseEvent){
-    mouseEvent.preventDefault();
+  , mouseDownHandler: function(mouseDownEvent){
+    mouseDownEvent.preventDefault();
     //hide all popovers
     $(".popover").hide();
-    $temp = new TempSnippetView({model: this.model.clone()}).render();
-    $("body").append($temp).show().on('mousemove', moveTemp);
-    centerOnMouse($temp, mouseEvent);
-    $("body").on("mousemove", function(mouseEvent){centerOnMouse($temp, mouseEvent);});
+    $("body").append(new TempSnippetView({model: this.model.clone()}).render());
+    $(".temp").css("background-color", "rgba(60,60,60,0.01)");
+    pubsub.trigger("newTempPostRender", mouseDownEvent);
   }
 });
