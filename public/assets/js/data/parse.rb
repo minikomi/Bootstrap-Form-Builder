@@ -6,6 +6,6 @@ require "yaml"
 yamlfiles = Dir.glob("./*.yaml")
 
 yamlfiles.each{ |file|
-  json = YAML.load_file(file).to_json
+  json = JSON.pretty_generate(YAML.load_file(file))
   File.open(file.gsub("yaml", "json"), 'w') { |out| out.write(json) }
 }

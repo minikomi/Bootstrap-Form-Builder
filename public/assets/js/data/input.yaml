@@ -1,23 +1,68 @@
 -
   title  : Text Input
   fields : 
-    -
-      name   : label
+    label:
       label  : Label Text
       type   : text
-      value  : label}
-    -
-      name   : prepend
-      label  : Prepend
-      type   : text
-      value  : prepend}
-    -
-      name   : placeholder
+      value  : label
+    placeholder:
       label  : Placeholder
       type   : text
       value  : placeholder
-    -
-      name   : helptext
+    helptext:
+      label  : Help Text
+      type   : text
+      value  : help
+-
+  title  : Search Input
+  fields : 
+    label:
+      label  : Label Text
+      type   : text
+      value  : label
+    placeholder:
+      label  : Placeholder
+      type   : text
+      value  : placeholder
+    helptext:
+      label  : Help Text
+      type   : text
+      value  : help
+-
+  title  : Prepended Text
+  fields : 
+    label:
+      label  : Label Text
+      type   : text
+      value  : label}
+    prepend:
+      label  : Prepend
+      type   : text
+      value  : prepend
+    placeholder:
+      label  : Placeholder
+      type   : text
+      value  : placeholder
+    helptext:
+      label  : Help Text
+      type   : text
+      value  : help
+-
+  title  : Appended Text
+  fields : 
+    label:
+      label  : Label Text
+      type   : text
+      value  : label}
+    append:
+      label  : Append
+      type   : text
+      value  : append
+    placeholder:
+      label  : Placeholder
+      type   : text
+      value  : placeholder
+    helptext:
       label  : Help Text
       type   : text
       value  : help

@@ -1,3 +1,4 @@
+//TODO
 var SnippetView = Backbone.View.extend({
   tagName: "div"
   , className: "control-group"
