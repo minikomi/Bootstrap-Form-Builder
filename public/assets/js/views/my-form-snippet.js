@@ -8,12 +8,7 @@ define([
   PubSub
 ){
   return SnippetView.extend({
-
-    initialize: function(){
-      this.constructor.__super__.initialize.call(this);
-    }
-
-    , events:{
+    events:{
       "mousedown" : "mouseDownHandler",
       "mouseup"   : "mouseUpHandler"
     }

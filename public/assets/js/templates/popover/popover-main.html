@@ -2,7 +2,7 @@
   <div class='controls'>
     <% _.reduce(items, function(str, v, k){  %>
       <% v["name"] = k %>
-      <%= popoverItemTemplates[v["type"]](v) %>
+      <%= popoverTemplates[v["type"]](v) %>
       <% }, "") %>
     <hr/>
     <button class='btn btn-info'>Save</button><button class='btn btn-danger'>Cancel</button>
