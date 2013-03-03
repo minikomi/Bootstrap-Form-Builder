@@ -1,42 +1,46 @@
 define([
-       "jquery", "underscore", "backbone", "require"
-       "templates/snippet-generator.js"
+       "jquery", "underscore", "backbone"
+       , "text!templates/popover/popover-main.html"
+       , "text!templates/popover/popover-input.html"
+       , "text!templates/popover/popover-select.html"
+       , "text!templates/popover/popover-textarea.html"
+       , "templates/snippet/snippet-templates"
+       , "bootstrap"
 ], function(
-  $, _, Backbone, req,
-  _PopoverMain,
-  _PopoverInput, _PopoverSelect, _PopoverTextArea
+  $, _, Backbone
+  , _PopoverMain
+  , _PopoverInput
+  , _PopoverSelect
+  , _PopoverTextArea
+  , _snippetTemplates
 ){
   return Backbone.View.extend({
     tagName: "div"
     , className: "control-group"
     , initialize: function(){ 
-      var that = this;
-      req(["text!snippet/"+this.options.group"/"+this.model.idFriendlyTitle()], function(_template){
-        that.template = _template;
-      });
+      this.template = _.template(_snippetTemplates[this.model.idFriendlyTitle()])
       this.popoverTemplates = {
-        "input" : _PopoverInput
-        , "select" : _PopoverSelect
-        , "textarea" : _PopoverTextArea
+        "input" : _.template(_PopoverInput)
+        , "select" : _.template(_PopoverSelect)
+        , "textarea" : _.template(_PopoverTextArea)
       }
-
     }
     , render: function(){
-
-      // Render the popover to put in the data-content
-      var content =  _PopoverTemplate({
-        "items" : this.model.get("fields"),
-        "popoverTemplates": this.popoverTemplates
+      var that = this;
+      var content = _.template(_PopoverMain)({
+        "title": that.model.get("title"),
+        "items" : that.model.get("fields"),
+        "popoverTemplates": that.popoverTemplates
       });
-
+      debugger;
       return this.$el.html(
-        this.template(this.model.getValues())
+        that.template(that.model.getValues())
       ).attr({                                                    
         "data-content"   : content
-        , "data-title"   : this.model.get("title")
+        , "data-title"   : that.model.get("title")
         , "data-trigger" : "manual"
         , "data-html"    : true
-      }).popover();
+      })
     }
   });
 });

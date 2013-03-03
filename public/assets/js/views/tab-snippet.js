@@ -1,19 +1,16 @@
 define([
-       "jquery", "underscore", "backbone",
-       "views/snippet", "views/temp-snippet"
-       "pubsub"
+       "jquery", "underscore", "backbone"
+       , "views/snippet", "views/temp-snippet"
+       , "helper/pubsub"
 ], function(
   $, _, Backbone
-  SnippetView
-  PubSub
+  , SnippetView
+  , PubSub
 ){
-  // Snippet Model / View
   return SnippetView.extend({
-
     events:{
       "mousedown" : "mouseDownHandler"
     }
-
     , mouseDownHandler: function(mouseDownEvent){
       mouseDownEvent.preventDefault();
       //hide all popovers

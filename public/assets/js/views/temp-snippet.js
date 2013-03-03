@@ -1,11 +1,15 @@
 define([
-       "jquery", "underscore", "backbone",
-       "views/snippet", "views/temp-snippet"
-       "pubsub"
-], function(){
+       "jquery"
+       , "views/snippet"
+       , "helper/pubsub"
+], function(
+  $
+  , SnippetView
+  , PubSub
+){
   return SnippetView.extend({
     initialize: function(){
-      pubsub.on("newTempPostRender", this.postRender, this);
+      PubSub.on("newTempPostRender", this.postRender, this);
       this.constructor.__super__.initialize.call(this);
     }
     , render: function() {
@@ -22,9 +26,9 @@ define([
       "mouseup" : "mouseUpHandler",
     }
     , centerOnEvent: function(mouseEvent){
-      var mouseX = mouseEvent.pageX;
-      var mouseY = mouseEvent.pageY;
-      var $tempForm = $(this.$el.find("form")[0]);
+      var mouseX     = mouseEvent.pageX;
+      var mouseY     = mouseEvent.pageY;
+      var $tempForm  = $(this.$el.find("form")[0]);
       var halfHeight = $tempForm.height()/2;
       var halfWidth  = $tempForm.width()/2;
       $tempForm.css({
@@ -34,14 +38,14 @@ define([
       // Make sure the element has been drawn and 
       // has height in the dom before triggering.
       if (this._$temp.height() > 0) { 
-        pubsub.trigger("tempMove", mouseEvent, this._$temp.height());
+        PubSub.trigger("tempMove", mouseEvent, this._$temp.height());
       }
     }
     , mouseMoveHandler: function(mouseEvent) {
       this.centerOnEvent(mouseEvent);
     }
     , mouseUpHandler: function(mouseEvent){
-      pubsub.trigger("tempDrop", mouseEvent, this.model);
+      PubSub.trigger("tempDrop", mouseEvent, this.model);
       this.remove();
     }
   });

@@ -1,14 +1,15 @@
 define([
        "jquery" , "underscore" , "backbone"
-       , "collections/snippets" , "collections/my-form-snippets"
-       , "views/tab" , "views/my-form"
+       , "models/snippet"
+       , "collections/snippets" 
+       , "views/my-form-snippet"
 ], function(
-  $,_, Backbone,
-  SnippetsCollection, MyFormSnippetsCollection,
-  TabView, MyFormView
+  $, _, Backbone
+  , SnippetModel
+  , SnippetsCollection
+  , MyFormSnippetView
 ){
-  //User created form snippets
-  var MyFormSnippetsCollection = SnippetsCollection.extend({
+  return SnippetsCollection.extend({
     model: SnippetModel
     , renderAll: function(){
       return this.map(function(snippet){
@@ -16,6 +17,4 @@ define([
       });
     }
   });
-
-  return MyFormSnippetsCollection;
 });

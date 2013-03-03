@@ -3,66 +3,66 @@
   fields : 
     label:
       label  : Label Text
-      type   : text
+      type   : input
       value  : label
     placeholder:
       label  : Placeholder
-      type   : text
+      type   : input
       value  : placeholder
     helptext:
       label  : Help Text
-      type   : text
+      type   : input
       value  : help
 -
   title  : Search Input
   fields : 
     label:
       label  : Label Text
-      type   : text
+      type   : input
       value  : label
     placeholder:
       label  : Placeholder
-      type   : text
+      type   : input
       value  : placeholder
     helptext:
       label  : Help Text
-      type   : text
+      type   : input
       value  : help
 -
   title  : Prepended Text
   fields : 
     label:
       label  : Label Text
-      type   : text
+      type   : input
       value  : label}
     prepend:
       label  : Prepend
-      type   : text
+      type   : input
       value  : prepend
     placeholder:
       label  : Placeholder
-      type   : text
+      type   : input
       value  : placeholder
     helptext:
       label  : Help Text
-      type   : text
+      type   : input
       value  : help
 -
   title  : Appended Text
   fields : 
     label:
       label  : Label Text
-      type   : text
+      type   : input
       value  : label}
     append:
       label  : Append
-      type   : text
+      type   : input
       value  : append
     placeholder:
       label  : Placeholder
-      type   : text
+      type   : input
       value  : placeholder
     helptext:
       label  : Help Text
-      type   : text
+      type   : input
       value  : help

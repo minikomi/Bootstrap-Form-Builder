@@ -1,22 +1,21 @@
 define([
-       "jquery", "underscore", "backbone",
-       "views/temp-snippet",
-       "pubsub"
+       "jquery", "underscore", "backbone"
+      , "views/temp-snippet"
+      , "helper/pubsub"
 ], function(
   $, _, Backbone
-  TempSnippetView
-  PubSub
+  , TempSnippetView
+  , pubsub
 ){
   return Backbone.View.extend({
     tagName: "fieldset"
-
     , initialize: function(){
       this.collection.on("add", this.render, this);
       this.collection.on("remove", this.render, this);
       this.collection.on("change", this.render, this);
-      PubSub.on("mySnippetDrag", this.handleSnippetDrag, this);
-      PubSub.on("tempMove", this.handleTempMove, this);
-      PubSub.on("tempDrop", this.handleTempDrop, this);
+      pubsub.on("mySnippetDrag", this.handleSnippetDrag, this);
+      pubsub.on("tempMove", this.handleTempMove, this);
+      pubsub.on("tempDrop", this.handleTempDrop, this);
       this.render();
     }
 
