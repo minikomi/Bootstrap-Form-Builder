@@ -1,4 +1,4 @@
--
+  -
   title  : Text Input
   fields : 
     label:
@@ -34,7 +34,7 @@
     label:
       label  : Label Text
       type   : input
-      value  : label}
+      value  : label
     prepend:
       label  : Prepend
       type   : input
@@ -53,7 +53,7 @@
     label:
       label  : Label Text
       type   : input
-      value  : label}
+      value  : label
     append:
       label  : Append
       type   : input

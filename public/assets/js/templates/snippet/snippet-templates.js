@@ -6,8 +6,8 @@ define( function(require) {
 
   return {
     formname: formname,
-    prepend: prepend,
-    search: search,
+    prependedtext: prepend,
+    searchinput: search,
     textinput: textinput
   }
 });

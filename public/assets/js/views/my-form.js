@@ -16,6 +16,7 @@ define([
       pubsub.on("mySnippetDrag", this.handleSnippetDrag, this);
       pubsub.on("tempMove", this.handleTempMove, this);
       pubsub.on("tempDrop", this.handleTempDrop, this);
+      this.$build = $("#build");
       this.render();
     }
 
@@ -42,7 +43,7 @@ define([
       });
       if (topelement){
         return topelement;
-      } else {                                  
+      } else {
         return myFormBits[0];
       }
     }
@@ -55,10 +56,10 @@ define([
 
     , handleTempMove: function(mouseEvent, height){
       $(".target").removeClass("target");
-      if(mouseEvent.pageX >= $build.position().left && 
-         mouseEvent.pageX < ($build.width() + $build.position().left) &&
-           mouseEvent.pageY >= $build.position().top && 
-             mouseEvent.pageY < ($build.height() + $build.position().top)){
+      if(mouseEvent.pageX >= this.$build.position().left &&
+          mouseEvent.pageX < (this.$build.width() + this.$build.position().left) &&
+          mouseEvent.pageY >= this.$build.position().top &&
+          mouseEvent.pageY < (this.$build.height() + this.$build.position().top)){
         $(this.getBottomAbove(mouseEvent.pageY, height)).addClass("target");
       }
     }
@@ -66,7 +67,6 @@ define([
     , handleTempDrop: function(mouseEvent, model){
       $(".target").removeClass("target");
       this.collection.add(model)
-      console.log("Drop:" +mouseEvent.pageX + " - " + mouseEvent.pageY);
     }
   })
 });

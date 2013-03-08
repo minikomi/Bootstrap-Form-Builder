@@ -4,7 +4,7 @@ define([
        , "helper/pubsub"
 ], function(
   $, _, Backbone
-  , SnippetView
+  , SnippetView, TempSnippetView
   , PubSub
 ){
   return SnippetView.extend({

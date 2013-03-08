@@ -32,7 +32,6 @@ define([
         "items" : that.model.get("fields"),
         "popoverTemplates": that.popoverTemplates
       });
-      debugger;
       return this.$el.html(
         that.template(that.model.getValues())
       ).attr({                                                    

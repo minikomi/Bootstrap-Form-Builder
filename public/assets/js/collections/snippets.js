@@ -10,9 +10,10 @@ define([
   return Backbone.Collection.extend({
     model: SnippetModel
     , renderAll: function(){
+      var that = this
       return this.map(function(snippet){
-        debugger;
-        return new TabSnippetView({group: this.options.title, model: snippet}).render();
+        console.log(snippet);
+        return new TabSnippetView({model: snippet}).render();
       });
     }
   });
