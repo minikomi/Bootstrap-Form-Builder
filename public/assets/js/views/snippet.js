@@ -35,10 +35,12 @@ define([
       return this.$el.html(
         that.template(that.model.getValues())
       ).attr({                                                    
-        "data-content"   : content
-        , "data-title"   : that.model.get("title")
-        , "data-trigger" : "manual"
-        , "data-html"    : true
+        "data-content"     : content
+        , "data-title"     : that.model.get("title")
+        , "data-trigger"   : "manual"
+        , "data-html"      : true
+        , "data-container" : "#cid" + that.model.cid
+        , "id"             : "cid"  + that.model.cid
       })
     }
   });

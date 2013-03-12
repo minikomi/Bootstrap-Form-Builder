@@ -26,7 +26,7 @@ define([
     , className: "temp"
     , events:{
       "mousemove": "mouseMoveHandler",
-      "mouseup" : "mouseUpHandler",
+      "mouseup" : "mouseUpHandler"
     }
     , centerOnEvent: function(mouseEvent){
       var mouseX     = mouseEvent.pageX;

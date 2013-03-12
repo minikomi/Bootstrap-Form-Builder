@@ -5,7 +5,7 @@ define([
 ], function(
   $, _, Backbone
   , TempSnippetView
-  , pubsub
+  , PubSub
 ){
   return Backbone.View.extend({
     tagName: "fieldset"
@@ -13,9 +13,9 @@ define([
       this.collection.on("add", this.render, this);
       this.collection.on("remove", this.render, this);
       this.collection.on("change", this.render, this);
-      pubsub.on("mySnippetDrag", this.handleSnippetDrag, this);
-      pubsub.on("tempMove", this.handleTempMove, this);
-      pubsub.on("tempDrop", this.handleTempDrop, this);
+      PubSub.on("mySnippetDrag", this.handleSnippetDrag, this);
+      PubSub.on("tempMove", this.handleTempMove, this);
+      PubSub.on("tempDrop", this.handleTempDrop, this);
       this.$build = $("#build");
       this.render();
     }
@@ -61,12 +61,22 @@ define([
           mouseEvent.pageY >= this.$build.position().top &&
           mouseEvent.pageY < (this.$build.height() + this.$build.position().top)){
         $(this.getBottomAbove(mouseEvent.pageY, height)).addClass("target");
+      } else {
+        $(".target").removeClass("target");
       }
     }
 
-    , handleTempDrop: function(mouseEvent, model){
-      $(".target").removeClass("target");
-      this.collection.add(model)
+    , handleTempDrop: function(mouseEvent, model, index){
+      if(mouseEvent.pageX >= this.$build.position().left &&
+         mouseEvent.pageX < (this.$build.width() + this.$build.position().left) &&
+         mouseEvent.pageY >= this.$build.position().top &&
+         mouseEvent.pageY < (this.$build.height() + this.$build.position().top)) {
+        var index = $(".target").index();
+        $(".target").removeClass("target");
+        this.collection.add(model,{at: index+1});
+      } else {
+        $(".target").removeClass("target");
+      }
     }
   })
 });
