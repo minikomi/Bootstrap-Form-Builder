@@ -1,6 +1,6 @@
 define([
        "jquery"
-       , "views/snippet"   
+       , "views/snippet"
        , "text!templates/app/temp.html"
        , "helper/pubsub"
 ], function(
@@ -38,9 +38,9 @@ define([
         "top"       : (mouseY - halfHeight) + "px",
         "left"      : (mouseX - halfWidth) + "px"
       });
-      // Make sure the element has been drawn and 
+      // Make sure the element has been drawn and
       // has height in the dom before triggering.
-      if (this._$temp.height() > 0) { 
+      if (this._$temp.height() > 0) {
         PubSub.trigger("tempMove", mouseEvent, this._$temp.height());
       }
     }

@@ -14,7 +14,7 @@ require.config({
     }
   }
   , paths: {
-    app         : ".." 
+    app         : ".."
     , collections : "../collections"
     , data        : "../data"
     , models      : "../models"
@@ -23,7 +23,7 @@ require.config({
     , views       : "../views"
   }
 });
-    
-require([ 'app/app'], function(app){ 
+
+require([ 'app/app'], function(app){
   app.initialize();
 });

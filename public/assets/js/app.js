@@ -9,7 +9,6 @@ define([
   , TabView, MyFormView
   , inputJSON
 ){
-  var snippets = JSON.parse(inputJSON);
   return {
     initialize: function(){
       // Bootstrap "My Form" with 'Form Name' snippet.
@@ -18,20 +17,25 @@ define([
         , collection: new MyFormSnippetsCollection(
         [
           { "title" : "Form Name"
-            , "fields": { 
+            , "fields": {
               "name" : {
                 "label"   : "Form Name"
                 , "type"  : "input"
-                , "value" : "Form Name" 
+                , "value" : "Form Name"
               }
             }
           }
-        ])   
+        ])
       });
+
       //Bootstrap tabs from json.
       new TabView({
         title: "Input"
-        , collection: new SnippetsCollection(snippets)
+        , collection: new SnippetsCollection(JSON.parse(inputJSON))
+      });
+      new TabView({
+        title: "Ogawa"
+        , collection: new SnippetsCollection(JSON.parse(inputJSON))
       });
 
       //Make the first tab active!

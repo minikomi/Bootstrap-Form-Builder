@@ -17,7 +17,7 @@ define([
   return Backbone.View.extend({
     tagName: "div"
     , className: "control-group"
-    , initialize: function(){ 
+    , initialize: function(){
       this.template = _.template(_snippetTemplates[this.model.idFriendlyTitle()])
       this.popoverTemplates = {
         "input" : _.template(_PopoverInput)
@@ -34,7 +34,7 @@ define([
       });
       return this.$el.html(
         that.template(that.model.getValues())
-      ).attr({                                                    
+      ).attr({
         "data-content"     : content
         , "data-title"     : that.model.get("title")
         , "data-trigger"   : "manual"
