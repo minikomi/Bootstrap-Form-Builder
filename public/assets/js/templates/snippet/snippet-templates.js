@@ -16,7 +16,6 @@ define(function(require) {
   , searchinput              = require('text!templates/snippet/searchinput.html')
   , selectbasic              = require('text!templates/snippet/selectbasic.html')
   , selectmultiple           = require('text!templates/snippet/selectmultiple.html')
-  , snippet-templates        = require('text!templates/snippet/snippet-templates.js')
   , textarea                 = require('text!templates/snippet/textarea.html')
   , textinput                = require('text!templates/snippet/textinput.html');
 
