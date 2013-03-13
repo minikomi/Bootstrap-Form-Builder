@@ -2,7 +2,7 @@ define(function(require) {
   var formname               = require('text!templates/snippet/formname.html')
   , prependedtext            = require('text!templates/snippet/prependedtext.html')
   , search                   = require('text!templates/snippet/searchinput.html')
-  , textinput                = require('text!templates/snippet/textinput.html');
+  , textinput                = require('text!templates/snippet/textinput.html')
   , appendedcheckbox         = require('text!templates/snippet/appendedcheckbox.html')
   , appendedtext             = require('text!templates/snippet/appendedtext.html')
   , button                   = require('text!templates/snippet/button.html')
