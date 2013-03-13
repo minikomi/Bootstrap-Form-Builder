@@ -1,13 +1,11 @@
 <!-- Appended checkbox -->
-<label class="control-label" data-valtype="label">Append checkbox</label>
+<label class="control-label"><%= label %></label>
 <div class="controls">
   <div class="input-append">
-    <input class="span2" placeholder="placeholder" type="text" data-valtype="placeholder">
+    <input class="span2" type="text" placeholder="<%= placeholder %>" />
     <span class="add-on">
-      <label class="checkbox" for="appendedCheckbox">
-        <input type="checkbox" class="valtype" data-valtype="checkbox">
-      </label>
+      <input type="checkbox">
     </span>
   </div>
-  <p class="help-block" data-valtype="help">Supporting help text</p>
+  <p class="help-block"><%= helptext %></p>
 </div>

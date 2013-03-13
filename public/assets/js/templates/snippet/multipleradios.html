@@ -1,13 +1,10 @@
-      <label class="control-label" data-valtype="label">Radio buttons</label>
-      <div class="controls" data-valtype="radios">
-
-        <!-- Multiple Radios -->
-        <label class="radio">
-          <input type="radio" value="Option one" name="group" checked="checked">
-          Option one
-        </label>
-        <label class="radio">
-          <input type="radio" value="Option two" name="group">
-          Option two
-        </label>
-      </div>
+<!-- Multiple Radios -->
+<label class="control-label"><%= label %></label>
+<div class="controls">
+<% _.each(radios, function(radio, i){ %>
+  <label class="radio">
+    <input type="radio" value="<%= radio %>"  <% if (i == 1) { %> checked="checked" <% } %>>
+  </label>
+  <%= radio %>
+<% }); %>
+</div>

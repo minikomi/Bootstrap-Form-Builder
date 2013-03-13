@@ -1,10 +1,9 @@
 <!-- Select Multiple -->
-<label class="control-label" data-valtype="label">Select - Multiple</label>
+<label class="control-label"><%= label %></label>
 <div class="controls">
-  <select class="input-xlarge" multiple="multiple" data-valtype="option">
-    <option>Enter</option>
-    <option>Your</option>
-    <option>Options</option>
-    <option>Here!</option>
+  <select class="input-xlarge" multiple="multiple">
+    <% _each(options, function(option) { %>
+    <option>option</option>
+    <% }); %>
   </select>
 </div>

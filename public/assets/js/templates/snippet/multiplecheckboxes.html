@@ -1,13 +1,10 @@
-<label class="control-label" data-valtype="label">Checkboxes</label>
-<div class="controls" data-valtype="checkboxes">
-
-  <!-- Multiple Checkboxes -->
+<!-- Multiple Checkboxes (inline) -->
+<label class="control-label"><%= label %></label>
+<div class="controls">
+  <% _.each(checkboxes, function(checkbox){ %>
   <label class="checkbox">
-    <input type="checkbox" value="Option one">
-    Option one
+    <input type="checkbox" value="checkbox">
+    checkbox
   </label>
-  <label class="checkbox">
-    <input type="checkbox" value="Option two">
-    Option two
-  </label>
+  <% }); %>
 </div>
