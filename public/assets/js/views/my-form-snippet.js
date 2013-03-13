@@ -17,9 +17,10 @@ define([
         this.popover = true;
       var that = this;
       mouseDownEvent.preventDefault();
-      $(".popover").hide();
-      $(".popover #save").on("click", this.saveHandler);
+      $(".popover").remove();
       this.$el.popover("show");
+      $(".popover #save").on("click", this.saveHandler);
+      $(".popover #cancel").on("click", this.cancelHandler);
       if(this.model.cid != "c1"){
         $("body").on("mousemove", function(mouseMoveEvent){
           if(
@@ -50,6 +51,7 @@ define([
 
     , cancelHandler : function(mouseEvent) {
       mouseEvent.preventDefault();
+      console.log(this);
     }
 
   });

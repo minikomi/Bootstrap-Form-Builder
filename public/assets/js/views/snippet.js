@@ -39,9 +39,7 @@ define([
         , "data-title"     : that.model.get("title")
         , "data-trigger"   : "manual"
         , "data-html"      : true
-        , "data-container" : "#cid" + that.model.cid
-        , "id"             : "cid"  + that.model.cid
-      })
+      });
     }
   });
 });
