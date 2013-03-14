@@ -1,6 +1,7 @@
 <form class='form'>
   <div class='controls'>
     <% var compiled =  _.reduce(items, function(str, v, k){ %>
+      <% v["name"] = k; %>
       <% return str + popoverTemplates[v["type"]](v); %>
     <% }, "") %>
     <%= compiled %>

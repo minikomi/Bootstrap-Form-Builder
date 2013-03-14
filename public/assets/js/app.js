@@ -2,12 +2,12 @@ define([
        "jquery" , "underscore" , "backbone"
        , "collections/snippets" , "collections/my-form-snippets"
        , "views/tab" , "views/my-form"
-       , "text!data/input.json"
+       , "text!data/input.json", "text!data/radio.json"
 ], function(
   $, _, Backbone
   , SnippetsCollection, MyFormSnippetsCollection
   , TabView, MyFormView
-  , inputJSON
+  , inputJSON, radioJSON
 ){
   return {
     initialize: function(){
@@ -34,8 +34,8 @@ define([
         , collection: new SnippetsCollection(JSON.parse(inputJSON))
       });
       new TabView({
-        title: "Ogawa"
-        , collection: new SnippetsCollection(JSON.parse(inputJSON))
+        title: "Radios / Checkboxes"
+        , collection: new SnippetsCollection(JSON.parse(radioJSON))
       });
 
       //Make the first tab active!

@@ -63,5 +63,30 @@
         "value": "help"
       }
     }
+  },
+  {
+    "title": "Appended Text",
+    "fields": {
+      "label": {
+        "label": "Label Text",
+        "type": "input",
+        "value": "label"
+      },
+      "append": {
+        "label": "Append",
+        "type": "input",
+        "value": "append"
+      },
+      "placeholder": {
+        "label": "Placeholder",
+        "type": "input",
+        "value": "placeholder"
+      },
+      "helptext": {
+        "label": "Help Text",
+        "type": "input",
+        "value": "help"
+      }
+    }
   }
 ]

@@ -19,8 +19,9 @@ define([
       mouseDownEvent.preventDefault();
       $(".popover").remove();
       this.$el.popover("show");
-      $(".popover #save").on("click", this.saveHandler);
-      $(".popover #cancel").on("click", this.cancelHandler);
+      $(".popover #save").on("click", this.saveHandler(that));
+      $(".popover #cancel").on("click", this.cancelHandler(that));
+
       if(this.model.cid != "c1"){
         $("body").on("mousemove", function(mouseMoveEvent){
           if(
@@ -44,14 +45,20 @@ define([
         $("body").off("mousemove");
     }
 
-    , saveHandler : function(mouseEvent) {
-      mouseEvent.preventDefault();
-      console.log(this);
+    , saveHandler : function(boundContext) {
+      return function(mouseEvent) {
+        mouseEvent.preventDefault();
+        console.log(boundContext.model);
+        $(".popover").remove();
+      }
     }
 
-    , cancelHandler : function(mouseEvent) {
-      mouseEvent.preventDefault();
-      console.log(this);
+    , cancelHandler : function(boundContext) {
+      return function(mouseEvent) {
+        mouseEvent.preventDefault();
+        console.log(boundContext.model);
+        $(".popover").remove();
+      }
     }
 
   });

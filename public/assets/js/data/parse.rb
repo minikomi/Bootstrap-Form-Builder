@@ -7,10 +7,6 @@ yamlfiles = Dir.glob("./*.yaml")
 
 yamlfiles.each{ |file|
   yaml = YAML.load_file(file)
-  yaml.each{ |snippet|
-  idtitle = snippet["title"].downcase.gsub(/\W/,"")
-  
   json = JSON.pretty_generate(YAML.load_file(file))
-
-  File.open(file.gsub("yaml", "json"), 'w') { |out| out.write(json) }
+  File.open(file.gsub("yaml", "json"), 'w'){ |out| out.write(json) }
 }
