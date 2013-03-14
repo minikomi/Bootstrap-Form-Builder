@@ -1,0 +1,11 @@
+-
+  title  : Multiple Radios
+  fields : 
+    label:
+      label  : Label Text
+      type   : input
+      value  : label
+    radios:
+      label  : Radios
+      type   : textarea
+      value  : ["Option one", "Option two"]
