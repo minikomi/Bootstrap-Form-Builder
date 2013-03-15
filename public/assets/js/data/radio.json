@@ -16,5 +16,25 @@
         ]
       }
     }
+  },
+  {
+    "title": "Multiple Radios Inline",
+    "fields": {
+      "label": {
+        "label": "Label Text",
+        "type": "input",
+        "value": "label"
+      },
+      "radios": {
+        "label": "Radios",
+        "type": "textarea-split",
+        "value": [
+          1,
+          2,
+          3,
+          4
+        ]
+      }
+    }
   }
 ]

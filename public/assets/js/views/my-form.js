@@ -35,7 +35,7 @@ define([
       var height = 80;
       var myFormBits = $(this.$el.find(".control-group"));
       var topelement = _.find(myFormBits, function(renderedSnippet) {
-        if (($(renderedSnippet).position().top + $(renderedSnippet).height()) > eventY - height - 20) {
+        if (($(renderedSnippet).position().top + $(renderedSnippet).height()) > eventY - height - 40) {
           return true;
         }
         else {
