@@ -15,6 +15,20 @@ body {
   padding: 5px;
 }
 
+.control-group {
+ cursor: pointer;
+}
+
+input {
+  cursor: pointer;
+}
+.popover .control-group {
+    cursor: default;
+}
+.popover input {
+  cursor: text;
+}
+
 #target .component{
   border: 1px solid #fff;
 }
@@ -27,7 +41,6 @@ body {
   top: 0;
   overflow: hidden;
   left: 0;
-  -webkit-transition: background-color 2s ease-in-out;
 }
 
 .temp form {
@@ -35,7 +48,7 @@ body {
   border: 1px dotted #ccc;
   position: absolute;
   background: white;
-  box-shadow: 0px 0px 40px #666;
+  box-shadow: 0px 0px 30px #999;
   -webkit-transition: -webkit-transform 0.1s ease-out;
 }
 

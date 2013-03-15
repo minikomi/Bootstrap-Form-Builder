@@ -20,7 +20,9 @@ define([
     }
     , postRender: function(mouseEvent){
       this._$temp = $(this.$el.find("form")[0]);
-      this._$temp.css("-webkit-transform", "rotate(-2deg)");
+      this.tempForm  = this.$el.find("form")[0];
+      this.halfHeight = Math.floor(this.tempForm.clientHeight/2);
+      this.halfWidth  = Math.floor(this.tempForm.clientWidth/2);
       this.centerOnEvent(mouseEvent);
     }
     , className: "temp"
@@ -31,13 +33,8 @@ define([
     , centerOnEvent: function(mouseEvent){
       var mouseX     = mouseEvent.pageX;
       var mouseY     = mouseEvent.pageY;
-      var $tempForm  = $(this.$el.find("form")[0]);
-      var halfHeight = $tempForm.height()/2;
-      var halfWidth  = $tempForm.width()/2;
-      $tempForm.css({
-        "top"       : (mouseY - halfHeight) + "px",
-        "left"      : (mouseX - halfWidth) + "px"
-      });
+      this.tempForm.style.top = (mouseY - this.halfHeight) + "px";
+      this.tempForm.style.left = (mouseX - this.halfWidth) + "px";
       // Make sure the element has been drawn and
       // has height in the dom before triggering.
       if (this._$temp.height() > 0) {
