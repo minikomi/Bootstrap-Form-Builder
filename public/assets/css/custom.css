@@ -3,6 +3,12 @@ body {
   padding-bottom: 10px;
 }
 
+@media (max-width: 979px) {
+  body {
+    padding-top: 0px;
+  }
+}
+
 #target{
   min-height: 200px;
   border: 1px solid #ccc;
@@ -40,9 +46,9 @@ body {
   min-height: 500px;
 }
 
-/* Popovers now are appended to their parent rather
-than to the body/main document as they once were.
-We need to over-ride some inherited stuff.. */
+  /* Popovers now are appended to their parent rather
+  than to the body/main document as they once were.
+  We need to over-ride some inherited stuff.. */
   form .popover .controls {
     margin-left: 0;
   }
@@ -63,7 +69,7 @@ We need to over-ride some inherited stuff.. */
 
   #build .control-group.target:after{
     height: 80px; 
-    background: #f6f6f6;
+    background: #eef;
     width: 100%;
     border: 1px dashed #ccc;
   }
