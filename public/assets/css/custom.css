@@ -25,6 +25,7 @@ body {
   background: transparent;
   position: absolute;
   top: 0;
+  overflow: hidden;
   left: 0;
   -webkit-transition: background-color 2s ease-in-out;
 }
