@@ -9,9 +9,10 @@ body {
   }
 }
 
-#target{
-  min-height: 200px;
+
+#target  {
   border: 1px solid #ccc;
+  min-height: 200px;
   padding: 5px;
 }
 

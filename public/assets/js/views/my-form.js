@@ -31,7 +31,8 @@ define([
       this.delegateEvents();
     }
 
-    , getBottomAbove: function(eventY, height){
+    , getBottomAbove: function(eventY){
+      var height = 80;
       var myFormBits = $(this.$el.find(".control-group"));
       var topelement = _.find(myFormBits, function(renderedSnippet) {
         if (($(renderedSnippet).position().top + $(renderedSnippet).height()) > eventY - height - 20) {
@@ -54,13 +55,13 @@ define([
       PubSub.trigger("newTempPostRender", mouseEvent);
     }
 
-    , handleTempMove: function(mouseEvent, height){
+    , handleTempMove: function(mouseEvent){
       $(".target").removeClass("target");
       if(mouseEvent.pageX >= this.$build.position().left &&
           mouseEvent.pageX < (this.$build.width() + this.$build.position().left) &&
           mouseEvent.pageY >= this.$build.position().top &&
           mouseEvent.pageY < (this.$build.height() + this.$build.position().top)){
-        $(this.getBottomAbove(mouseEvent.pageY, height)).addClass("target");
+        $(this.getBottomAbove(mouseEvent.pageY)).addClass("target");
       } else {
         $(".target").removeClass("target");
       }

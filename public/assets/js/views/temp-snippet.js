@@ -19,7 +19,6 @@ define([
       return this.$el.html(this.tempTemplate({text: this.constructor.__super__.render.call(this).html()}));
     }
     , postRender: function(mouseEvent){
-      this._$temp = $(this.$el.find("form")[0]);
       this.tempForm  = this.$el.find("form")[0];
       this.halfHeight = Math.floor(this.tempForm.clientHeight/2);
       this.halfWidth  = Math.floor(this.tempForm.clientWidth/2);
@@ -37,9 +36,7 @@ define([
       this.tempForm.style.left = (mouseX - this.halfWidth) + "px";
       // Make sure the element has been drawn and
       // has height in the dom before triggering.
-      if (this._$temp.height() > 0) {
-        PubSub.trigger("tempMove", mouseEvent, this._$temp.height());
-      }
+      PubSub.trigger("tempMove", mouseEvent);
     }
     , mouseMoveHandler: function(mouseEvent) {
       this.centerOnEvent(mouseEvent);
