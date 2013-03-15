@@ -15,7 +15,6 @@ define([
       var fields = this.get("fields")
       fields[name]["value"] = value;
       this.set("fields", fields);
-      debugger;
     }
   });
 });
