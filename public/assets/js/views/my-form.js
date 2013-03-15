@@ -32,10 +32,9 @@ define([
     }
 
     , getBottomAbove: function(eventY){
-      var height = 80;
       var myFormBits = $(this.$el.find(".control-group"));
       var topelement = _.find(myFormBits, function(renderedSnippet) {
-        if (($(renderedSnippet).position().top + $(renderedSnippet).height()) > eventY - height - 40) {
+        if (($(renderedSnippet).position().top + $(renderedSnippet).height()) > eventY  - 90) {
           return true;
         }
         else {

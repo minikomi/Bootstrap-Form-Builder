@@ -5,6 +5,7 @@ define(function(require) {
   , textinput                = require('text!templates/snippet/textinput.html')
   , appendedcheckbox         = require('text!templates/snippet/appendedcheckbox.html')
   , appendedtext             = require('text!templates/snippet/appendedtext.html')
+  , filebutton               = require('text!templates/snippet/filebutton.html')
   , button                   = require('text!templates/snippet/button.html')
   , formname                 = require('text!templates/snippet/formname.html')
   , multiplecheckboxes       = require('text!templates/snippet/multiplecheckboxes.html')
@@ -26,6 +27,7 @@ define(function(require) {
     , textinput                : textinput
     , appendedcheckbox         : appendedcheckbox
     , appendedtext             : appendedtext
+    , filebutton               : filebutton
     , button                   : button
     , formname                 : formname
     , multiplecheckboxes       : multiplecheckboxes

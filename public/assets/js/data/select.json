@@ -1,0 +1,38 @@
+[
+  {
+    "title": "Select Basic",
+    "fields": {
+      "label": {
+        "label": "Label Text",
+        "type": "input",
+        "value": "Select Basic"
+      },
+      "options": {
+        "label": "Options",
+        "type": "textarea-split",
+        "value": [
+          "Option one",
+          "Option two"
+        ]
+      }
+    }
+  },
+  {
+    "title": "Select Multiple",
+    "fields": {
+      "label": {
+        "label": "Label Text",
+        "type": "input",
+        "value": "Select Multiple"
+      },
+      "options": {
+        "label": "Options",
+        "type": "textarea-split",
+        "value": [
+          "Option one",
+          "Option two"
+        ]
+      }
+    }
+  }
+]

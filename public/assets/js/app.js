@@ -2,12 +2,12 @@ define([
        "jquery" , "underscore" , "backbone"
        , "collections/snippets" , "collections/my-form-snippets"
        , "views/tab" , "views/my-form"
-       , "text!data/input.json", "text!data/radio.json"
+       , "text!data/input.json", "text!data/radio.json", "text!data/select.json", "text!data/buttons.json"
 ], function(
   $, _, Backbone
   , SnippetsCollection, MyFormSnippetsCollection
   , TabView, MyFormView
-  , inputJSON, radioJSON
+  , inputJSON, radioJSON, selectJSON, buttonsJSON
 ){
   return {
     initialize: function(){
@@ -37,6 +37,16 @@ define([
         title: "Radios / Checkboxes"
         , collection: new SnippetsCollection(JSON.parse(radioJSON))
       });
+      new TabView({
+        title: "Select"
+        , collection: new SnippetsCollection(JSON.parse(selectJSON))
+      });
+      new TabView({
+        title: "Buttons"
+        , collection: new SnippetsCollection(JSON.parse(buttonsJSON))
+      });
+
+
 
       //Make the first tab active!
       $(".tab-pane").first().addClass("active");

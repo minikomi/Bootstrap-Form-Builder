@@ -13,7 +13,7 @@ body {
   border: 1px solid #ccc;
   min-height: 200px;
   padding: 5px;
-  padding-bottom: 60px;
+  padding-bottom: 30px;
 }
 
 .control-group {
@@ -83,7 +83,8 @@ input {
   }
 
   #build .control-group.target:after{
-    height: 80px; 
+    height: 77px; 
+    margin-top: 3px;
     background: #eef;
     width: 100%;
     border: 1px dashed #ccc;

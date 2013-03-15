@@ -74,6 +74,10 @@ define([
                   .filter(function(t){return t.length > 0}));
               break;
             case "select":
+              var valarr = _.map($e.find("option"), function(e){
+                return {value: e.value, selected: e.selected, label:$(e).text()};
+              });
+              boundContext.model.setField(name, valarr);
               break;
           }
         });

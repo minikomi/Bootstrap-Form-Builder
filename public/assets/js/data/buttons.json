@@ -1,0 +1,68 @@
+[
+  {
+    "title": "File Button",
+    "fields": {
+      "label": {
+        "label": "Label Text",
+        "type": "input",
+        "value": "File Button"
+      }
+    }
+  },
+  {
+    "title": "Button",
+    "fields": {
+      "label": {
+        "label": "Label Text",
+        "type": "input",
+        "value": "Button"
+      },
+      "buttonlabel": {
+        "label": "Button Label",
+        "type": "input",
+        "value": "Button"
+      },
+      "buttontype": {
+        "label": "Button Type",
+        "type": "select",
+        "value": [
+          {
+            "value": "btn-default",
+            "label": "Default",
+            "selected": true
+          },
+          {
+            "value": "btn-primary",
+            "label": "Primary",
+            "selected": false
+          },
+          {
+            "value": "btn-info",
+            "label": "Info",
+            "selected": false
+          },
+          {
+            "value": "btn-success",
+            "label": "Success",
+            "selected": false
+          },
+          {
+            "value": "btn-warning",
+            "label": "Warning",
+            "selected": false
+          },
+          {
+            "value": "btn-danger",
+            "label": "Danger",
+            "selected": false
+          },
+          {
+            "value": "btn-inverse",
+            "label": "Inverse",
+            "selected": false
+          }
+        ]
+      }
+    }
+  }
+]

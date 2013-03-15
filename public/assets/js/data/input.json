@@ -145,10 +145,10 @@
       "label": {
         "label": "Label Text",
         "type": "input",
-        "value": "Appended Checkbox"
+        "value": "Text Area"
       },
       "textarea": {
-        "label": "Placeholder",
+        "label": "Starting Text",
         "type": "textarea",
         "value": ""
       }
