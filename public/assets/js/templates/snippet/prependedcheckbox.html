@@ -4,7 +4,7 @@
   <div class="input-prepend">
     <span class="add-on">
       <label class="checkbox">
-        <input type="checkbox">
+        <input type="checkbox" <% if (checked){ %>checked="checked"<% } %>>
       </label>
     </span>
     <input class="span2" placeholder="<%= placeholder %>" type="text">

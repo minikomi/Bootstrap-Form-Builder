@@ -1,4 +1,2 @@
 <label class='control-label'> <%= label %> </label>
-<textarea class="field" style='min-height: 200px' id='<%= name %>'>
-<% for ( var i = 0; i < value.length ; i++ ) { %><%= value[i] + "\n" %><% } %>
-</textarea>
+<textarea class="field" data-type="<%= type %>" style='min-height: 200px' id='<%= name %>'><%= value %></textarea>

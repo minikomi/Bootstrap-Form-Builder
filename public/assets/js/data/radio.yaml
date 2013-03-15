@@ -7,5 +7,5 @@
       value  : label
     radios:
       label  : Radios
-      type   : textarea
+      type   : textarea-split
       value  : ["Option one", "Option two"]

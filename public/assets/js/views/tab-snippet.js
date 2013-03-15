@@ -1,9 +1,11 @@
 define([
        "jquery", "underscore", "backbone"
+       , "models/snippet"
        , "views/snippet", "views/temp-snippet"
        , "helper/pubsub"
 ], function(
   $, _, Backbone
+  , SnippetModel
   , SnippetView, TempSnippetView
   , PubSub
 ){
@@ -15,10 +17,9 @@ define([
       mouseDownEvent.preventDefault();
       //hide all popovers
       $(".popover").hide();
-      $("body").append(new TempSnippetView({model: this.model.clone()}).render());
+      $("body").append(new TempSnippetView({model: new SnippetModel($.extend(true,{},this.model.attributes))}).render());
       $(".temp").css("background-color", "rgba(60,60,60,0.01)");
       PubSub.trigger("newTempPostRender", mouseDownEvent);
     }
-
   });
 });

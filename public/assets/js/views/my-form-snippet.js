@@ -9,23 +9,25 @@ define([
 ){
   return SnippetView.extend({
     events:{
-      "mousedown" : "mouseDownHandler"
+      "click"   : "preventPropagation" //stops checkbox / radio reacting.
+      , "mousedown" : "mouseDownHandler"
       , "mouseup"   : "mouseUpHandler"
     }
 
     , mouseDownHandler : function(mouseDownEvent){
-        this.popover = true;
-      var that = this;
+      mouseDownEvent.stopPropagation();
       mouseDownEvent.preventDefault();
+      var that = this;
+      //popover
       $(".popover").remove();
       this.$el.popover("show");
       $(".popover #save").on("click", this.saveHandler(that));
       $(".popover #cancel").on("click", this.cancelHandler(that));
-
+      //add drag event for all but form name
       if(this.model.cid != "c1"){
         $("body").on("mousemove", function(mouseMoveEvent){
           if(
-            Math.abs(mouseDownEvent.pageX - mouseMoveEvent.pageX) > 10 || 
+            Math.abs(mouseDownEvent.pageX - mouseMoveEvent.pageX) > 10 ||
             Math.abs(mouseDownEvent.pageY - mouseMoveEvent.pageY) > 10
           ){
             that.$el.popover('destroy');
@@ -36,9 +38,9 @@ define([
       }
     }
 
-    , preventPropagation : function(e){
+    , preventPropagation: function(e) {
       e.stopPropagation();
-
+      e.preventDefault();
     }
 
     , mouseUpHandler : function(mouseUpEvent) {
@@ -48,7 +50,34 @@ define([
     , saveHandler : function(boundContext) {
       return function(mouseEvent) {
         mouseEvent.preventDefault();
-        console.log(boundContext.model);
+        var fields = $(".popover .field");
+        _.each(fields, function(e){
+
+          var $e = $(e)
+          , type = $e.attr("data-type")
+          , name = $e.attr("id");
+
+          switch(type) {
+            case "checkbox":
+              boundContext.model.setField(name, $e.is(":checked"));
+              break;
+            case "input":
+              boundContext.model.setField(name, $e.val());
+              break;
+            case "textarea":
+              boundContext.model.setField(name, $e.val());
+              break;
+            case "textarea-split":
+              boundContext.model.setField(name,
+                $e.val().split("\n")
+                  .map(function(t){return t.trim()})
+                  .filter(function(t){return t.length > 0}));
+              break;
+            case "select":
+              break;
+          }
+        });
+        boundContext.model.trigger("change");
         $(".popover").remove();
       }
     }
@@ -58,6 +87,7 @@ define([
         mouseEvent.preventDefault();
         console.log(boundContext.model);
         $(".popover").remove();
+        boundContext.model.trigger("change");
       }
     }
 

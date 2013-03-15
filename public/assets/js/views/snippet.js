@@ -1,17 +1,21 @@
 define([
-       "jquery", "underscore", "backbone"
-       , "text!templates/popover/popover-main.html"
-       , "text!templates/popover/popover-input.html"
-       , "text!templates/popover/popover-select.html"
-       , "text!templates/popover/popover-textarea.html"
-       , "templates/snippet/snippet-templates"
-       , "bootstrap"
+  "jquery", "underscore", "backbone"
+  , "text!templates/popover/popover-main.html"
+  , "text!templates/popover/popover-input.html"
+  , "text!templates/popover/popover-select.html"
+  , "text!templates/popover/popover-textarea.html"
+  , "text!templates/popover/popover-textarea-split.html"
+  , "text!templates/popover/popover-checkbox.html"
+  , "templates/snippet/snippet-templates"
+  , "bootstrap"
 ], function(
   $, _, Backbone
   , _PopoverMain
   , _PopoverInput
   , _PopoverSelect
   , _PopoverTextArea
+  , _PopoverTextAreaSplit
+  , _PopoverCheckbox
   , _snippetTemplates
 ){
   return Backbone.View.extend({
@@ -23,6 +27,8 @@ define([
         "input" : _.template(_PopoverInput)
         , "select" : _.template(_PopoverSelect)
         , "textarea" : _.template(_PopoverTextArea)
+        , "textarea-split" : _.template(_PopoverTextAreaSplit)
+        , "checkbox" : _.template(_PopoverCheckbox)
       }
     }
     , render: function(){

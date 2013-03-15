@@ -5,7 +5,7 @@
       "label": {
         "label": "Label Text",
         "type": "input",
-        "value": "label"
+        "value": "Text Input"
       },
       "placeholder": {
         "label": "Placeholder",
@@ -25,7 +25,7 @@
       "label": {
         "label": "Label Text",
         "type": "input",
-        "value": "label"
+        "value": "Search Input"
       },
       "placeholder": {
         "label": "Placeholder",
@@ -45,7 +45,7 @@
       "label": {
         "label": "Label Text",
         "type": "input",
-        "value": "label"
+        "value": "Prepended Text"
       },
       "prepend": {
         "label": "Prepend",
@@ -70,7 +70,7 @@
       "label": {
         "label": "Label Text",
         "type": "input",
-        "value": "label"
+        "value": "Appended Text"
       },
       "append": {
         "label": "Append",
@@ -86,6 +86,71 @@
         "label": "Help Text",
         "type": "input",
         "value": "help"
+      }
+    }
+  },
+  {
+    "title": "Prepended Checkbox",
+    "fields": {
+      "label": {
+        "label": "Label Text",
+        "type": "input",
+        "value": "Prepended Checkbox"
+      },
+      "placeholder": {
+        "label": "Placeholder",
+        "type": "input",
+        "value": "placeholder"
+      },
+      "helptext": {
+        "label": "Help Text",
+        "type": "input",
+        "value": "help"
+      },
+      "checked": {
+        "label": "Checked",
+        "type": "checkbox",
+        "value": false
+      }
+    }
+  },
+  {
+    "title": "Appended Checkbox",
+    "fields": {
+      "label": {
+        "label": "Label Text",
+        "type": "input",
+        "value": "Appended Checkbox"
+      },
+      "placeholder": {
+        "label": "Placeholder",
+        "type": "input",
+        "value": "placeholder"
+      },
+      "helptext": {
+        "label": "Help Text",
+        "type": "input",
+        "value": "help"
+      },
+      "checked": {
+        "label": "Checked",
+        "type": "checkbox",
+        "value": false
+      }
+    }
+  },
+  {
+    "title": "Text Area",
+    "fields": {
+      "label": {
+        "label": "Label Text",
+        "type": "input",
+        "value": "Appended Checkbox"
+      },
+      "textarea": {
+        "label": "Placeholder",
+        "type": "textarea",
+        "value": ""
       }
     }
   }
