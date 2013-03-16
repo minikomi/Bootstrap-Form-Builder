@@ -15,9 +15,14 @@ define([
     , render: function(){
       // Render Snippet Views
       var that = this;
-      _.each(this.collection.renderAll(), function(snippet){
-        that.$el.append(snippet);
-      });
+      debugger;
+      if (that.collection !== undefined) {
+        _.each(this.collection.renderAll(), function(snippet){
+          that.$el.append(snippet);
+        });
+      } else if (that.options.content){
+        that.$el.append(that.options.content);
+      }
       // Render & append nav for tab
       $(".nav.nav-tabs").append(this.tabNavTemplate({title: this.options.title, id: this.id}))
       // Render tab

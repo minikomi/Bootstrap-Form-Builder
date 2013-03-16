@@ -105,6 +105,25 @@
       type   : checkbox
       value  : false
 -
+  title: Button Drop Down
+  fields:
+    label: 
+      label: Label Text
+      type:  input
+      value: Button Drop Down
+    placeholder:
+      label  : Placeholder
+      type   : input
+      value  : placeholder
+    buttontext:
+      label  : Button Text
+      type   : input
+      value  : Action
+    buttonoptions:
+      label  : Options
+      type   : textarea-split
+      value  : ["Option one", "Option two", "Option three"]
+-
   title  : Text Area
   fields :
     label:

@@ -1,10 +1,8 @@
 <!-- Multiple Checkboxes (inline) -->
 <label class="control-label"><%= label %></label>
 <div class="controls">
-  <% _.each(checkboxes, function(checkbox){ %>
-  <label class="checkbox">
+  <% _.each(checkboxes, function(checkbox){ %><label class="checkbox">
     <input type="checkbox" value="checkbox">
     <%= checkbox %>
-  </label>
-  <% }); %>
+  </label><% }); %>
 </div>

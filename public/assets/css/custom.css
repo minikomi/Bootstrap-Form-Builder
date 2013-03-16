@@ -9,6 +9,7 @@ body {
     padding-top: 0px;
   }
 }
+
 #target fieldset {
   border: 1px solid #ccc;
   min-height: 200px;
@@ -17,14 +18,14 @@ body {
 }
 
 .control-group {
- cursor: pointer;
+  cursor: pointer;
 }
 
 input {
   cursor: pointer;
 }
 .popover .control-group {
-    cursor: default;
+  cursor: default;
 }
 .popover input {
   cursor: text;
@@ -57,13 +58,14 @@ input {
   margin-right: 10px
 }
 
-#source{
+#render{
   min-height: 500px;
+  font-family: monospace;
 }
 
-  /* Popovers now are appended to their parent rather
-  than to the body/main document as they once were.
-  We need to over-ride some inherited stuff.. */
+/* Popovers now are appended to their parent rather
+than to the body/main document as they once were.
+We need to over-ride some inherited stuff.. */
   form .popover .controls {
     margin-left: 0;
   }
