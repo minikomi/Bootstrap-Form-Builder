@@ -1,0 +1,16 @@
+<!-- Button Drop Down -->
+<label class="control-label"><%= label %></label>
+<div class="controls">
+  <div class="input-append">
+    <input class="span2" placeholder="<%= placeholder %>" type="text">
+    <div class="btn-group">
+      <button class="btn dropdown-toggle" data-toggle="dropdown">
+        <%= buttontext %>
+        <span class="caret"></span>
+      </button>
+      <ul class="dropdown-menu"><% _.each(buttonoptions, function(value) { %>
+        <li><a href="#"><%= value %></a></li><% }); %>
+      </ul>
+    </div>
+  </div>
+</div>

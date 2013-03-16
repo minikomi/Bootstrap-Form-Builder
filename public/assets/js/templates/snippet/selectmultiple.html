@@ -1,0 +1,7 @@
+<!-- Select Multiple -->
+<label class="control-label"><%= label %></label>
+<div class="controls">
+  <select class="input-xlarge" multiple="multiple"><% _.each(options, function(option) { %>
+    <option><%= option %></option><% }); %>
+  </select>
+</div>
