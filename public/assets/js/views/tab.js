@@ -15,7 +15,6 @@ define([
     , render: function(){
       // Render Snippet Views
       var that = this;
-      debugger;
       if (that.collection !== undefined) {
         _.each(this.collection.renderAll(), function(snippet){
           that.$el.append(snippet);
