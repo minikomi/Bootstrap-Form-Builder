@@ -2,10 +2,12 @@ define([
        "jquery", "underscore", "backbone"
       , "views/temp-snippet"
       , "helper/pubsub"
+      , "text!templates/app/renderform.html"
 ], function(
   $, _, Backbone
   , TempSnippetView
   , PubSub
+  , _renderForm
 ){
   return Backbone.View.extend({
     tagName: "fieldset"
@@ -17,6 +19,7 @@ define([
       PubSub.on("tempMove", this.handleTempMove, this);
       PubSub.on("tempDrop", this.handleTempDrop, this);
       this.$build = $("#build");
+      this.renderForm = _.template(_renderForm);
       this.render();
     }
 
@@ -27,7 +30,7 @@ define([
       _.each(this.collection.renderAll(), function(snippet){
         that.$el.append(snippet);
       });
-      $("#render").text(this.collection.renderAllClean().map(function(e){return e.html()}).join("\n"));
+      $("#render").text(that.renderForm({text: this.collection.renderAllClean().map(function(e){return e.html()}).join("\n")}));
       this.$el.appendTo("#build form");
       this.delegateEvents();
     }

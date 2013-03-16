@@ -24,7 +24,7 @@ define([
       $(".popover #save").on("click", this.saveHandler(that));
       $(".popover #cancel").on("click", this.cancelHandler(that));
       //add drag event for all but form name
-      if(this.model.cid != "c1"){
+      if(this.model.get("title") !== "Form Name"){
         $("body").on("mousemove", function(mouseMoveEvent){
           if(
             Math.abs(mouseDownEvent.pageX - mouseMoveEvent.pageX) > 10 ||
@@ -89,7 +89,6 @@ define([
     , cancelHandler : function(boundContext) {
       return function(mouseEvent) {
         mouseEvent.preventDefault();
-        console.log(boundContext.model);
         $(".popover").remove();
         boundContext.model.trigger("change");
       }
