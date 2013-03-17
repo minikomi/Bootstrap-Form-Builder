@@ -1,5 +1,5 @@
 <label class='control-label'> <%= label %> </label>
-<select class="field" data-type="<%= type %>" style='min-height: 200px' id='<%= name %>'>
+<select class="field" data-type="<%= type %>" id='<%= name %>'>
 <% _.each(value, function(v,k){ %>
   <option value="<%= v["value"] %>" <% if (v["selected"]){ %> selected <% } %> ><%= v["label"] %></option>
 <% }); %>
