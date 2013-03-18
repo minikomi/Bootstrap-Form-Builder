@@ -15,6 +15,7 @@ define([
       this.constructor.__super__.initialize.call(this);
       this.tempTemplate = _.template(_tempTemplate);
     }
+    , className: "temp"
     , render: function() {
       return this.$el.html(this.tempTemplate({text: this.constructor.__super__.render.call(this).html()}));
     }
@@ -24,7 +25,6 @@ define([
       this.halfWidth  = Math.floor(this.tempForm.clientWidth/2);
       this.centerOnEvent(mouseEvent);
     }
-    , className: "temp"
     , events:{
       "mousemove": "mouseMoveHandler",
       "mouseup" : "mouseUpHandler"
