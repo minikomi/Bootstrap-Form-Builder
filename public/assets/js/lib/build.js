@@ -1,7 +1,6 @@
 ({
   name: "../main",
-  out: "../main-built.js",
-  optimize: "none"
+  out: "../main-built.js"
   , shim: {
     'backbone': {
       deps: ['underscore', 'jquery'],
