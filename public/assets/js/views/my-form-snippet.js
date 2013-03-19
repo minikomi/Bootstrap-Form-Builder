@@ -69,9 +69,11 @@ define([
               break;
             case "textarea-split":
               boundContext.model.setField(name,
-                $e.val().split("\n")
-                  .map(function(t){return t.trim()})
-                  .filter(function(t){return t.length > 0}));
+                _.chain($e.val().split("\n"))
+                  .map(function(t){return $.trim(t)})
+                  .filter(function(t){return t.length > 0})
+                  .value()
+                  );
               break;
             case "select":
               var valarr = _.map($e.find("option"), function(e){
