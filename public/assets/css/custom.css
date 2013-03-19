@@ -40,6 +40,7 @@ input {
   height: 100%;
   background: transparent;
   position: absolute;
+  z-index: 999999;
   top: 0;
   overflow-x: hidden;
   left: 0;
