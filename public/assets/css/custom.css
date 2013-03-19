@@ -85,6 +85,7 @@ We need to over-ride some inherited stuff.. */
   }
 
   #build .control-group.target:after{
+    content: " ";
     height: 77px; 
     margin-top: 3px;
     background: #eef;
