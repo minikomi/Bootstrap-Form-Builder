@@ -39,9 +39,11 @@ define([
       PubSub.trigger("tempMove", mouseEvent);
     }
     , mouseMoveHandler: function(mouseEvent) {
+      mouseEvent.preventDefault();
       this.centerOnEvent(mouseEvent);
     }
     , mouseUpHandler: function(mouseEvent){
+      mouseEvent.preventDefault();
       PubSub.trigger("tempDrop", mouseEvent, this.model);
       this.remove();
     }
