@@ -14,6 +14,21 @@
       type   : input
       value  : help
 -
+  title  : Password Input
+  fields :
+    label:
+      label  : Label Text
+      type   : input
+      value  : Password Input
+    placeholder:
+      label  : Placeholder
+      type   : input
+      value  : placeholder
+    helptext:
+      label  : Help Text
+      type   : input
+      value  : help
+-
   title  : Search Input
   fields :
     label:

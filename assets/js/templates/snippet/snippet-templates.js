@@ -13,6 +13,7 @@ define(function(require) {
   , multiplecheckboxesinline = require('text!templates/snippet/multiplecheckboxesinline.html')
   , multipleradios           = require('text!templates/snippet/multipleradios.html')
   , multipleradiosinline     = require('text!templates/snippet/multipleradiosinline.html')
+  , passwordinput            = require('text!templates/snippet/passwordinput.html')
   , prependedcheckbox        = require('text!templates/snippet/prependedcheckbox.html')
   , prependedtext            = require('text!templates/snippet/prependedtext.html')
   , searchinput              = require('text!templates/snippet/searchinput.html')
@@ -36,6 +37,7 @@ define(function(require) {
     , multiplecheckboxesinline : multiplecheckboxesinline
     , multipleradios           : multipleradios
     , multipleradiosinline     : multipleradiosinline
+    , passwordinput            : passwordinput
     , prependedcheckbox        : prependedcheckbox
     , prependedtext            : prependedtext
     , searchinput              : searchinput
