@@ -4,7 +4,7 @@
   <div class="controls">
     <div class="input-prepend">
       <span class="add-on"><%= prepend %></span>
-      <input class="span2" placeholder="<%= placeholder %>" type="text">
+      <input class="span2" placeholder="<%= placeholder %>" type="text"<% if(required) {%> required <% } %> />
     </div>
     <p class="help-block"><%= helptext %></p>
   </div>

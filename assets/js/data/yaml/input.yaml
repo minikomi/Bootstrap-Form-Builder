@@ -13,6 +13,10 @@
       label  : Help Text
       type   : input
       value  : help
+    required:
+      label  : Required
+      type   : checkbox
+      value  : false
 -
   title  : Password Input
   fields :
@@ -28,6 +32,10 @@
       label  : Help Text
       type   : input
       value  : help
+    required:
+      label  : Required
+      type   : checkbox
+      value  : false
 -
   title  : Search Input
   fields :
@@ -43,6 +51,10 @@
       label  : Help Text
       type   : input
       value  : help
+    required:
+      label  : Required
+      type   : checkbox
+      value  : false
 -
   title  : Prepended Text
   fields :
@@ -62,6 +74,10 @@
       label  : Help Text
       type   : input
       value  : help
+    required:
+      label  : Required
+      type   : checkbox
+      value  : false
 -
   title  : Appended Text
   fields :
@@ -81,6 +97,10 @@
       label  : Help Text
       type   : input
       value  : help
+    required:
+      label  : Required
+      type   : checkbox
+      value  : false
 -
   title  : Prepended Checkbox
   fields :
@@ -98,6 +118,10 @@
       value  : help
     checked:
       label  : Checked
+      type   : checkbox
+      value  : false
+    required:
+      label  : Required
       type   : checkbox
       value  : false
 -
@@ -119,6 +143,10 @@
       label  : Checked
       type   : checkbox
       value  : false
+    required:
+      label  : Required
+      type   : checkbox
+      value  : false
 -
   title: Button Drop Down
   fields:
@@ -138,6 +166,10 @@
       label  : Options
       type   : textarea-split
       value  : ["Option one", "Option two", "Option three"]
+    required:
+      label  : Required
+      type   : input
+      value  : false
 -
   title  : Text Area
   fields :

@@ -16,6 +16,11 @@
         "label": "Help Text",
         "type": "input",
         "value": "help"
+      },
+      "required": {
+        "label": "Required",
+        "type": "checkbox",
+        "value": false
       }
     }
   },
@@ -36,6 +41,11 @@
         "label": "Help Text",
         "type": "input",
         "value": "help"
+      },
+      "required": {
+        "label": "Required",
+        "type": "checkbox",
+        "value": false
       }
     }
   },
@@ -56,6 +66,11 @@
         "label": "Help Text",
         "type": "input",
         "value": "help"
+      },
+      "required": {
+        "label": "Required",
+        "type": "checkbox",
+        "value": false
       }
     }
   },
@@ -81,6 +96,11 @@
         "label": "Help Text",
         "type": "input",
         "value": "help"
+      },
+      "required": {
+        "label": "Required",
+        "type": "checkbox",
+        "value": false
       }
     }
   },
@@ -106,6 +126,11 @@
         "label": "Help Text",
         "type": "input",
         "value": "help"
+      },
+      "required": {
+        "label": "Required",
+        "type": "checkbox",
+        "value": false
       }
     }
   },
@@ -131,6 +156,11 @@
         "label": "Checked",
         "type": "checkbox",
         "value": false
+      },
+      "required": {
+        "label": "Required",
+        "type": "checkbox",
+        "value": false
       }
     }
   },
@@ -154,6 +184,11 @@
       },
       "checked": {
         "label": "Checked",
+        "type": "checkbox",
+        "value": false
+      },
+      "required": {
+        "label": "Required",
         "type": "checkbox",
         "value": false
       }
@@ -185,6 +220,11 @@
           "Option two",
           "Option three"
         ]
+      },
+      "required": {
+        "label": "Required",
+        "type": "input",
+        "value": false
       }
     }
   },
