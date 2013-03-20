@@ -31,14 +31,14 @@ define([
         that.$el.append(snippet);
       });
       $("#render").val(that.renderForm({
-        text: _.map(this.collection.renderAllClean(), function(e){return e.prop('outerHTML')}).join("\n\n")+"\n"
+        text: _.map(this.collection.renderAllClean(), function(e){return e.html()}).join("\n")
       }));
       this.$el.appendTo("#build form");
       this.delegateEvents();
     }
 
     , getBottomAbove: function(eventY){
-      var myFormBits = $(this.$el.find(".control-group"));
+      var myFormBits = $(this.$el.find(".component"));
       var topelement = _.find(myFormBits, function(renderedSnippet) {
         if (($(renderedSnippet).position().top + $(renderedSnippet).height()) > eventY  - 90) {
           return true;

@@ -17,22 +17,19 @@ body {
   padding-bottom: 30px;
 }
 
-.control-group {
+.component {
   cursor: pointer;
 }
 
 input {
   cursor: pointer;
 }
+
 .popover .control-group {
   cursor: default;
 }
 .popover input {
   cursor: text;
-}
-
-#target .component{
-  border: 1px solid #fff;
 }
 
 .temp{
@@ -55,10 +52,6 @@ input {
   -webkit-transition: -webkit-transform 0.1s ease-out;
 }
 
-.popover-content form .btn{
-  margin-right: 10px
-}
-
 #render{
   min-height: 500px;
   font-family: monospace;
@@ -67,30 +60,29 @@ input {
 /* Popovers now are appended to their parent rather
 than to the body/main document as they once were.
 We need to over-ride some inherited stuff.. */
-  form .popover .controls {
-    margin-left: 0;
-  }
+form .popover .controls {
+  margin-left: 0;
+}
 
-  form .popover .control-label {
-    text-align: left;
-  }
+form .popover .control-label {
+  text-align: left;
+}
 
-  form .popover form {
-    width: 224px;
-  }
+form .popover form {
+  width: 224px;
+}
 
-  /* Drag & Drop */
-  #build .control-group{
-    border-top: 1px solid #fff;
-    border-bottom: 1px solid #fff;
-  }
+.popover-content form .btn{
+  margin-right: 10px
+}
 
-  #build .control-group.target:after{
-    content: " ";
-    height: 77px; 
-    margin-top: 3px;
-    background: #eef;
-    width: 100%;
-    border: 1px dashed #ccc;
-  }
+.target:after{
+  float:left;
+  content: " ";
+  height: 77px; 
+  margin-top: 3px;
+  background: #f0f0f0;
+  width: 100%;
+  border: 1px dashed #ccc;
+}
 
