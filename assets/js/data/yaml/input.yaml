@@ -168,7 +168,7 @@
       value  : ["Option one", "Option two", "Option three"]
     required:
       label  : Required
-      type   : input
+      type   : checkbox
       value  : false
 -
   title  : Text Area

@@ -223,7 +223,7 @@
       },
       "required": {
         "label": "Required",
-        "type": "input",
+        "type": "checkbox",
         "value": false
       }
     }
