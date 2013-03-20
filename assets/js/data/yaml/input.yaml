@@ -1,6 +1,10 @@
 -
   title  : Text Input
   fields :
+    id:
+      label  : ID / Name
+      type   : input
+      value  : textinput
     label:
       label  : Label Text
       type   : input
@@ -20,6 +24,10 @@
 -
   title  : Password Input
   fields :
+    id:
+      label  : ID / Name
+      type   : input
+      value  : passwordinput
     label:
       label  : Label Text
       type   : input
@@ -39,6 +47,10 @@
 -
   title  : Search Input
   fields :
+    id:
+      label  : ID / Name
+      type   : input
+      value  : searchinput
     label:
       label  : Label Text
       type   : input
@@ -58,6 +70,10 @@
 -
   title  : Prepended Text
   fields :
+    id:
+      label  : ID / Name
+      type   : input
+      value  : prependedtext
     label:
       label  : Label Text
       type   : input
@@ -81,6 +97,10 @@
 -
   title  : Appended Text
   fields :
+    id:
+      label  : ID / Name
+      type   : input
+      value  : appendedtext
     label:
       label  : Label Text
       type   : input
@@ -104,6 +124,10 @@
 -
   title  : Prepended Checkbox
   fields :
+    id:
+      label  : ID / Name
+      type   : input
+      value  : prependedcheckbox
     label:
       label  : Label Text
       type   : input
@@ -127,6 +151,10 @@
 -
   title  : Appended Checkbox
   fields :
+    id:
+      label  : ID / Name
+      type   : input
+      value  : appendedcheckbox
     label:
       label  : Label Text
       type   : input
@@ -150,6 +178,10 @@
 -
   title: Button Drop Down
   fields:
+    id:
+      label  : ID / Name
+      type   : input
+      value  : buttondropdown
     label: 
       label: Label Text
       type:  input
@@ -173,6 +205,10 @@
 -
   title  : Text Area
   fields :
+    id:
+      label  : ID / Name
+      type   : input
+      value  : textarea
     label:
       label  : Label Text
       type   : input
@@ -180,4 +216,4 @@
     textarea:
       label  : Starting Text
       type   : textarea
-      value  : ""
+      value  : default text

@@ -3,7 +3,7 @@
   <label class="control-label"><%= label %></label>
   <div class="controls">
     <div class="input-append">
-      <input class="span2" placeholder="<%= placeholder %>" type="text"<% if(required) {%> required <% } %> />
+      <input id="<%= id %>" name="<%= id %>" class="span2" placeholder="<%= placeholder %>" type="text"<% if(required) {%> required <% } %> />
       <span class="add-on"><%= append %></span>
     </div>
     <p class="help-block" ><%= helptext %></p>

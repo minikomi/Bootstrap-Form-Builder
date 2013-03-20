@@ -1,6 +1,10 @@
 -
   title  : Select Basic
   fields : 
+    id:
+      label  : ID / Name
+      type   : input
+      value  : selectbasic
     label:
       label  : Label Text
       type   : input
@@ -12,6 +16,10 @@
 -
   title  : Select Multiple
   fields : 
+    id:
+      label  : ID / Name
+      type   : input
+      value  : selectmultiple
     label:
       label  : Label Text
       type   : input

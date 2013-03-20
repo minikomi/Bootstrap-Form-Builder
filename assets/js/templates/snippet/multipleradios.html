@@ -1,8 +1,8 @@
 <!-- Multiple Radios -->
 <div class="control-group">
   <label class="control-label"><%= label %></label>
-  <div class="controls">
-    <% _.each(radios, function(radio, i){ %><label class="radio">
+  <div class="controls"><% _.each(radios, function(radio, i){ %>
+    <label class="radio">
       <input type="radio" value="<%= radio %>"  <% if (i < 1) { %> checked="checked" <% } %>>
       <%= radio %>
     </label><% }); %>
