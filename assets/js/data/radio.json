@@ -2,6 +2,11 @@
   {
     "title": "Multiple Radios",
     "fields": {
+      "name": {
+        "label": "Group Name",
+        "type": "input",
+        "value": "radios"
+      },
       "label": {
         "label": "Label Text",
         "type": "input",
@@ -20,6 +25,11 @@
   {
     "title": "Multiple Radios Inline",
     "fields": {
+      "name": {
+        "label": "Group Name",
+        "type": "input",
+        "value": "radios"
+      },
       "label": {
         "label": "Label Text",
         "type": "input",
@@ -40,6 +50,11 @@
   {
     "title": "Multiple Checkboxes",
     "fields": {
+      "name": {
+        "label": "Group Name",
+        "type": "input",
+        "value": "checkboxes"
+      },
       "label": {
         "label": "Label Text",
         "type": "input",
@@ -58,6 +73,11 @@
   {
     "title": "Multiple Checkboxes Inline",
     "fields": {
+      "name": {
+        "label": "Group Name",
+        "type": "input",
+        "value": "checkboxes"
+      },
       "label": {
         "label": "Label Text",
         "type": "input",

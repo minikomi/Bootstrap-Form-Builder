@@ -3,7 +3,7 @@
   <label class="control-label"><%= label %></label>
   <div class="controls"><% _.each(radios, function(radio, i){ %>
     <label class="radio">
-      <input type="radio" value="<%= radio %>"  <% if (i < 1) { %> checked="checked" <% } %>>
+      <input type="radio" name="<%= name %>" value="<%= radio %>"  <% if (i < 1) { %> checked="checked" <% } %>>
       <%= radio %>
     </label><% }); %>
   </div>
