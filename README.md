@@ -1,14 +1,20 @@
 #Bootstrap Form Builder
 
-Hosted on github pages [here](http://minikomi.github.com/Bootstrap-Form-Builder).
+##What's this?
 
-Drag and drop form builder for twitter bootstrap.
+A Drag-and-drop form builder for twitter bootstrap. 
 
-Everything is in /public.
+##Where can I see it in action?
 
-You can build this for production using the `build.js` script in the `assets/js/lib`
-folder and [r.js](https://github.com/jrburke/r.js/).
+It's hosted on github pages [here](http://minikomi.github.com/Bootstrap-Form-Builder).
 
-Use this command from the base directory to build it: `r.js -o assets/js/lib/build.js`
+###Notes
 
-Then change the require line in `index.html` to point at `assets/lib/main-built.js`.
+* For development & debugging change the data-main for the require script tag in `index.html` 
+  to point at `assets/js/main.js`. (Look just before the closing `<body>` tag!)
+
+* Once done, change it back to  build for production using the `build.js` script in the `assets/js/lib`
+  folder and [r.js](https://github.com/jrburke/r.js/). Then revert to `assets/js/main-built.js`
+
+* The full command is `r.js -o assets/js/lib/build.js` which should be run from the base directory.
+
