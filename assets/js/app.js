@@ -44,8 +44,6 @@ define([
       //Make the first tab active!
       $(".tab-pane").first().addClass("active");
       $("ul.nav li").first().addClass("active");
-      //disable selection on forms
-      $('form').css('UserSelect','none').css('MozUserSelect','none');
       // Bootstrap "My Form" with 'Form Name' snippet.
       new MyFormView({
         title: "Original"
