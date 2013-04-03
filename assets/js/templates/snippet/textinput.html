@@ -3,6 +3,6 @@
   <label class="control-label"><%= label %></label>
   <div class="controls">
     <input id="<%= id %>" name="<%= id %>" type="text" placeholder="<%= placeholder %>" class="input-xlarge" <% if(required) {%> required <% } %> />
-    <p class="help-block"><%= helptext %></p>
+    <% if (helptext.length > 0) { %><p class="help-block"><%= helptext %></p><% } %>
   </div>
 </div>

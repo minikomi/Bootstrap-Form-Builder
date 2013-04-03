@@ -10,6 +10,6 @@
       </span>
       <input id="<%= id %>" name="<%= id %>" class="span2" type="text" placeholder="<%= placeholder %>" <% if(required) {%> required <% } %> />
     </div>
-    <p class="help-block"><%= helptext %></p>
+    <% if (helptext.length > 0) { %><p class="help-block"><%= helptext %></p><% } %>
   </div>
 </div>

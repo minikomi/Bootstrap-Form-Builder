@@ -8,6 +8,6 @@
         <input type="checkbox" <% if (checked){ %>checked <% } %>>
       </span>
     </div>
-    <p class="help-block"><%= helptext %></p>
+    <% if (helptext.length > 0) { %><p class="help-block"><%= helptext %></p><% } %>
   </div>
 </div>
