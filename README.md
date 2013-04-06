@@ -8,7 +8,7 @@ Currently using `v. 2.3.1` :dolphin:
 
 ##Where can I see it in action?
 
-It's hosted on github pages [here](http://minikomi.github.com/Bootstrap-Form-Builder).
+It's hosted on github pages [here](http://minikomi.github.io/Bootstrap-Form-Builder/).
 
 ###Notes
 
