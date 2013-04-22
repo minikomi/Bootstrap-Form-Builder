@@ -10,6 +10,10 @@ body {
   }
 }
 
+#target {
+  min-height: 600px;
+}
+
 #target fieldset {
   border: 1px solid #ccc;
   min-height: 200px;
