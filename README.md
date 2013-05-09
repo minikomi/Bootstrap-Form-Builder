@@ -20,3 +20,14 @@ It's hosted on github pages [here](http://minikomi.github.io/Bootstrap-Form-Buil
 
 * The full command is `r.js -o assets/js/lib/build.js` which should be run from the base directory.
 
+## Adding new form elements
+
+* In the [js/data/yaml folder](https://github.com/minikomi/Bootstrap-Form-Builder/tree/gh-pages/assets/js/data/yaml) are yaml files each, of which corresponds to a tab in the form builder.
+* If you just want to add a new element you need to:
+  - describe it in one of these files
+  - parse the yaml to json using parse.rb in the same folder
+  - create a corresponding template in the [templates/snippet directory](https://github.com/minikomi/Bootstrap-Form-Builder/tree/gh-pages/assets/js/templates/snippet)
+  - add the template to [snippet-templates.js](https://github.com/minikomi/Bootstrap-Form-Builder/blob/gh-pages/assets/js/templates/snippet/snippet-templates.js)
+* If you want to add a new tab, you'll also need to adjust the [app.js file](https://github.com/minikomi/Bootstrap-Form-Builder/blob/gh-pages/assets/js/app.js) to make sure the tab is loaded.
+
+Don't forget to switch to main.js rather than main-built.js, or the changes you make before compiling with require.js won't show up!
