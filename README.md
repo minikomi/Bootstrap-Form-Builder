@@ -20,7 +20,7 @@ It's hosted on github pages [here](http://minikomi.github.io/Bootstrap-Form-Buil
 
 * The full command is `r.js -o assets/js/lib/build.js` which should be run from the base directory.
 
-## Adding new form elements
+### Adding new form elements
 
 * In the [js/data/yaml folder](https://github.com/minikomi/Bootstrap-Form-Builder/tree/gh-pages/assets/js/data/yaml) are yaml files, each of which corresponds to a tab in the form builder.
 * If you just want to add a new element you need to:
