@@ -21,6 +21,34 @@
       label  : Required
       type   : checkbox
       value  : false
+    inputsize:
+      label  : Input Size
+      type   : select
+      value  : 
+        -
+          value    : input-mini
+          label    : Mini
+          selected : false
+        -
+          value    : input-small
+          label    : Small
+          selected : false
+        -
+          value    : input-medium
+          label    : Medium
+          selected : false
+        -
+          value    : input-large
+          label    : Large
+          selected : false
+        -
+          value    : input-xlarge
+          label    : Xlarge
+          selected : true
+        -
+          value    : input-xxlarge
+          label    : Xxlarge
+          selected : false
 -
   title  : Password Input
   fields :
@@ -44,6 +72,34 @@
       label  : Required
       type   : checkbox
       value  : false
+    inputsize:
+      label  : Input Size
+      type   : select
+      value  : 
+        -
+          value    : input-mini
+          label    : Mini
+          selected : false
+        -
+          value    : input-small
+          label    : Small
+          selected : false
+        -
+          value    : input-medium
+          label    : Medium
+          selected : false
+        -
+          value    : input-large
+          label    : Large
+          selected : false
+        -
+          value    : input-xlarge
+          label    : Xlarge
+          selected : true
+        -
+          value    : input-xxlarge
+          label    : Xxlarge
+          selected : false
 -
   title  : Search Input
   fields :
@@ -67,6 +123,34 @@
       label  : Required
       type   : checkbox
       value  : false
+    inputsize:
+      label  : Input Size
+      type   : select
+      value  : 
+        -
+          value    : input-mini
+          label    : Mini
+          selected : false
+        -
+          value    : input-small
+          label    : Small
+          selected : false
+        -
+          value    : input-medium
+          label    : Medium
+          selected : false
+        -
+          value    : input-large
+          label    : Large
+          selected : false
+        -
+          value    : input-xlarge
+          label    : Xlarge
+          selected : true
+        -
+          value    : input-xxlarge
+          label    : Xxlarge
+          selected : false
 -
   title  : Prepended Text
   fields :
@@ -94,6 +178,34 @@
       label  : Required
       type   : checkbox
       value  : false
+    inputsize:
+      label: Input Size
+      type: select
+      value:
+        -
+          value    : input-mini
+          label    : Mini
+          selected : false
+        -
+          value    : input-small
+          label    : Small
+          selected : false
+        -
+          value    : input-medium
+          label    : Medium
+          selected : false
+        -
+          value    : input-large
+          label    : Large
+          selected : false
+        -
+          value    : input-xlarge
+          label    : Xlarge
+          selected : true
+        -
+          value    : input-xxlarge
+          label    : Xxlarge
+          selected : false
 -
   title  : Appended Text
   fields :
@@ -121,6 +233,34 @@
       label  : Required
       type   : checkbox
       value  : false
+    inputsize:
+      label: Input Size
+      type: select
+      value:
+        -
+          value    : input-mini
+          label    : Mini
+          selected : false
+        -
+          value    : input-small
+          label    : Small
+          selected : false
+        -
+          value    : input-medium
+          label    : Medium
+          selected : false
+        -
+          value    : input-large
+          label    : Large
+          selected : false
+        -
+          value    : input-xlarge
+          label    : Xlarge
+          selected : true
+        -
+          value    : input-xxlarge
+          label    : Xxlarge
+          selected : false
 -
   title  : Prepended Checkbox
   fields :
@@ -148,6 +288,34 @@
       label  : Required
       type   : checkbox
       value  : false
+    inputsize:
+      label: Input Size
+      type: select
+      value:
+        -
+          value    : input-mini
+          label    : Mini
+          selected : false
+        -
+          value    : input-small
+          label    : Small
+          selected : false
+        - 
+          value    : input-medium
+          label    : Medium
+          selected : false
+        -
+          value    : input-large
+          label    : Large
+          selected : false
+        -
+          value    : input-xlarge
+          label    : Xlarge
+          selected : true
+        -
+          value    : input-xxlarge
+          label    : Xxlarge
+          selected : false
 -
   title  : Appended Checkbox
   fields :
@@ -175,6 +343,34 @@
       label  : Required
       type   : checkbox
       value  : false
+    inputsize:
+      label: Input Size
+      type: select
+      value:
+        -
+          value    : input-mini
+          label    : Mini
+          selected : false
+        -
+          value    : input-small
+          label    : Small
+          selected : false
+        - 
+          value    : input-medium
+          label    : Medium
+          selected : false
+        -
+          value    : input-large
+          label    : Large
+          selected : false
+        -
+          value    : input-xlarge
+          label    : Xlarge
+          selected : true
+        -
+          value    : input-xxlarge
+          label    : Xxlarge
+          selected : false
 -
   title: Button Drop Down
   fields:
@@ -202,6 +398,34 @@
       label  : Required
       type   : checkbox
       value  : false
+    inputsize:
+      label  : Input Size
+      type   : select
+      value  : 
+        -
+          value: input-mini
+          label    : Mini
+          selected : false
+        -
+          value    : input-small
+          label    : Small
+          selected : false
+        - 
+          value    : input-medium
+          label    : Medium
+          selected : false
+        -
+          value    : input-large
+          label    : Large
+          selected : false
+        -
+          value    : input-xlarge
+          label    : Xlarge
+          selected : true
+        -
+          value    : input-xxlarge
+          label    : Xxlarge
+          selected : false
 -
   title  : Text Area
   fields :

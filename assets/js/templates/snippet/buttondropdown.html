@@ -3,7 +3,7 @@
   <label class="control-label" for="<%= id %>"><%= label %></label>
   <div class="controls">
     <div class="input-append">
-      <input id="<%= id %>" name="<%= id %>" class="span2" placeholder="<%= placeholder %>" type="text" <% if(required) {%> required <% } %> />
+      <input id="<%= id %>" name="<%= id %>" class="<%= inputsize %>" placeholder="<%= placeholder %>" type="text" <% if(required) {%> required <% } %> />
       <div class="btn-group">
         <button class="btn dropdown-toggle" data-toggle="dropdown">
           <%= buttontext %>
