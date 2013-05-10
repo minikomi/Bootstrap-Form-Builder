@@ -54,6 +54,7 @@ input {
   background: white;
   box-shadow: 0px 0px 30px #999;
   -webkit-transition: -webkit-transform 0.1s ease-out;
+  overflow: hidden;
 }
 
 #render{
@@ -98,3 +99,10 @@ form .popover form {
  -ms-user-select: none;
  user-select: none;
 }
+
+#target fieldset{
+ width: 100%;
+ overflow: hidden;
+}
+
+
