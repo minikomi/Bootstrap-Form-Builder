@@ -21,5 +21,10 @@ define([
         return new MyFormSnippetView({model: snippet}).render(false);
       });
     }
+    , toJSON: function() {
+      return this.map(function(snippet) {
+         return snippet.getValues();
+      });
+    }
   });
 });
