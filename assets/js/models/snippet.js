@@ -3,7 +3,7 @@ define([
 ], function($, _, Backbone) {
   return Backbone.Model.extend({
     getValues: function(){
-      return _.reduce(this.get("fields"), function(o, v, k){
+      var reduced = _.reduce(this.get("fields"), function(o, v, k){
         if (v["type"] == "select") {
           o[k] = _.find(v["value"], function(o){return o.selected})["value"];
         } else {
@@ -11,6 +11,8 @@ define([
         }
         return o;
       }, {});
+      reduced.fieldtype= this.get('title');
+      return reduced;
     }
     , idFriendlyTitle: function(){
       return this.get("title").replace(/\W/g,'').toLowerCase();
