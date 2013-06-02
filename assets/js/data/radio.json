@@ -2,67 +2,64 @@
   {
     "title": "Multiple Radios",
     "fields": {
-      "name": {
-        "label": "Group Name",
-        "type": "input",
-        "value": "radios"
-      },
-      "label": {
-        "label": "Label Text",
-        "type": "input",
-        "value": "Multiple Radios"
-      },
       "radios": {
-        "label": "Radios",
         "type": "textarea-split",
+        "label": "Radios",
         "value": [
           "Option one",
           "Option two"
         ]
+      },
+      "label": {
+        "type": "input",
+        "label": "Label Text",
+        "value": "Multiple Radios"
+      },
+      "name": {
+        "type": "input",
+        "label": "Group Name",
+        "value": "radios"
       }
     }
   },
   {
     "title": "Multiple Radios Inline",
     "fields": {
-      "name": {
-        "label": "Group Name",
-        "type": "input",
-        "value": "radios"
+      "radios": {
+        "type": "textarea-split",
+        "label": "Radios",
+        "value": [
+          1234
+        ]
       },
       "label": {
-        "label": "Label Text",
         "type": "input",
+        "label": "Label Text",
         "value": "Inline Radios"
       },
-      "radios": {
-        "label": "Radios",
-        "type": "textarea-split",
-        "value": [
-          1,
-          2,
-          3,
-          4
-        ]
+      "name": {
+        "type": "input",
+        "label": "Group Name",
+        "value": "radios"
       }
     }
   },
   {
     "title": "Multiple Checkboxes",
     "fields": {
-      "name": {
-        "label": "Group Name",
-        "type": "input",
-        "value": "checkboxes"
-      },
       "label": {
-        "label": "Label Text",
         "type": "input",
+        "label": "Label Text",
         "value": "Multiple Checkboxes"
       },
+      "name": {
+        "type": "input",
+        "label": "Group Name",
+        "value": "checkboxes"
+      },
       "checkboxes": {
-        "label": "Checkboxes",
         "type": "textarea-split",
+        "label": "Checkboxes",
         "value": [
           "Option one",
           "Option two"
@@ -73,24 +70,21 @@
   {
     "title": "Multiple Checkboxes Inline",
     "fields": {
-      "name": {
-        "label": "Group Name",
-        "type": "input",
-        "value": "checkboxes"
-      },
       "label": {
-        "label": "Label Text",
         "type": "input",
+        "label": "Label Text",
         "value": "Inline Checkboxes"
       },
+      "name": {
+        "type": "input",
+        "label": "Group Name",
+        "value": "checkboxes"
+      },
       "checkboxes": {
-        "label": "Checkboxes",
         "type": "textarea-split",
+        "label": "Checkboxes",
         "value": [
-          1,
-          2,
-          3,
-          4
+          1234
         ]
       }
     }
