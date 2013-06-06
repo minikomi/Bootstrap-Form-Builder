@@ -26,7 +26,7 @@ define(['module'], function (module) {
         version: '2.0.5',
 
         strip: function (content) {
-            //Strips <?xml ...?> declarations so that external SVG and XML
+            //Strips <\?xml ...?> declarations so that external SVG and XML
             //documents can be added to a document without worry. Also, if the string
             //is an HTML document, only the part inside the body tag is returned.
             if (content) {
@@ -157,7 +157,7 @@ define(['module'], function (module) {
             //The strip part is optional.
             //if strip is present, then that means only get the string contents
             //inside a body tag in an HTML string. For XML/SVG content it means
-            //removing the <?xml ...?> declarations so the content can be inserted
+            //removing the <\?xml ...?> declarations so the content can be inserted
             //into the current doc without problems.
 
             // Do not bother with the work if a build and text will
