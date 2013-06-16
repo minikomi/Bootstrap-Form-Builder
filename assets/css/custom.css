@@ -29,6 +29,10 @@ input {
   cursor: pointer;
 }
 
+textarea {
+  resize: vertical;
+}
+
 .popover .control-group {
   cursor: default;
 }
@@ -104,5 +108,3 @@ form .popover form {
  width: 100%;
  overflow: hidden;
 }
-
-
