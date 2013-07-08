@@ -6,6 +6,7 @@ define([
   , "text!templates/popover/popover-textarea.html"
   , "text!templates/popover/popover-textarea-split.html"
   , "text!templates/popover/popover-checkbox.html"
+  , "text!templates/popover/popover-hidden.html"
   , "templates/snippet/snippet-templates"
   , "bootstrap"
 ], function(
@@ -16,6 +17,7 @@ define([
   , _PopoverTextArea
   , _PopoverTextAreaSplit
   , _PopoverCheckbox
+  , _PopoverHidden
   , _snippetTemplates
 ){
   return Backbone.View.extend({
@@ -29,6 +31,7 @@ define([
         , "textarea" : _.template(_PopoverTextArea)
         , "textarea-split" : _.template(_PopoverTextAreaSplit)
         , "checkbox" : _.template(_PopoverCheckbox)
+        , "hidden" : _.template(_PopoverHidden)
       }
     }
     , render: function(withAttributes){

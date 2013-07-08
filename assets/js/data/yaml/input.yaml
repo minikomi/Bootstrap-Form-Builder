@@ -1,53 +1,57 @@
 -
   title  : Text Input
   fields :
-    id:
+    field_guid:
       label  : ID / Name
-      type   : input
-      value  : textinput
+      type   : hidden
+      value  : temporary-id
     label:
-      label  : Label Text
+      label  : Label
       type   : input
       value  : Text Input
     placeholder:
-      label  : Placeholder
+      label  : Example
       type   : input
-      value  : placeholder
+      value  : "0.07"
     required:
       label  : Required
       type   : checkbox
-      value  : false
+      value  : true
 -
   title  : Password Input
   fields :
-    id:
+    field_guid:
       label  : ID / Name
-      type   : input
-      value  : passwordinput
+      type   : hidden
+      value  : temporary-id
     label:
-      label  : Label Text
+      label  : Label
       type   : input
       value  : Password Input
     placeholder:
-      label  : Placeholder
+      label  : Example
       type   : input
-      value  : placeholder
+      value  : asdf
     required:
       label  : Required
       type   : checkbox
-      value  : false
+      value  : true
 -
   title  : Text Area
   fields :
-    id:
+    field_guid:
       label  : ID / Name
-      type   : input
-      value  : textarea
+      type   : hidden
+      value  : temporary-id
     label:
-      label  : Label Text
+      label  : Label
       type   : input
       value  : Text Area
     textarea:
       label  : Starting Text
       type   : textarea
-      value  : default text
+      value  : Default Text
+    required:
+      label  : Required
+      type   : checkbox
+      value  : true

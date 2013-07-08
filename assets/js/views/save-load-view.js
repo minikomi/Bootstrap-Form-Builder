@@ -8,23 +8,20 @@ define([
          'click .loadButton': 'loadIt'
       }
       , saveIt: function() {
-         var serialized = this.model.toJSON();
-         console.log(serialized);
+         this.model.save();
       }
       , loadIt: function() {
          var self = this;
-         var testStr = 
-      '{"stepid":123,"fields":[{"id":"textinput1","placeholder":"placeholder2","required":true,"label":"Text Input3","fieldtype":"Text Input"},{"id":"passwordinput4","placeholder":"placeholder5","required":false,"label":"Password Input6","fieldtype":"Password Input"}]}';
+         if (App.stepForm === null) {
+            return;
+         }
 
-         var parsed = JSON.parse(testStr);
-         
-         this.model.set('stepid', parsed.stepid);
-         var newModels = _.map(parsed.fields, function(fieldInfo) {
-            var curSnippet = self.findSnippet(fieldInfo.fieldtype);
-            var fields = curSnippet.get('fields');
+         var newModels = _.map(App.stepForm.fields, function(fieldInfo) {
+            var curSnippet2 = self.findSnippet(fieldInfo.field_type);
+            var fields = curSnippet2.get('fields');
 
             for (var field in fieldInfo) {
-               if (field != 'fieldtype') {
+               if (field != 'field_type') {
                   // This is kind of weird. We're changing a nested object inside a model.
                   // To do this the backbone way, the simplest way seems to be to get the
                   // whole object, change it, then put it back. This ensures that we still
@@ -32,23 +29,25 @@ define([
                   // automatically, but I don't want to go through the hassle of installing
                   // it now. More info:
                   // http://stackoverflow.com/questions/6351271/backbone-js-get-and-set-nested-object-attribute
-                  fields[field].value = fieldInfo[field];
+                  if (!_.isUndefined(fields[field])) {
+                     fields[field].value = fieldInfo[field];
+                  }
                }
             }
-            curSnippet.set('fields', fields);
-            return curSnippet;
+            curSnippet2.set('fields', fields);
+            return curSnippet2;
          });
-         console.log(newModels);
-         this.model.collection.reset(newModels);
 
-         //this.model.load(parsed);
+         this.model.snippets.reset(newModels);
       }
-      , findSnippet: function(fieldtype) {
+      , findSnippet: function(field_type) {
          var curSnippet;
-         for (var i in this.options.snippets.models) {
+         for (var i = 0; i < this.options.snippets.models.length; ++i) {
             curSnippet = this.options.snippets.models[i];
-            if (curSnippet.get('title') == fieldtype) {
-               return curSnippet;
+            if (curSnippet.get('title') == field_type) {
+               var clone = jQuery.extend(true, {}, curSnippet.toJSON());
+               // Have to jump through hoops to clone a model.
+               return new (curSnippet.constructor)(clone);
             }
          }
          return null;

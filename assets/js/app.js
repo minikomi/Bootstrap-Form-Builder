@@ -62,11 +62,13 @@ define([
         , model: wrapper
       });
 
-      new SaveLoadView({
+      var saveLoad = new SaveLoadView({
          el: $('#saveLoadButtons')
          , model: wrapper
          , snippets: allSnippets
       });
+
+      saveLoad.loadIt();
     }
   }
 });

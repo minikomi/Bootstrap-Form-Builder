@@ -12,11 +12,11 @@ define([
   return Backbone.View.extend({
     tagName: "fieldset"
     , initialize: function(){
-      this.model.collection.on("add", this.render, this);
-      this.model.collection.on("remove", this.render, this);
-      this.model.collection.on("change", this.render, this);
-      this.model.collection.on("reset", this.render, this);
-      this.model.collection.on("change", this.model.collection.sync);
+      this.model.snippets.on("add", this.render, this);
+      this.model.snippets.on("remove", this.render, this);
+      this.model.snippets.on("change", this.render, this);
+      this.model.snippets.on("reset", this.render, this);
+      this.model.snippets.on("change", this.model.snippets.sync);
       PubSub.on("mySnippetDrag", this.handleSnippetDrag, this);
       PubSub.on("tempMove", this.handleTempMove, this);
       PubSub.on("tempDrop", this.handleTempDrop, this);
@@ -29,11 +29,11 @@ define([
       //Render Snippet Views
       this.$el.empty();
       var that = this;
-      _.each(this.model.collection.renderAll(), function(snippet){
+      _.each(this.model.snippets.renderAll(), function(snippet){
         that.$el.append(snippet);
       });
       $("#render").val(that.renderForm({
-        text: _.map(this.model.collection.renderAllClean(), function(e){return e.html()}).join("\n")
+        text: _.map(this.model.snippets.renderAllClean(), function(e){return e.html()}).join("\n")
       }));
       this.$el.appendTo("#build form");
       this.delegateEvents();
@@ -58,7 +58,7 @@ define([
 
     , handleSnippetDrag: function(mouseEvent, snippetModel) {
       $("body").append(new TempSnippetView({model: snippetModel}).render());
-      this.model.collection.remove(snippetModel);
+      this.model.snippets.remove(snippetModel);
       PubSub.trigger("newTempPostRender", mouseEvent);
     }
 
@@ -81,7 +81,7 @@ define([
          mouseEvent.pageY < (this.$build.height() + this.$build.offset().top)) {
         var index = $(".target").index();
         $(".target").removeClass("target");
-        this.model.collection.add(model,{at: index+1});
+        this.model.snippets.add(model,{at: index+1});
       } else {
         $(".target").removeClass("target");
       }

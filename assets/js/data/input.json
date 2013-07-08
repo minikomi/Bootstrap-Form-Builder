@@ -2,70 +2,75 @@
   {
     "title": "Text Input",
     "fields": {
-      "id": {
-        "type": "input",
+      "field_guid": {
         "label": "ID / Name",
-        "value": "textinput"
-      },
-      "placeholder": {
-        "type": "input",
-        "label": "Placeholder",
-        "value": "placeholder"
-      },
-      "required": {
-        "type": "checkbox",
-        "label": "Required",
-        "value": false
+        "type": "hidden",
+        "value": "temporary-id"
       },
       "label": {
+        "label": "Label",
         "type": "input",
-        "label": "Label Text",
         "value": "Text Input"
+      },
+      "placeholder": {
+        "label": "Example",
+        "type": "input",
+        "value": "0.07"
+      },
+      "required": {
+        "label": "Required",
+        "type": "checkbox",
+        "value": true
       }
     }
   },
   {
     "title": "Password Input",
     "fields": {
-      "id": {
-        "type": "input",
+      "field_guid": {
         "label": "ID / Name",
-        "value": "passwordinput"
-      },
-      "placeholder": {
-        "type": "input",
-        "label": "Placeholder",
-        "value": "placeholder"
-      },
-      "required": {
-        "type": "checkbox",
-        "label": "Required",
-        "value": false
+        "type": "hidden",
+        "value": "temporary-id"
       },
       "label": {
+        "label": "Label",
         "type": "input",
-        "label": "Label Text",
         "value": "Password Input"
+      },
+      "placeholder": {
+        "label": "Example",
+        "type": "input",
+        "value": "asdf"
+      },
+      "required": {
+        "label": "Required",
+        "type": "checkbox",
+        "value": true
       }
     }
   },
   {
     "title": "Text Area",
     "fields": {
-      "id": {
-        "type": "input",
+      "field_guid": {
         "label": "ID / Name",
-        "value": "textarea"
-      },
-      "textarea": {
-        "type": "textarea",
-        "label": "Starting Text",
-        "value": "default text"
+        "type": "hidden",
+        "value": "temporary-id"
       },
       "label": {
+        "label": "Label",
         "type": "input",
-        "label": "Label Text",
         "value": "Text Area"
+      },
+      "textarea": {
+        "label": "Starting Text",
+        "type": "textarea",
+        "value": "Default Text"
+      },
+      "required": {
+        "label": "Required",
+        "type": "checkbox",
+        "value": true
       }
     }
   }

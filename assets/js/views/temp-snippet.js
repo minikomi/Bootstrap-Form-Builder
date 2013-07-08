@@ -14,19 +14,19 @@ define([
       PubSub.on("newTempPostRender", this.postRender, this);
       this.constructor.__super__.initialize.call(this);
       this.tempTemplate = _.template(_tempTemplate);
+      $('body').on('mousemove', _.bind(this.mouseMoveHandler, this));
     }
     , className: "temp"
     , render: function() {
       return this.$el.html(this.tempTemplate({text: this.constructor.__super__.render.call(this).html()}));
     }
     , postRender: function(mouseEvent){
-      this.tempForm  = this.$el.find("form")[0];
+      this.tempForm  = this.$("form")[0];
       this.halfHeight = Math.floor(this.tempForm.clientHeight/2);
       this.halfWidth  = Math.floor(this.tempForm.clientWidth/2);
       this.centerOnEvent(mouseEvent);
     }
     , events:{
-      "mousemove": "mouseMoveHandler",
       "mouseup" : "mouseUpHandler"
     }
     , centerOnEvent: function(mouseEvent){
@@ -45,6 +45,7 @@ define([
     , mouseUpHandler: function(mouseEvent){
       mouseEvent.preventDefault();
       PubSub.trigger("tempDrop", mouseEvent, this.model);
+      $('body').off('mousemove');
       this.remove();
     }
   });

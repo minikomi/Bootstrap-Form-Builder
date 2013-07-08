@@ -25,7 +25,10 @@ define([
       $(".popover #cancel").on("click", this.cancelHandler(that));
       //add drag event for all but form name
       if(this.model.get("title") !== "Form Name"){
-        $("body").on("mousemove", function(mouseMoveEvent){
+        // Need to specify this is a startDrag mousemove so that
+        // we can remove just this mousemove event later. We add
+        // another mousemove handler in temp-snippet.js.
+        $("body").on("mousemove.startDrag", function(mouseMoveEvent){
           if(
             Math.abs(mouseDownEvent.pageX - mouseMoveEvent.pageX) > 10 ||
             Math.abs(mouseDownEvent.pageY - mouseMoveEvent.pageY) > 10
@@ -44,7 +47,7 @@ define([
     }
 
     , mouseUpHandler : function(mouseUpEvent) {
-        $("body").off("mousemove");
+       $("body").off("mousemove.startDrag");
     }
 
     , saveHandler : function(boundContext) {
