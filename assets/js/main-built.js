@@ -3505,7 +3505,7 @@ define('text!templates/snippet/selectbasic.html',[],function () { return '<!-- S
 
 define('text!templates/snippet/selectmultiple.html',[],function () { return '<!-- Select Multiple -->\n<div class="control-group">\n  <label class="control-label" for="<%= id %>"><%= label %></label>\n  <div class="controls">\n    <select id="<%= id %>" name="<%= id %>" class="<%= inputsize %>" multiple="multiple"><% _.each(options, function(option) { %>\n      <option><%= option %></option><% }); %>\n    </select>\n  </div>\n</div>\n';});
 
-define('text!templates/snippet/textarea.html',[],function () { return '<!-- Textarea -->\n<div>\n  <label for ="<%= field_guid %>"><%= label %></label>\n    <textarea field_guid="<%= field_guid %>" name="<%= field_guid %>" id="<%= field_guid %>"><%= textarea %></textarea>\n</div>\n';});
+define('text!templates/snippet/textarea.html',[],function () { return '<!-- Textarea -->\n<div>\n  <label for ="<%= field_guid %>"><%= label %></label>\n    <textarea field_guid="<%= field_guid %>" name="<%= field_guid %>" id="<%= field_guid %>" class="noResize"><%= textarea %></textarea>\n</div>\n';});
 
 define('templates/snippet/snippet-templates',['require','text!templates/snippet/formname.html','text!templates/snippet/prependedtext.html','text!templates/snippet/searchinput.html','text!templates/snippet/textinput.html','text!templates/snippet/appendedcheckbox.html','text!templates/snippet/appendedtext.html','text!templates/snippet/filebutton.html','text!templates/snippet/button.html','text!templates/snippet/buttondouble.html','text!templates/snippet/buttondropdown.html','text!templates/snippet/multiplecheckboxes.html','text!templates/snippet/multiplecheckboxesinline.html','text!templates/snippet/multipleradios.html','text!templates/snippet/multipleradiosinline.html','text!templates/snippet/passwordinput.html','text!templates/snippet/prependedcheckbox.html','text!templates/snippet/prependedtext.html','text!templates/snippet/searchinput.html','text!templates/snippet/selectbasic.html','text!templates/snippet/selectmultiple.html','text!templates/snippet/textarea.html','text!templates/snippet/textinput.html'],function(require) {
   var formname               = require('text!templates/snippet/formname.html')
@@ -4063,7 +4063,11 @@ define('views/save-load-view',[
          'click .loadButton': 'loadIt'
       }
       , saveIt: function() {
-         this.model.save();
+         this.model.save(null, {
+            success: function(model, response, options) {
+               App.stepForm = response;
+            }
+         });
       }
       , loadIt: function() {
          var self = this;

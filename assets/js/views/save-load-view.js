@@ -8,7 +8,11 @@ define([
          'click .loadButton': 'loadIt'
       }
       , saveIt: function() {
-         this.model.save();
+         this.model.save(null, {
+            success: function(model, response, options) {
+               App.stepForm = response;
+            }
+         });
       }
       , loadIt: function() {
          var self = this;
