@@ -25,31 +25,6 @@
     }
   },
   {
-    "title": "Password Input",
-    "fields": {
-      "field_guid": {
-        "label": "ID / Name",
-        "type": "hidden",
-        "value": "temporary-id"
-      },
-      "label": {
-        "label": "Label",
-        "type": "input",
-        "value": "Password Input"
-      },
-      "placeholder": {
-        "label": "Example",
-        "type": "input",
-        "value": "asdf"
-      },
-      "required": {
-        "label": "Required",
-        "type": "checkbox",
-        "value": true
-      }
-    }
-  },
-  {
     "title": "Text Area",
     "fields": {
       "field_guid": {
@@ -60,7 +35,7 @@
       "label": {
         "label": "Label",
         "type": "input",
-        "value": "Text Area"
+        "value": "Multi-line Text Area"
       },
       "textarea": {
         "label": "Starting Text",

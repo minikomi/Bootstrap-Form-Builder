@@ -3475,7 +3475,7 @@ define('text!templates/snippet/prependedtext.html',[],function () { return '<!--
 
 define('text!templates/snippet/searchinput.html',[],function () { return '<!-- Search input-->\n<div class="control-group">\n  <label class="control-label" for="<%= id %>"><%= label %></label>\n  <div class="controls">\n    <input id="<%= id %>" name="<%= id %>" type="text" placeholder="<%= placeholder %>" class="<%= inputsize %> search-query" <% if(required) {%> required <% } %> />\n    <% if (helptext.length > 0) { %><p class="help-block"><%= helptext %></p><% } %>\n  </div>\n</div>\n';});
 
-define('text!templates/snippet/textinput.html',[],function () { return '<!-- Text input-->\n<div>\n  <label for="<%= field_guid %>"><%= label %></label>\n    <input data-field_guid="<%= field_guid %>" name="<%= field_guid %>" id="<%= field_guid %>" type="text" placeholder="<%= placeholder %>"      <% if(required) {%> required <% } %> />\n</div>\n';});
+define('text!templates/snippet/textinput.html',[],function () { return '<!-- Text input-->\n<div>\n  <label for="<%- field_guid %>" <% if(required) {%> class="required" <% } %>><%- label %></label>\n    <input data-field_guid="<%- field_guid %>" name="<%- field_guid %>" id="<%- field_guid %>" type="text" placeholder="<%- placeholder %>"      <% if(required) {%> required <% } %> />\n</div>\n';});
 
 define('text!templates/snippet/appendedcheckbox.html',[],function () { return '<!-- Appended checkbox -->\n<div class="control-group">\n  <label class="control-label" for="<%= id %>"><%= label %></label>\n  <div class="controls">\n    <div class="input-append">\n      <input id="<%= id %>" name="<%= id %>" class="span2" type="text" placeholder="<%= placeholder %>" <% if(required) {%> required <% } %> />\n      <span class="add-on">\n        <input type="checkbox"<% if (checked){ %> checked <% } %>>\n      </span>\n    </div>\n    <% if (helptext.length > 0) { %><p class="help-block"><%= helptext %></p><% } %>\n  </div>\n</div>\n';});
 
@@ -3497,7 +3497,7 @@ define('text!templates/snippet/multipleradios.html',[],function () { return '<!-
 
 define('text!templates/snippet/multipleradiosinline.html',[],function () { return '<!-- Multiple Radios (inline) -->\n<div class="control-group">\n  <label class="control-label" for="<%= name %>"><%= label %></label>\n  <div class="controls"><% _.each(radios, function(radio, i){ %>\n    <label class="radio inline" for="<%= name+\'-\'+i %>">\n      <input type="radio" name="<%= name %>" id="<%= name+\'-\'+i %>" value="<%= radio %>" <% if(i < 1) { %>checked="checked" <% } %>>\n      <%= radio %>\n    </label><% }); %>\n  </div>\n</div>\n';});
 
-define('text!templates/snippet/passwordinput.html',[],function () { return '<!-- Password input-->\n<div>\n  <label for="<%= field_guid %>"><%= label %></label>\n    <input field_guid="<%= field_guid %>" name="<%= field_guid %>" id="<%= field_guid %>" type="password" placeholder="<%= placeholder %>" <% if(required) {%> required <% } %> />\n</div>\n';});
+define('text!templates/snippet/passwordinput.html',[],function () { return '<!-- Password input-->\n<div>\n  <label for="<%- field_guid %>" <% if(required) {%> class="required" <% } %>><%- label %></label>\n    <input field_guid="<%- field_guid %>" name="<%- field_guid %>" id="<%- field_guid %>" type="password" placeholder="<%- placeholder %>" <% if(required) {%> required <% } %> />\n</div>\n';});
 
 define('text!templates/snippet/prependedcheckbox.html',[],function () { return '<!-- Prepended checkbox -->\n<div class="control-group">\n  <label class="control-label" for="<%= id %>"><%= label %></label>\n  <div class="controls">\n    <div class="input-prepend">\n      <span class="add-on">\n        <label class="checkbox">\n          <input type="checkbox" <% if (checked){ %>checked="checked"<% } %>>\n        </label>\n      </span>\n      <input id="<%= id %>" name="<%= id %>" class="<%= inputsize %>" type="text" placeholder="<%= placeholder %>" <% if(required) {%> required <% } %> />\n    </div>\n    <% if (helptext.length > 0) { %><p class="help-block"><%= helptext %></p><% } %>\n  </div>\n</div>\n';});
 
@@ -3505,7 +3505,7 @@ define('text!templates/snippet/selectbasic.html',[],function () { return '<!-- S
 
 define('text!templates/snippet/selectmultiple.html',[],function () { return '<!-- Select Multiple -->\n<div class="control-group">\n  <label class="control-label" for="<%= id %>"><%= label %></label>\n  <div class="controls">\n    <select id="<%= id %>" name="<%= id %>" class="<%= inputsize %>" multiple="multiple"><% _.each(options, function(option) { %>\n      <option><%= option %></option><% }); %>\n    </select>\n  </div>\n</div>\n';});
 
-define('text!templates/snippet/textarea.html',[],function () { return '<!-- Textarea -->\n<div>\n  <label for ="<%= field_guid %>"><%= label %></label>\n    <textarea field_guid="<%= field_guid %>" name="<%= field_guid %>" id="<%= field_guid %>" class="noResize"><%= textarea %></textarea>\n</div>\n';});
+define('text!templates/snippet/textarea.html',[],function () { return '<!-- Textarea -->\n<div>\n  <label for ="<%- field_guid %>" <% if(required) {%> class="required" <% } %>><%- label %></label>\n  <textarea field_guid="<%- field_guid %>" name="<%- field_guid %>" id="<%- field_guid %>"\n     class="noResize" <% if(required) {%> required <% } %> placeholder="<%- textarea %>"></textarea>\n</div>\n';});
 
 define('templates/snippet/snippet-templates',['require','text!templates/snippet/formname.html','text!templates/snippet/prependedtext.html','text!templates/snippet/searchinput.html','text!templates/snippet/textinput.html','text!templates/snippet/appendedcheckbox.html','text!templates/snippet/appendedtext.html','text!templates/snippet/filebutton.html','text!templates/snippet/button.html','text!templates/snippet/buttondouble.html','text!templates/snippet/buttondropdown.html','text!templates/snippet/multiplecheckboxes.html','text!templates/snippet/multiplecheckboxesinline.html','text!templates/snippet/multipleradios.html','text!templates/snippet/multipleradiosinline.html','text!templates/snippet/passwordinput.html','text!templates/snippet/prependedcheckbox.html','text!templates/snippet/prependedtext.html','text!templates/snippet/searchinput.html','text!templates/snippet/selectbasic.html','text!templates/snippet/selectmultiple.html','text!templates/snippet/textarea.html','text!templates/snippet/textinput.html'],function(require) {
   var formname               = require('text!templates/snippet/formname.html')
@@ -4062,10 +4062,17 @@ define('views/save-load-view',[
          "click .saveButton": 'saveIt',
          'click .loadButton': 'loadIt'
       }
+      , enableSave: function() {
+         $('.formBuilderSave').removeClass('buttonLinkDisabled').prop('disabled', 0);
+      }
+      , initialize: function() {
+         this.model.snippets.on('all', this.enableSave);
+      }
       , saveIt: function() {
          this.model.save(null, {
             success: function(model, response, options) {
                App.stepForm = response;
+               $('.formBuilderSave').addClass('buttonLinkDisabled').prop('disabled', 1);
             }
          });
       }
@@ -4077,7 +4084,11 @@ define('views/save-load-view',[
 
          var newModels = _.map(App.stepForm.fields, function(fieldInfo) {
             var curSnippet2 = self.findSnippet(fieldInfo.field_type);
-            var fields = curSnippet2.get('fields');
+            if (curSnippet2) {
+               var fields = curSnippet2.get('fields');
+            } else {
+               return null;
+            }
 
             for (var field in fieldInfo) {
                if (field != 'field_type') {
@@ -4097,7 +4108,13 @@ define('views/save-load-view',[
             return curSnippet2;
          });
 
+         // If we get some nulls because of removed fields, deal with it.
+         newModels = _.filter(newModels, function(snip) {
+            return snip;
+         });
+
          this.model.snippets.reset(newModels);
+         $('.formBuilderSave').addClass('buttonLinkDisabled').prop('disabled', 1);
       }
       , findSnippet: function(field_type) {
          var curSnippet;
@@ -4114,7 +4131,7 @@ define('views/save-load-view',[
    });
 });
 
-define('text!data/input.json',[],function () { return '[\n  {\n    "title": "Text Input",\n    "fields": {\n      "field_guid": {\n        "label": "ID / Name",\n        "type": "hidden",\n        "value": "temporary-id"\n      },\n      "label": {\n        "label": "Label",\n        "type": "input",\n        "value": "Text Input"\n      },\n      "placeholder": {\n        "label": "Example",\n        "type": "input",\n        "value": "0.07"\n      },\n      "required": {\n        "label": "Required",\n        "type": "checkbox",\n        "value": true\n      }\n    }\n  },\n  {\n    "title": "Password Input",\n    "fields": {\n      "field_guid": {\n        "label": "ID / Name",\n        "type": "hidden",\n        "value": "temporary-id"\n      },\n      "label": {\n        "label": "Label",\n        "type": "input",\n        "value": "Password Input"\n      },\n      "placeholder": {\n        "label": "Example",\n        "type": "input",\n        "value": "asdf"\n      },\n      "required": {\n        "label": "Required",\n        "type": "checkbox",\n        "value": true\n      }\n    }\n  },\n  {\n    "title": "Text Area",\n    "fields": {\n      "field_guid": {\n        "label": "ID / Name",\n        "type": "hidden",\n        "value": "temporary-id"\n      },\n      "label": {\n        "label": "Label",\n        "type": "input",\n        "value": "Text Area"\n      },\n      "textarea": {\n        "label": "Starting Text",\n        "type": "textarea",\n        "value": "Default Text"\n      },\n      "required": {\n        "label": "Required",\n        "type": "checkbox",\n        "value": true\n      }\n    }\n  }\n]';});
+define('text!data/input.json',[],function () { return '[\n  {\n    "title": "Text Input",\n    "fields": {\n      "field_guid": {\n        "label": "ID / Name",\n        "type": "hidden",\n        "value": "temporary-id"\n      },\n      "label": {\n        "label": "Label",\n        "type": "input",\n        "value": "Text Input"\n      },\n      "placeholder": {\n        "label": "Example",\n        "type": "input",\n        "value": "0.07"\n      },\n      "required": {\n        "label": "Required",\n        "type": "checkbox",\n        "value": true\n      }\n    }\n  },\n  {\n    "title": "Text Area",\n    "fields": {\n      "field_guid": {\n        "label": "ID / Name",\n        "type": "hidden",\n        "value": "temporary-id"\n      },\n      "label": {\n        "label": "Label",\n        "type": "input",\n        "value": "Multi-line Text Area"\n      },\n      "textarea": {\n        "label": "Starting Text",\n        "type": "textarea",\n        "value": "Default Text"\n      },\n      "required": {\n        "label": "Required",\n        "type": "checkbox",\n        "value": true\n      }\n    }\n  }\n]';});
 
 define('text!data/radio.json',[],function () { return '[\n  {\n    "title": "Multiple Radios",\n    "fields": {\n      "name": {\n        "label": "Group Name",\n        "type": "input",\n        "value": "radios"\n      },\n      "label": {\n        "label": "Label Text",\n        "type": "input",\n        "value": "Multiple Radios"\n      },\n      "radios": {\n        "label": "Radios",\n        "type": "textarea-split",\n        "value": [\n          "Option one",\n          "Option two"\n        ]\n      }\n    }\n  },\n  {\n    "title": "Multiple Radios Inline",\n    "fields": {\n      "name": {\n        "label": "Group Name",\n        "type": "input",\n        "value": "radios"\n      },\n      "label": {\n        "label": "Label Text",\n        "type": "input",\n        "value": "Inline Radios"\n      },\n      "radios": {\n        "label": "Radios",\n        "type": "textarea-split",\n        "value": [\n          1,\n          2,\n          3,\n          4\n        ]\n      }\n    }\n  },\n  {\n    "title": "Multiple Checkboxes",\n    "fields": {\n      "name": {\n        "label": "Group Name",\n        "type": "input",\n        "value": "checkboxes"\n      },\n      "label": {\n        "label": "Label Text",\n        "type": "input",\n        "value": "Multiple Checkboxes"\n      },\n      "checkboxes": {\n        "label": "Checkboxes",\n        "type": "textarea-split",\n        "value": [\n          "Option one",\n          "Option two"\n        ]\n      }\n    }\n  },\n  {\n    "title": "Multiple Checkboxes Inline",\n    "fields": {\n      "name": {\n        "label": "Group Name",\n        "type": "input",\n        "value": "checkboxes"\n      },\n      "label": {\n        "label": "Label Text",\n        "type": "input",\n        "value": "Inline Checkboxes"\n      },\n      "checkboxes": {\n        "label": "Checkboxes",\n        "type": "textarea-split",\n        "value": [\n          1,\n          2,\n          3,\n          4\n        ]\n      }\n    }\n  }\n]';});
 

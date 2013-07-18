@@ -7,10 +7,17 @@ define([
          "click .saveButton": 'saveIt',
          'click .loadButton': 'loadIt'
       }
+      , enableSave: function() {
+         $('.formBuilderSave').removeClass('buttonLinkDisabled').prop('disabled', 0);
+      }
+      , initialize: function() {
+         this.model.snippets.on('all', this.enableSave);
+      }
       , saveIt: function() {
          this.model.save(null, {
             success: function(model, response, options) {
                App.stepForm = response;
+               $('.formBuilderSave').addClass('buttonLinkDisabled').prop('disabled', 1);
             }
          });
       }
@@ -22,7 +29,11 @@ define([
 
          var newModels = _.map(App.stepForm.fields, function(fieldInfo) {
             var curSnippet2 = self.findSnippet(fieldInfo.field_type);
-            var fields = curSnippet2.get('fields');
+            if (curSnippet2) {
+               var fields = curSnippet2.get('fields');
+            } else {
+               return null;
+            }
 
             for (var field in fieldInfo) {
                if (field != 'field_type') {
@@ -42,7 +53,13 @@ define([
             return curSnippet2;
          });
 
+         // If we get some nulls because of removed fields, deal with it.
+         newModels = _.filter(newModels, function(snip) {
+            return snip;
+         });
+
          this.model.snippets.reset(newModels);
+         $('.formBuilderSave').addClass('buttonLinkDisabled').prop('disabled', 1);
       }
       , findSnippet: function(field_type) {
          var curSnippet;
