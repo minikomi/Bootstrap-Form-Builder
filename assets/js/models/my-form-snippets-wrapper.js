@@ -8,12 +8,6 @@ define([
       initialize: function() {
          var self = this;
          this.snippets = new MyFormSnippetsCollection([]);
-         /*
-         this.snippets.on('change add', function() {
-            // TODO: Save?
-            console.log(JSON.stringify(self));
-         });
-         */
       }
       , toJSON: function() {
          return {
@@ -24,12 +18,6 @@ define([
             console.log(fieldInfo);
          });
       }
-      /*
-      , url: function() {
-         return "https://" + window.location.hostname + "/api/1.1/step_forms/" +
-          App.stepid;
-      }
-      */
       , sync: function(method, model, options) {
          // We never want to update, just add a new form.
          method = method == 'read' ? 'read' : 'create';
@@ -39,7 +27,7 @@ define([
             , headers: {
                'X-CSRF': CSRF.get()
             }
-            , url: "https://" + window.location.hostname + "/api/1.1/step_forms/" +
+            , url: "https://" + window.location.hostname + "/api/2.0/step_forms/" +
                App.stepid
             , xhrFields: {
                withCredentials: true
