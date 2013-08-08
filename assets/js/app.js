@@ -40,15 +40,13 @@ define([
         , content: aboutTab
       });
 
-
       //Make the first tab active!
       $(".tab-pane").first().addClass("active");
       $("ul.nav li").first().addClass("active");
       // Bootstrap "My Form" with 'Form Name' snippet.
       new MyFormView({
         title: "Original"
-        , collection: new MyFormSnippetsCollection(
-        [
+        , collection: new MyFormSnippetsCollection([
           { "title" : "Form Name"
             , "fields": {
               "name" : {
