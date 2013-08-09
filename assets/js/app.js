@@ -41,8 +41,8 @@ define([
       });
 
       //Make the first tab active!
-      $(".tab-pane").first().addClass("active");
-      $("ul.nav li").first().addClass("active");
+      $("#components .tab-pane").first().addClass("active");
+      $("#formtabs li").first().addClass("active");
       // Bootstrap "My Form" with 'Form Name' snippet.
       new MyFormView({
         title: "Original"
