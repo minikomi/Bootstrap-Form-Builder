@@ -23,7 +23,7 @@ define([
         that.$el.append(that.options.content);
       }
       // Render & append nav for tab
-      $(".nav.nav-tabs").append(this.tabNavTemplate({title: this.options.title, id: this.id}))
+      $("#formtabs").append(this.tabNavTemplate({title: this.options.title, id: this.id}))
       // Render tab
       this.$el.attr("id", this.id);
       this.$el.appendTo(".tab-content");
