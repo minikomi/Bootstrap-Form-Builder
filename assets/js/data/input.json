@@ -2,577 +2,577 @@
   {
     "title": "Text Input",
     "fields": {
-      "id": {
-        "label": "ID / Name",
-        "type": "input",
-        "value": "textinput"
-      },
       "label": {
         "label": "Label Text",
-        "type": "input",
-        "value": "Text Input"
+        "value": "Text Input",
+        "type": "input"
       },
       "placeholder": {
         "label": "Placeholder",
-        "type": "input",
-        "value": "placeholder"
-      },
-      "helptext": {
-        "label": "Help Text",
-        "type": "input",
-        "value": "help"
-      },
-      "required": {
-        "label": "Required",
-        "type": "checkbox",
-        "value": false
+        "value": "placeholder",
+        "type": "input"
       },
       "inputsize": {
         "label": "Input Size",
-        "type": "select",
         "value": [
           {
-            "value": "input-mini",
             "label": "Mini",
-            "selected": false
+            "selected": false,
+            "value": "input-mini"
           },
           {
-            "value": "input-small",
             "label": "Small",
-            "selected": false
+            "selected": false,
+            "value": "input-small"
           },
           {
-            "value": "input-medium",
             "label": "Medium",
-            "selected": false
+            "selected": false,
+            "value": "input-medium"
           },
           {
-            "value": "input-large",
             "label": "Large",
-            "selected": false
+            "selected": false,
+            "value": "input-large"
           },
           {
-            "value": "input-xlarge",
             "label": "Xlarge",
-            "selected": true
+            "selected": true,
+            "value": "input-xlarge"
           },
           {
-            "value": "input-xxlarge",
             "label": "Xxlarge",
-            "selected": false
+            "selected": false,
+            "value": "input-xxlarge"
           }
-        ]
+        ],
+        "type": "select"
+      },
+      "required": {
+        "label": "Required",
+        "value": false,
+        "type": "checkbox"
+      },
+      "helptext": {
+        "label": "Help Text",
+        "value": "help",
+        "type": "input"
+      },
+      "id": {
+        "label": "ID / Name",
+        "value": "textinput",
+        "type": "input"
       }
     }
   },
   {
     "title": "Password Input",
     "fields": {
-      "id": {
-        "label": "ID / Name",
-        "type": "input",
-        "value": "passwordinput"
-      },
       "label": {
         "label": "Label Text",
-        "type": "input",
-        "value": "Password Input"
+        "value": "Password Input",
+        "type": "input"
       },
       "placeholder": {
         "label": "Placeholder",
-        "type": "input",
-        "value": "placeholder"
-      },
-      "helptext": {
-        "label": "Help Text",
-        "type": "input",
-        "value": "help"
-      },
-      "required": {
-        "label": "Required",
-        "type": "checkbox",
-        "value": false
+        "value": "placeholder",
+        "type": "input"
       },
       "inputsize": {
         "label": "Input Size",
-        "type": "select",
         "value": [
           {
-            "value": "input-mini",
             "label": "Mini",
-            "selected": false
+            "selected": false,
+            "value": "input-mini"
           },
           {
-            "value": "input-small",
             "label": "Small",
-            "selected": false
+            "selected": false,
+            "value": "input-small"
           },
           {
-            "value": "input-medium",
             "label": "Medium",
-            "selected": false
+            "selected": false,
+            "value": "input-medium"
           },
           {
-            "value": "input-large",
             "label": "Large",
-            "selected": false
+            "selected": false,
+            "value": "input-large"
           },
           {
-            "value": "input-xlarge",
             "label": "Xlarge",
-            "selected": true
+            "selected": true,
+            "value": "input-xlarge"
           },
           {
-            "value": "input-xxlarge",
             "label": "Xxlarge",
-            "selected": false
+            "selected": false,
+            "value": "input-xxlarge"
           }
-        ]
+        ],
+        "type": "select"
+      },
+      "required": {
+        "label": "Required",
+        "value": false,
+        "type": "checkbox"
+      },
+      "helptext": {
+        "label": "Help Text",
+        "value": "help",
+        "type": "input"
+      },
+      "id": {
+        "label": "ID / Name",
+        "value": "passwordinput",
+        "type": "input"
       }
     }
   },
   {
     "title": "Search Input",
     "fields": {
-      "id": {
-        "label": "ID / Name",
-        "type": "input",
-        "value": "searchinput"
-      },
       "label": {
         "label": "Label Text",
-        "type": "input",
-        "value": "Search Input"
+        "value": "Search Input",
+        "type": "input"
       },
       "placeholder": {
         "label": "Placeholder",
-        "type": "input",
-        "value": "placeholder"
-      },
-      "helptext": {
-        "label": "Help Text",
-        "type": "input",
-        "value": "help"
-      },
-      "required": {
-        "label": "Required",
-        "type": "checkbox",
-        "value": false
+        "value": "placeholder",
+        "type": "input"
       },
       "inputsize": {
         "label": "Input Size",
-        "type": "select",
         "value": [
           {
-            "value": "input-mini",
             "label": "Mini",
-            "selected": false
+            "selected": false,
+            "value": "input-mini"
           },
           {
-            "value": "input-small",
             "label": "Small",
-            "selected": false
+            "selected": false,
+            "value": "input-small"
           },
           {
-            "value": "input-medium",
             "label": "Medium",
-            "selected": false
+            "selected": false,
+            "value": "input-medium"
           },
           {
-            "value": "input-large",
             "label": "Large",
-            "selected": false
+            "selected": false,
+            "value": "input-large"
           },
           {
-            "value": "input-xlarge",
             "label": "Xlarge",
-            "selected": true
+            "selected": true,
+            "value": "input-xlarge"
           },
           {
-            "value": "input-xxlarge",
             "label": "Xxlarge",
-            "selected": false
+            "selected": false,
+            "value": "input-xxlarge"
           }
-        ]
+        ],
+        "type": "select"
+      },
+      "required": {
+        "label": "Required",
+        "value": false,
+        "type": "checkbox"
+      },
+      "helptext": {
+        "label": "Help Text",
+        "value": "help",
+        "type": "input"
+      },
+      "id": {
+        "label": "ID / Name",
+        "value": "searchinput",
+        "type": "input"
       }
     }
   },
   {
     "title": "Prepended Text",
     "fields": {
-      "id": {
-        "label": "ID / Name",
-        "type": "input",
-        "value": "prependedtext"
-      },
       "label": {
         "label": "Label Text",
-        "type": "input",
-        "value": "Prepended Text"
-      },
-      "prepend": {
-        "label": "Prepend",
-        "type": "input",
-        "value": "prepend"
+        "value": "Prepended Text",
+        "type": "input"
       },
       "placeholder": {
         "label": "Placeholder",
-        "type": "input",
-        "value": "placeholder"
-      },
-      "helptext": {
-        "label": "Help Text",
-        "type": "input",
-        "value": "help"
-      },
-      "required": {
-        "label": "Required",
-        "type": "checkbox",
-        "value": false
+        "value": "placeholder",
+        "type": "input"
       },
       "inputsize": {
         "label": "Input Size",
-        "type": "select",
         "value": [
           {
-            "value": "input-mini",
             "label": "Mini",
-            "selected": false
+            "selected": false,
+            "value": "input-mini"
           },
           {
-            "value": "input-small",
             "label": "Small",
-            "selected": false
+            "selected": false,
+            "value": "input-small"
           },
           {
-            "value": "input-medium",
             "label": "Medium",
-            "selected": false
+            "selected": false,
+            "value": "input-medium"
           },
           {
-            "value": "input-large",
             "label": "Large",
-            "selected": false
+            "selected": false,
+            "value": "input-large"
           },
           {
-            "value": "input-xlarge",
             "label": "Xlarge",
-            "selected": true
+            "selected": true,
+            "value": "input-xlarge"
           },
           {
-            "value": "input-xxlarge",
             "label": "Xxlarge",
-            "selected": false
+            "selected": false,
+            "value": "input-xxlarge"
           }
-        ]
+        ],
+        "type": "select"
+      },
+      "required": {
+        "label": "Required",
+        "value": false,
+        "type": "checkbox"
+      },
+      "helptext": {
+        "label": "Help Text",
+        "value": "help",
+        "type": "input"
+      },
+      "prepend": {
+        "label": "Prepend",
+        "value": "prepend",
+        "type": "input"
+      },
+      "id": {
+        "label": "ID / Name",
+        "value": "prependedtext",
+        "type": "input"
       }
     }
   },
   {
     "title": "Appended Text",
     "fields": {
-      "id": {
-        "label": "ID / Name",
-        "type": "input",
-        "value": "appendedtext"
-      },
       "label": {
         "label": "Label Text",
-        "type": "input",
-        "value": "Appended Text"
-      },
-      "append": {
-        "label": "Append",
-        "type": "input",
-        "value": "append"
+        "value": "Appended Text",
+        "type": "input"
       },
       "placeholder": {
         "label": "Placeholder",
-        "type": "input",
-        "value": "placeholder"
-      },
-      "helptext": {
-        "label": "Help Text",
-        "type": "input",
-        "value": "help"
-      },
-      "required": {
-        "label": "Required",
-        "type": "checkbox",
-        "value": false
+        "value": "placeholder",
+        "type": "input"
       },
       "inputsize": {
         "label": "Input Size",
-        "type": "select",
         "value": [
           {
-            "value": "input-mini",
             "label": "Mini",
-            "selected": false
+            "selected": false,
+            "value": "input-mini"
           },
           {
-            "value": "input-small",
             "label": "Small",
-            "selected": false
+            "selected": false,
+            "value": "input-small"
           },
           {
-            "value": "input-medium",
             "label": "Medium",
-            "selected": false
+            "selected": false,
+            "value": "input-medium"
           },
           {
-            "value": "input-large",
             "label": "Large",
-            "selected": false
+            "selected": false,
+            "value": "input-large"
           },
           {
-            "value": "input-xlarge",
             "label": "Xlarge",
-            "selected": true
+            "selected": true,
+            "value": "input-xlarge"
           },
           {
-            "value": "input-xxlarge",
             "label": "Xxlarge",
-            "selected": false
+            "selected": false,
+            "value": "input-xxlarge"
           }
-        ]
+        ],
+        "type": "select"
+      },
+      "required": {
+        "label": "Required",
+        "value": false,
+        "type": "checkbox"
+      },
+      "helptext": {
+        "label": "Help Text",
+        "value": "help",
+        "type": "input"
+      },
+      "append": {
+        "label": "Append",
+        "value": "append",
+        "type": "input"
+      },
+      "id": {
+        "label": "ID / Name",
+        "value": "appendedtext",
+        "type": "input"
       }
     }
   },
   {
     "title": "Prepended Checkbox",
     "fields": {
-      "id": {
-        "label": "ID / Name",
-        "type": "input",
-        "value": "prependedcheckbox"
-      },
       "label": {
         "label": "Label Text",
-        "type": "input",
-        "value": "Prepended Checkbox"
+        "value": "Prepended Checkbox",
+        "type": "input"
       },
       "placeholder": {
         "label": "Placeholder",
-        "type": "input",
-        "value": "placeholder"
-      },
-      "helptext": {
-        "label": "Help Text",
-        "type": "input",
-        "value": "help"
-      },
-      "checked": {
-        "label": "Checked",
-        "type": "checkbox",
-        "value": false
-      },
-      "required": {
-        "label": "Required",
-        "type": "checkbox",
-        "value": false
+        "value": "placeholder",
+        "type": "input"
       },
       "inputsize": {
         "label": "Input Size",
-        "type": "select",
         "value": [
           {
-            "value": "input-mini",
             "label": "Mini",
-            "selected": false
+            "selected": false,
+            "value": "input-mini"
           },
           {
-            "value": "input-small",
             "label": "Small",
-            "selected": false
+            "selected": false,
+            "value": "input-small"
           },
           {
-            "value": "input-medium",
             "label": "Medium",
-            "selected": false
+            "selected": false,
+            "value": "input-medium"
           },
           {
-            "value": "input-large",
             "label": "Large",
-            "selected": false
+            "selected": false,
+            "value": "input-large"
           },
           {
-            "value": "input-xlarge",
             "label": "Xlarge",
-            "selected": true
+            "selected": true,
+            "value": "input-xlarge"
           },
           {
-            "value": "input-xxlarge",
             "label": "Xxlarge",
-            "selected": false
+            "selected": false,
+            "value": "input-xxlarge"
           }
-        ]
+        ],
+        "type": "select"
+      },
+      "required": {
+        "label": "Required",
+        "value": false,
+        "type": "checkbox"
+      },
+      "helptext": {
+        "label": "Help Text",
+        "value": "help",
+        "type": "input"
+      },
+      "checked": {
+        "label": "Checked",
+        "value": false,
+        "type": "checkbox"
+      },
+      "id": {
+        "label": "ID / Name",
+        "value": "prependedcheckbox",
+        "type": "input"
       }
     }
   },
   {
     "title": "Appended Checkbox",
     "fields": {
-      "id": {
-        "label": "ID / Name",
-        "type": "input",
-        "value": "appendedcheckbox"
-      },
       "label": {
         "label": "Label Text",
-        "type": "input",
-        "value": "Appended Checkbox"
+        "value": "Appended Checkbox",
+        "type": "input"
       },
       "placeholder": {
         "label": "Placeholder",
-        "type": "input",
-        "value": "placeholder"
-      },
-      "helptext": {
-        "label": "Help Text",
-        "type": "input",
-        "value": "help"
-      },
-      "checked": {
-        "label": "Checked",
-        "type": "checkbox",
-        "value": false
-      },
-      "required": {
-        "label": "Required",
-        "type": "checkbox",
-        "value": false
+        "value": "placeholder",
+        "type": "input"
       },
       "inputsize": {
         "label": "Input Size",
-        "type": "select",
         "value": [
           {
-            "value": "input-mini",
             "label": "Mini",
-            "selected": false
+            "selected": false,
+            "value": "input-mini"
           },
           {
-            "value": "input-small",
             "label": "Small",
-            "selected": false
+            "selected": false,
+            "value": "input-small"
           },
           {
-            "value": "input-medium",
             "label": "Medium",
-            "selected": false
+            "selected": false,
+            "value": "input-medium"
           },
           {
-            "value": "input-large",
             "label": "Large",
-            "selected": false
+            "selected": false,
+            "value": "input-large"
           },
           {
-            "value": "input-xlarge",
             "label": "Xlarge",
-            "selected": true
+            "selected": true,
+            "value": "input-xlarge"
           },
           {
-            "value": "input-xxlarge",
             "label": "Xxlarge",
-            "selected": false
+            "selected": false,
+            "value": "input-xxlarge"
           }
-        ]
+        ],
+        "type": "select"
+      },
+      "required": {
+        "label": "Required",
+        "value": false,
+        "type": "checkbox"
+      },
+      "helptext": {
+        "label": "Help Text",
+        "value": "help",
+        "type": "input"
+      },
+      "checked": {
+        "label": "Checked",
+        "value": false,
+        "type": "checkbox"
+      },
+      "id": {
+        "label": "ID / Name",
+        "value": "appendedcheckbox",
+        "type": "input"
       }
     }
   },
   {
     "title": "Button Drop Down",
     "fields": {
-      "id": {
-        "label": "ID / Name",
-        "type": "input",
-        "value": "buttondropdown"
-      },
       "label": {
         "label": "Label Text",
-        "type": "input",
-        "value": "Button Drop Down"
+        "value": "Button Drop Down",
+        "type": "input"
       },
       "placeholder": {
         "label": "Placeholder",
-        "type": "input",
-        "value": "placeholder"
+        "value": "placeholder",
+        "type": "input"
       },
-      "buttontext": {
-        "label": "Button Text",
-        "type": "input",
-        "value": "Action"
+      "inputsize": {
+        "label": "Input Size",
+        "value": [
+          {
+            "label": "Mini",
+            "selected": false,
+            "value": "input-mini"
+          },
+          {
+            "label": "Small",
+            "selected": false,
+            "value": "input-small"
+          },
+          {
+            "label": "Medium",
+            "selected": false,
+            "value": "input-medium"
+          },
+          {
+            "label": "Large",
+            "selected": false,
+            "value": "input-large"
+          },
+          {
+            "label": "Xlarge",
+            "selected": true,
+            "value": "input-xlarge"
+          },
+          {
+            "label": "Xxlarge",
+            "selected": false,
+            "value": "input-xxlarge"
+          }
+        ],
+        "type": "select"
+      },
+      "required": {
+        "label": "Required",
+        "value": false,
+        "type": "checkbox"
       },
       "buttonoptions": {
         "label": "Options",
-        "type": "textarea-split",
         "value": [
           "Option one",
           "Option two",
           "Option three"
-        ]
+        ],
+        "type": "textarea-split"
       },
-      "required": {
-        "label": "Required",
-        "type": "checkbox",
-        "value": false
+      "id": {
+        "label": "ID / Name",
+        "value": "buttondropdown",
+        "type": "input"
       },
-      "inputsize": {
-        "label": "Input Size",
-        "type": "select",
-        "value": [
-          {
-            "value": "input-mini",
-            "label": "Mini",
-            "selected": false
-          },
-          {
-            "value": "input-small",
-            "label": "Small",
-            "selected": false
-          },
-          {
-            "value": "input-medium",
-            "label": "Medium",
-            "selected": false
-          },
-          {
-            "value": "input-large",
-            "label": "Large",
-            "selected": false
-          },
-          {
-            "value": "input-xlarge",
-            "label": "Xlarge",
-            "selected": true
-          },
-          {
-            "value": "input-xxlarge",
-            "label": "Xxlarge",
-            "selected": false
-          }
-        ]
+      "buttontext": {
+        "label": "Button Text",
+        "value": "Action",
+        "type": "input"
       }
     }
   },
   {
     "title": "Text Area",
     "fields": {
-      "id": {
-        "label": "ID / Name",
-        "type": "input",
-        "value": "textarea"
-      },
       "label": {
         "label": "Label Text",
-        "type": "input",
-        "value": "Text Area"
+        "value": "Text Area",
+        "type": "input"
+      },
+      "id": {
+        "label": "ID / Name",
+        "value": "textarea",
+        "type": "input"
       },
       "textarea": {
         "label": "Starting Text",
-        "type": "textarea",
-        "value": "default text"
+        "value": "default text",
+        "type": "textarea"
       }
     }
   }

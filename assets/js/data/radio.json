@@ -2,96 +2,90 @@
   {
     "title": "Multiple Radios",
     "fields": {
-      "name": {
-        "label": "Group Name",
-        "type": "input",
-        "value": "radios"
-      },
-      "label": {
-        "label": "Label Text",
-        "type": "input",
-        "value": "Multiple Radios"
-      },
       "radios": {
         "label": "Radios",
-        "type": "textarea-split",
         "value": [
           "Option one",
           "Option two"
-        ]
+        ],
+        "type": "textarea-split"
+      },
+      "label": {
+        "label": "Label Text",
+        "value": "Multiple Radios",
+        "type": "input"
+      },
+      "name": {
+        "label": "Group Name",
+        "value": "radios",
+        "type": "input"
       }
     }
   },
   {
     "title": "Multiple Radios Inline",
     "fields": {
-      "name": {
-        "label": "Group Name",
-        "type": "input",
-        "value": "radios"
+      "radios": {
+        "label": "Radios",
+        "value": [
+          1234
+        ],
+        "type": "textarea-split"
       },
       "label": {
         "label": "Label Text",
-        "type": "input",
-        "value": "Inline Radios"
+        "value": "Inline Radios",
+        "type": "input"
       },
-      "radios": {
-        "label": "Radios",
-        "type": "textarea-split",
-        "value": [
-          1,
-          2,
-          3,
-          4
-        ]
+      "name": {
+        "label": "Group Name",
+        "value": "radios",
+        "type": "input"
       }
     }
   },
   {
     "title": "Multiple Checkboxes",
     "fields": {
-      "name": {
-        "label": "Group Name",
-        "type": "input",
-        "value": "checkboxes"
-      },
       "label": {
         "label": "Label Text",
-        "type": "input",
-        "value": "Multiple Checkboxes"
+        "value": "Multiple Checkboxes",
+        "type": "input"
+      },
+      "name": {
+        "label": "Group Name",
+        "value": "checkboxes",
+        "type": "input"
       },
       "checkboxes": {
         "label": "Checkboxes",
-        "type": "textarea-split",
         "value": [
           "Option one",
           "Option two"
-        ]
+        ],
+        "type": "textarea-split"
       }
     }
   },
   {
     "title": "Multiple Checkboxes Inline",
     "fields": {
-      "name": {
-        "label": "Group Name",
-        "type": "input",
-        "value": "checkboxes"
-      },
       "label": {
         "label": "Label Text",
-        "type": "input",
-        "value": "Inline Checkboxes"
+        "value": "Inline Checkboxes",
+        "type": "input"
+      },
+      "name": {
+        "label": "Group Name",
+        "value": "checkboxes",
+        "type": "input"
       },
       "checkboxes": {
         "label": "Checkboxes",
-        "type": "textarea-split",
         "value": [
-          1,
-          2,
-          3,
-          4
-        ]
+          1234
+        ],
+        "type": "textarea-split"
       }
     }
   }
