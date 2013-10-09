@@ -22,7 +22,7 @@ It's hosted on github pages [here](http://minikomi.github.io/Bootstrap-Form-Buil
 
 ### Adding new form elements
 
-* In the [js/data/yaml folder](https://github.com/minikomi/Bootstrap-Form-Builder/tree/gh-pages/assets/js/data/yaml) are yaml files, each of which corresponds to a tab in the form builder.
+* In the [js/data/ folder](https://github.com/minikomi/Bootstrap-Form-Builder/tree/gh-pages/assets/js/data/) are yaml files, each of which corresponds to a tab in the form builder.
 * If you just want to add a new element you need to:
   - describe it in one of these files
   - parse the yaml to json using parse.rb in the same folder
