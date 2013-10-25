@@ -1,120 +1,120 @@
 [
   {
-    "title": "Select Basic",
     "fields": {
+      "id": {
+        "type": "input",
+        "label": "ID / Name",
+        "value": "selectbasic"
+      },
       "options": {
+        "type": "textarea-split",
         "label": "Options",
         "value": [
           "Option one",
           "Option two"
-        ],
-        "type": "textarea-split"
-      },
-      "label": {
-        "label": "Label Text",
-        "value": "Select Basic",
-        "type": "input"
+        ]
       },
       "inputsize": {
+        "type": "select",
         "label": "Input Size",
         "value": [
           {
             "label": "Mini",
-            "selected": false,
-            "value": "input-mini"
+            "value": "input-mini",
+            "selected": false
           },
           {
             "label": "Small",
-            "selected": false,
-            "value": "input-small"
+            "value": "input-small",
+            "selected": false
           },
           {
             "label": "Medium",
-            "selected": false,
-            "value": "input-medium"
+            "value": "input-medium",
+            "selected": false
           },
           {
             "label": "Large",
-            "selected": false,
-            "value": "input-large"
+            "value": "input-large",
+            "selected": false
           },
           {
             "label": "Xlarge",
-            "selected": true,
-            "value": "input-xlarge"
+            "value": "input-xlarge",
+            "selected": true
           },
           {
             "label": "Xxlarge",
-            "selected": false,
-            "value": "input-xxlarge"
+            "value": "input-xxlarge",
+            "selected": false
           }
-        ],
-        "type": "select"
+        ]
       },
-      "id": {
-        "label": "ID / Name",
-        "value": "selectbasic",
-        "type": "input"
+      "label": {
+        "type": "input",
+        "label": "Label Text",
+        "value": "Select Basic"
       }
-    }
+    },
+    "title": "Select Basic"
   },
   {
-    "title": "Select Multiple",
     "fields": {
+      "id": {
+        "type": "input",
+        "label": "ID / Name",
+        "value": "selectmultiple"
+      },
       "options": {
+        "type": "textarea-split",
         "label": "Options",
         "value": [
           "Option one",
           "Option two"
-        ],
-        "type": "textarea-split"
-      },
-      "label": {
-        "label": "Label Text",
-        "value": "Select Multiple",
-        "type": "input"
+        ]
       },
       "inputsize": {
+        "type": "select",
         "label": "Input Size",
         "value": [
           {
             "label": "Mini",
-            "selected": false,
-            "value": "input-mini"
+            "value": "input-mini",
+            "selected": false
           },
           {
             "label": "Small",
-            "selected": false,
-            "value": "input-small"
+            "value": "input-small",
+            "selected": false
           },
           {
             "label": "Medium",
-            "selected": false,
-            "value": "input-medium"
+            "value": "input-medium",
+            "selected": false
           },
           {
             "label": "Large",
-            "selected": false,
-            "value": "input-large"
+            "value": "input-large",
+            "selected": false
           },
           {
             "label": "Xlarge",
-            "selected": true,
-            "value": "input-xlarge"
+            "value": "input-xlarge",
+            "selected": true
           },
           {
             "label": "Xxlarge",
-            "selected": false,
-            "value": "input-xxlarge"
+            "value": "input-xxlarge",
+            "selected": false
           }
-        ],
-        "type": "select"
+        ]
       },
-      "id": {
-        "label": "ID / Name",
-        "value": "selectmultiple",
-        "type": "input"
+      "label": {
+        "type": "input",
+        "label": "Label Text",
+        "value": "Select Multiple"
       }
-    }
+    },
+    "title": "Select Multiple"
   }
 ]

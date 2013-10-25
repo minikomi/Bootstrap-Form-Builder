@@ -9,6 +9,10 @@
       label  : Label Text
       type   : input
       value  : Multiple Radios
+    required:
+      label  : Required
+      type   : checkbox
+      value  : false
     radios:
       label  : Radios
       type   : textarea-split
@@ -24,6 +28,10 @@
       label  : Label Text
       type   : input
       value  : Inline Radios
+    required:
+      label  : Required
+      type   : checkbox
+      value  : false
     radios:
       label  : Radios
       type   : textarea-split
@@ -39,6 +47,10 @@
       label  : Label Text
       type   : input
       value  : Multiple Checkboxes
+    required:
+      label  : Required
+      type   : checkbox
+      value  : false
     checkboxes:
       label  : Checkboxes
       type   : textarea-split
@@ -54,6 +66,10 @@
       label  : Label Text
       type   : input
       value  : Inline Checkboxes
+    required:
+      label  : Required
+      type   : checkbox
+      value  : false
     checkboxes:
       label  : Checkboxes
       type   : textarea-split
