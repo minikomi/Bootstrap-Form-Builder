@@ -48,5 +48,25 @@
         "value": true
       }
     }
+  },
+  {
+    "title": "Checkbox",
+    "fields": {
+      "field_guid": {
+        "label": "ID / Name",
+        "type": "hidden",
+        "value": "temporary-id"
+      },
+      "label": {
+        "label": "Label",
+        "type": "input",
+        "value": "Checkbox"
+      },
+      "placeholder": {
+        "label": "Default",
+        "type": "checkbox",
+        "value": false
+      }
+    }
   }
 ]
