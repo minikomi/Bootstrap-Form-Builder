@@ -25,9 +25,13 @@ define([
             crossDomain: true
             , dataType: 'json'
             , headers: {
-               'X-CSRF': CSRF.get()
+               'X-CSRF': CSRF.get(),
+               'X-ALLOW-HTTP': true
             }
-            , url: "https://" + window.location.hostname + "/api/2.0/step_forms/" +
+            // , url: "https://" + window.location.hostname + "/api/2.0/step_forms/" +
+            // We used to force https but now we do not for items originating from a
+            // Dozuki-controlled domain.
+            , url: "/api/2.0/step_forms/" +
                App.stepid
             , xhrFields: {
                withCredentials: true
