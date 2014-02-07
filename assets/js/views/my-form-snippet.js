@@ -95,7 +95,9 @@ define([
       return function(mouseEvent) {
         mouseEvent.preventDefault();
         $(".popover").remove();
-        boundContext.model.trigger("change");
+        // We used to call boundContext.model.trigger("change"); here,
+        // but that was causing the save button to be enabled even when
+        // there was no change.
       }
     }
 
