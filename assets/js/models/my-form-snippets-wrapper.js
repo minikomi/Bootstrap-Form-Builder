@@ -22,8 +22,7 @@ define([
          // We never want to update, just add a new form.
          method = method == 'read' ? 'read' : 'create';
          var myOptions = _(options).extend({
-            crossDomain: true
-            , dataType: 'json'
+            dataType: 'json'
             , headers: {
                'X-CSRF': CSRF.get(),
                'X-ALLOW-HTTP': true
