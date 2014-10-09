@@ -1,7 +1,7 @@
 define([
        "jquery" , "underscore" , "backbone"
        , "models/snippet"
-       , "collections/snippets" 
+       , "collections/snippets"
        , "views/my-form-snippet"
 ], function(
   $, _, Backbone
@@ -11,6 +11,24 @@ define([
 ){
   return SnippetsCollection.extend({
     model: SnippetModel
+    , initialize: function() {
+      this.counter = {};
+      this.on("add", this.giveUniqueId);
+    }
+
+    , giveUniqueId: function(snippet){
+      var snippetType = snippet.attributes.fields.id.value;
+
+      if(typeof this.counter[snippetType] === "undefined") {
+        this.counter[snippetType] = 0;
+      } else {
+        this.counter[snippetType] += 1;
+      }
+
+      snippet.setField("id", snippetType + "-" + this.counter[snippetType]);
+
+    }
+
     , renderAll: function(){
       return this.map(function(snippet){
         return new MyFormSnippetView({model: snippet}).render(true);
