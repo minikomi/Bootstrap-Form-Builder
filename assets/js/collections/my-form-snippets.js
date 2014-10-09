@@ -17,6 +17,10 @@ define([
     }
 
     , giveUniqueId: function(snippet){
+      if(!snippet.get("fresh")) {
+        return;
+      }
+      snippet.set("fresh", false);
       var snippetType = snippet.attributes.fields.id.value;
 
       if(typeof this.counter[snippetType] === "undefined") {
