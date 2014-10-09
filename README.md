@@ -1,6 +1,6 @@
 #Bootstrap Form Builder
 
-## Warning: Currently using `v. 2.3.1` :dolphin: 
+## Warning: Currently using Bootstrap `v. 2.3.1` :dolphin:  (Not Bootstrap 3 ready.)
 
 ##What's this?
 
