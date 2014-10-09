@@ -1,10 +1,10 @@
 #Bootstrap Form Builder
 
+## Warning: Currently using Bootstrap `v. 2.3.1` :dolphin:  (Not Bootstrap 3 ready.)
+
 ##What's this?
 
 A Drag-and-drop form builder for [twitter bootstrap](http://twitter.github.com/bootstrap/). 
-
-Currently using `v. 2.3.1` :dolphin:
 
 ##Where can I see it in action?
 
