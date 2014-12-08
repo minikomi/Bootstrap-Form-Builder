@@ -7,11 +7,6 @@
         "type": "input",
         "value": "multipleradios"
       },
-      "name": {
-        "label": "Group Name",
-        "type": "input",
-        "value": "radios"
-      },
       "label": {
         "label": "Label Text",
         "type": "input",
@@ -39,11 +34,6 @@
         "label": "ID / Name",
         "type": "input",
         "value": "multipleradiosinline"
-      },
-      "name": {
-        "label": "Group Name",
-        "type": "input",
-        "value": "radios"
       },
       "label": {
         "label": "Label Text",
@@ -75,11 +65,6 @@
         "type": "input",
         "value": "multiplecheckboxes"
       },
-      "name": {
-        "label": "Group Name",
-        "type": "input",
-        "value": "checkboxes"
-      },
       "label": {
         "label": "Label Text",
         "type": "input",
@@ -107,11 +92,6 @@
         "label": "ID / Name",
         "type": "input",
         "value": "multiplecheckboxesinline"
-      },
-      "name": {
-        "label": "Group Name",
-        "type": "input",
-        "value": "checkboxes"
       },
       "label": {
         "label": "Label Text",

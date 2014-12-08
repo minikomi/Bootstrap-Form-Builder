@@ -2,8 +2,8 @@
 <div class="control-group">
   <label class="control-label" for="<%- name %>"><%- label %></label>
   <div class="controls"><% _.each(radios, function(radio, i){ %>
-    <label class="radio inline" for="<%- name+'-'+i %>">
-      <input type="radio" name="<%- name %>" id="<%- name+'-'+i %>" value="<%- radio %>" <% if(i < 1) { %>checked="checked" <% } %><% if(required){ %> required="required"<% } %>>
+    <label class="radio inline" for="<%- id+'-'+i %>">
+      <input type="radio" name="<%- id %>" id="<%- id+'-'+i %>" value="<%- radio %>" <% if(i < 1) { %>checked="checked" <% } %><% if(required){ %> required="required"<% } %>>
       <%- radio %>
     </label><% }); %>
   </div>
