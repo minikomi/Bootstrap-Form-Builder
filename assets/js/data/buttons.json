@@ -81,7 +81,7 @@
       "id": {
         "label": "Button 1 ID / Name",
         "type": "input",
-        "value": "button1id"
+        "value": "doublebutton"
       },
       "label": {
         "label": "Label Text",
