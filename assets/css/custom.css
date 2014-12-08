@@ -33,9 +33,13 @@ textarea {
   resize: vertical;
 }
 
+.popover {
+  z-index: 9999999;
+}
 .popover .control-group {
   cursor: default;
 }
+
 .popover input {
   cursor: text;
 }
