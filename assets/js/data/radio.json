@@ -1,112 +1,118 @@
 [
   {
+    "title": "Multiple Radios",
     "fields": {
-      "label": {
+      "id": {
+        "label": "ID / Name",
         "type": "input",
+        "value": "multipleradios"
+      },
+      "label": {
         "label": "Label Text",
+        "type": "input",
         "value": "Multiple Radios"
       },
+      "required": {
+        "label": "Required",
+        "type": "checkbox",
+        "value": false
+      },
       "radios": {
-        "type": "textarea-split",
         "label": "Radios",
+        "type": "textarea-split",
         "value": [
           "Option one",
           "Option two"
         ]
-      },
-      "required": {
-        "type": "checkbox",
-        "label": "Required",
-        "value": false
-      },
-      "name": {
-        "type": "input",
-        "label": "Group Name",
-        "value": "radios"
       }
-    },
-    "title": "Multiple Radios"
+    }
   },
   {
+    "title": "Multiple Radios Inline",
     "fields": {
-      "label": {
+      "id": {
+        "label": "ID / Name",
         "type": "input",
+        "value": "multipleradiosinline"
+      },
+      "label": {
         "label": "Label Text",
+        "type": "input",
         "value": "Inline Radios"
       },
-      "radios": {
-        "type": "textarea-split",
-        "label": "Radios",
-        "value": [
-          1234
-        ]
-      },
       "required": {
-        "type": "checkbox",
         "label": "Required",
+        "type": "checkbox",
         "value": false
       },
-      "name": {
-        "type": "input",
-        "label": "Group Name",
-        "value": "radios"
+      "radios": {
+        "label": "Radios",
+        "type": "textarea-split",
+        "value": [
+          1,
+          2,
+          3,
+          4
+        ]
       }
-    },
-    "title": "Multiple Radios Inline"
+    }
   },
   {
+    "title": "Multiple Checkboxes",
     "fields": {
-      "label": {
+      "id": {
+        "label": "ID / Name",
         "type": "input",
+        "value": "multiplecheckboxes"
+      },
+      "label": {
         "label": "Label Text",
+        "type": "input",
         "value": "Multiple Checkboxes"
       },
+      "required": {
+        "label": "Required",
+        "type": "checkbox",
+        "value": false
+      },
       "checkboxes": {
-        "type": "textarea-split",
         "label": "Checkboxes",
+        "type": "textarea-split",
         "value": [
           "Option one",
           "Option two"
         ]
-      },
-      "required": {
-        "type": "checkbox",
-        "label": "Required",
-        "value": false
-      },
-      "name": {
-        "type": "input",
-        "label": "Group Name",
-        "value": "checkboxes"
       }
-    },
-    "title": "Multiple Checkboxes"
+    }
   },
   {
+    "title": "Multiple Checkboxes Inline",
     "fields": {
-      "label": {
+      "id": {
+        "label": "ID / Name",
         "type": "input",
+        "value": "multiplecheckboxesinline"
+      },
+      "label": {
         "label": "Label Text",
+        "type": "input",
         "value": "Inline Checkboxes"
       },
-      "checkboxes": {
-        "type": "textarea-split",
-        "label": "Checkboxes",
-        "value": [
-          1234
-        ]
-      },
       "required": {
-        "type": "checkbox",
         "label": "Required",
+        "type": "checkbox",
         "value": false
       },
-      "name": {
-        "type": "input",
-        "label": "Group Name",
-        "value": "checkboxes"
+      "checkboxes": {
+        "label": "Checkboxes",
+        "type": "textarea-split",
+        "value": [
+          1,
+          2,
+          3,
+          4
+        ]
       }
-    },
-    "title": "Multiple Checkboxes Inline"
+    }
   }
 ]

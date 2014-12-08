@@ -1,10 +1,10 @@
 -
   title  : Multiple Radios
   fields : 
-    name:
-      label  : Group Name
+    id:
+      label  : ID / Name
       type   : input
-      value  : radios
+      value  : multipleradios
     label:
       label  : Label Text
       type   : input
@@ -20,10 +20,10 @@
 -
   title  : Multiple Radios Inline
   fields : 
-    name:
-      label  : Group Name
+    id:
+      label  : ID / Name
       type   : input
-      value  : radios
+      value  : multipleradiosinline
     label:
       label  : Label Text
       type   : input
@@ -39,10 +39,10 @@
 -
   title  : Multiple Checkboxes
   fields : 
-    name:
-      label  : Group Name
+    id:
+      label  : ID / Name
       type   : input
-      value  : checkboxes
+      value  : multiplecheckboxes
     label:
       label  : Label Text
       type   : input
@@ -58,10 +58,10 @@
 -
   title  : Multiple Checkboxes Inline
   fields : 
-    name:
-      label  : Group Name
+    id:
+      label  : ID / Name
       type   : input
-      value  : checkboxes
+      value  : multiplecheckboxesinline
     label:
       label  : Label Text
       type   : input

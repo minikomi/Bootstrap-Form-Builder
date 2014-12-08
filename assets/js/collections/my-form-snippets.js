@@ -31,6 +31,10 @@ define([
 
       snippet.setField("id", snippetType + "-" + this.counter[snippetType]);
 
+      if(typeof snippet.get("fields")["id2"] !== "undefined") {
+        snippet.setField("id2", snippetType + "2-" + this.counter[snippetType]);
+      }
+
     }
 
     , renderAll: function(){
