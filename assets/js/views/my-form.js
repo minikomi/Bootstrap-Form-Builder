@@ -27,10 +27,12 @@ define([
       //Render Snippet Views
       this.$el.empty();
       var that = this;
+      var containsFile = false;
       _.each(this.collection.renderAll(), function(snippet){
         that.$el.append(snippet);
       });
       $("#render").val(that.renderForm({
+        multipart: this.collection.containsFileType(),
         text: _.map(this.collection.renderAllClean(), function(e){return e.html()}).join("\n")
       }));
       this.$el.appendTo("#build form");

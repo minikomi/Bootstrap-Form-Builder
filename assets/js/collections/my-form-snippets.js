@@ -34,9 +34,12 @@ define([
       if(typeof snippet.get("fields")["id2"] !== "undefined") {
         snippet.setField("id2", snippetType + "2-" + this.counter[snippetType]);
       }
-
     }
-
+    , containsFileType: function(){
+      return !(typeof this.find(function(snippet){
+        return snippet.attributes.title === "File Button"
+      }) === "undefined");
+    }
     , renderAll: function(){
       return this.map(function(snippet){
         return new MyFormSnippetView({model: snippet}).render(true);
