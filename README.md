@@ -38,12 +38,15 @@ I've added support for minimized components. When you are creating some forms ov
 
 How to make a component minimizable?
 
-* Add "minimized" property and set it to true in [js/data files](https://github.com/PavlovicDzFilip/Bootstrap-Form-Builder/blob/gh-pages/assets/js/data/), check file [minimizable.json](https://github.com/PavlovicDzFilip/Bootstrap-Form-Builder/blob/gh-pages/assets/js/data/minimizables.json) for example.
+* Add `"minimized"` property and set it to `true` in [js/data files](https://github.com/PavlovicDzFilip/Bootstrap-Form-Builder/blob/gh-pages/assets/js/data/), check file [minimizable.json](https://github.com/PavlovicDzFilip/Bootstrap-Form-Builder/blob/gh-pages/assets/js/data/minimizables.json) for example.
 
 * When creating html templates, type all the html code. Then surround the part you want to be hidden with 
-<% if(!this.model.attributes.minimized) { %>
-<hidden html code>
-<% } %>
+
+`<% if(!this.model.attributes.minimized) { %>` 
+
+`<hidden html code>` 
+
+`<% } %>` 
 
 Check [js/templates/snippet/minimizedlogin.html](https://github.com/PavlovicDzFilip/Bootstrap-Form-Builder/blob/gh-pages/assets/js/templates/snippet/minimizedlogin.html) for example
 
