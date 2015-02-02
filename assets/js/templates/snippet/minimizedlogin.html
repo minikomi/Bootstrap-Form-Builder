@@ -1,0 +1,28 @@
+<!-- Minimized login -->
+<% if(MinimizedLogin_label.length>0) { %>
+<div class="control-group">
+    <h4><%- MinimizedLogin_label %></h4>
+</div>
+<% } %>
+
+<% if(!this.model.attributes.minimized) { %>
+
+<% if(Username_label.length > 0) { %>
+    <div class="control-group">
+        <label class="control-label" for="<%- id %>_username"><%- Username_label %></label>
+        <div class="controls">
+            <input type="text" name="<%- id %>_username" placeholder="<%- Username_placeholder %>" class="<%- Username_inputsize %>"<% if(Username_required) {%> required <% } %> >
+            <% if (Username_helptext.length > 0) { %><p class="help-block"><%- Username_helptext %></p><% } %>
+        </div>
+    </div>
+    <% } %>
+    <% if(Password_label.length > 0) { %>
+    <div class="control-group">
+        <label class="control-label" for="<%- id %>_password"><%- Password_label %></label>
+        <div class="controls">
+            <input type="password" name="<%- id %>_password" placeholder="<%- Password_placeholder %>" class="<%- Password_inputsize %>"<% if(Password_required) {%> required <% } %> >
+            <% if (Password_helptext.length > 0) { %><p class="help-block"><%- Password_helptext %></p><% } %>
+        </div>
+    </div>
+    <% } %>
+<% } %>
