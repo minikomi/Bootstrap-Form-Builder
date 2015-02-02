@@ -31,3 +31,20 @@ It's hosted on github pages [here](http://minikomi.github.io/Bootstrap-Form-Buil
 * If you want to add a new tab, you'll also need to adjust the [app.js file](https://github.com/minikomi/Bootstrap-Form-Builder/blob/gh-pages/assets/js/app.js) to make sure the tab is loaded.
 
 Don't forget to switch to main.js rather than main-built.js, or the changes you make before compiling with require.js won't show up!
+
+What is different here?
+
+I've added support for minimized components. When you are creating some forms over and over, you want to have them prepared. However they take a lot of space on the right side. So, I've added support for components to take little space on the right side, and auto expand when dragged to the form. 
+
+How to make a component minimizable?
+
+1) Add "minimized" property and set it to true in [js/data files](https://github.com/PavlovicDzFilip/Bootstrap-Form-Builder/blob/gh-pages/assets/js/data/), check file [minimizable.json](https://github.com/PavlovicDzFilip/Bootstrap-Form-Builder/blob/gh-pages/assets/js/data/minimizables.json) for example.
+
+2) When creating html templates, type all the html code. Then surround the part you want to be hidden with 
+<% if(!this.model.attributes.minimized) { %>
+<hidden html code>
+<% } %>
+
+Check [js/templates/snippet/minimizedlogin.html](https://github.com/PavlovicDzFilip/Bootstrap-Form-Builder/blob/gh-pages/assets/js/templates/snippet/minimizedlogin.html) for example
+
+3) That's it, everything should work now.
