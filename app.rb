@@ -28,3 +28,11 @@ get '/form/:id' do
   puts @markup
   erb :form
 end
+
+get '/form' do
+  redirect '/'
+end
+
+get '/form/' do
+  redirect '/'
+end
