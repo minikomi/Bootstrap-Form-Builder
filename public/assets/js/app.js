@@ -61,6 +61,23 @@ define([
 
       $("#publish-button").click(function(){
         myForm.render();
+
+        $.ajax({
+          type: "POST",
+          url: "/create",
+          data: { markup: $('#render').val() }
+        })
+        .done(function(response) {
+          console.log( "success" );
+          console.log( response );
+          window.location.href = "/form/" + response;
+        })
+        .fail(function() {
+          console.log( "error" );
+        })
+        .always(function() {
+          console.log( "complete" );
+        });
         // REGEX for a URL // /^(https?:\/\/)?([\da-z\.-]+)\.([a-z\.]{2,6})([\/\w \.-]*)*\/?$/
         // console.log($('#render').val());
       });
