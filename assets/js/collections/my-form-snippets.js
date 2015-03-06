@@ -40,6 +40,11 @@ define([
         return snippet.attributes.title === "File Button"
       }) === "undefined");
     }
+
+    , getFormAction: function(){
+      return $('#form-action').val();
+    }
+
     , renderAll: function(){
       return this.map(function(snippet){
         return new MyFormSnippetView({model: snippet}).render(true);

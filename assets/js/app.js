@@ -44,7 +44,7 @@ define([
       $("#components .tab-pane").first().addClass("active");
       $("#formtabs li").first().addClass("active");
       // Bootstrap "My Form" with 'Form Name' snippet.
-      new MyFormView({
+      var myForm = new MyFormView({
         title: "Original"
         , collection: new MyFormSnippetsCollection([
           { "title" : "Form Name"
@@ -57,6 +57,12 @@ define([
             }
           }
         ])
+      });
+
+      $("#publish-button").click(function(){
+        myForm.render();
+        // REGEX for a URL // /^(https?:\/\/)?([\da-z\.-]+)\.([a-z\.]{2,6})([\/\w \.-]*)*\/?$/
+        // console.log($('#render').val());
       });
     }
   }

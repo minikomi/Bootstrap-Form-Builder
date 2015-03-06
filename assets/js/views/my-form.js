@@ -33,7 +33,8 @@ define([
       });
       $("#render").val(that.renderForm({
         multipart: this.collection.containsFileType(),
-        text: _.map(this.collection.renderAllClean(), function(e){return e.html()}).join("\n")
+        text: _.map(this.collection.renderAllClean(), function(e){return e.html()}).join("\n"),
+        formAction: this.collection.getFormAction()
       }));
       this.$el.appendTo("#build form");
       this.delegateEvents();
