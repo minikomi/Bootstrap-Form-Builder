@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <link href="/assets/css/lib/bootstrap.min.css" rel="stylesheet" media="all" >
+    <link href="/assets/css/lib/bootstrap-responsive.min.css" rel="stylesheet" media="screen" >
+
+    <script src="/assets/js/lib/jquery.js"></script>
+    <script src="/assets/js/lib/bootstrap.js"></script>
+  </head>
+
+  <body>
+
+
+    <br><br><br><br><br>
+
+    <div class="container">
+      <%= @markup %>
+
+    </div>
+
+
+
+
+    <script type="text/javascript">
+      $(function(){
+        $('form').append('<fieldset><input type="submit" value="Submit" class="btn btn-success" ></fieldset>');
+        $('form legend .icon-pencil').hide();
+      });
+    </script>
+
+  </body>
+</html>

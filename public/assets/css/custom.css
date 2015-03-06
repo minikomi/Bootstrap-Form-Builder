@@ -1,5 +1,5 @@
 body {
-  padding-top: 60px; /* 60px to make the container go all the way to the bottom of the topbar */
+  /*padding-top: 60px; */ /* 60px to make the container go all the way to the bottom of the topbar */
   padding-bottom: 10px;
   position: relative;
 }
@@ -92,7 +92,7 @@ form .popover form {
 .target:after{
   float:left;
   content: " ";
-  height: 77px; 
+  height: 77px;
   margin-top: 3px;
   background: #f0f0f0;
   width: 100%;

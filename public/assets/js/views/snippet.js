@@ -20,7 +20,7 @@ define([
 ){
   return Backbone.View.extend({
     tagName: "div"
-    , className: "component" 
+    , className: "component"
     , initialize: function(){
       this.template = _.template(_snippetTemplates[this.model.idFriendlyTitle()])
       this.popoverTemplates = {
@@ -46,6 +46,7 @@ define([
           , "data-title"     : that.model.get("title")
           , "data-trigger"   : "manual"
           , "data-html"      : true
+          , "data-placement"  : "left"
         });
       } else {
         return this.$el.html(

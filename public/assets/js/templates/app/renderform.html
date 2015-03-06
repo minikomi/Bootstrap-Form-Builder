@@ -1,0 +1,6 @@
+<form <% if(multipart){ %>enctype="multipart/form-data"<% } %> <% if(formAction){ %>action="<%= formAction %>"<% } %> method="POST" >
+<fieldset>
+
+<%= text %>
+</fieldset>
+</form>
