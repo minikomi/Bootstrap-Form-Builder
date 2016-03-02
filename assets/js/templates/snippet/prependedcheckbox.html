@@ -8,7 +8,14 @@
           <input type="checkbox" <% if (checked){ %>checked="checked"<% } %>>
         </label>
       </span>
-      <input id="<%- id %>" name="<%- id %>" class="<%- inputsize %>" type="text" placeholder="<%- placeholder %>" <% if(required) {%> required <% } %> />
+      <input
+        id="<%- id %>"
+        name="<%- id %>"
+        class="<%- inputsize %>"
+        type="text"
+        <% if(placeholder) { %> placeholder="<%- placeholder %>" <% } %>
+        <% if(required) {%> required <% } %>
+      />
     </div>
     <% if (helptext.length > 0) { %><p class="help-block"><%- helptext %></p><% } %>
   </div>

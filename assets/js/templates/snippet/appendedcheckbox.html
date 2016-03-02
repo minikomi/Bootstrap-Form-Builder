@@ -3,7 +3,13 @@
   <label class="control-label" for="<%- id %>"><%- label %></label>
   <div class="controls">
     <div class="input-append">
-      <input id="<%- id %>" name="<%- id %>" class="span2" type="text" placeholder="<%- placeholder %>" <% if(required) {%> required <% } %> />
+      <input
+        id="<%- id %>"
+        name="<%- id %>"
+        class="span2"
+        type="text"
+        <% if(placeholder) { %> placeholder="<%- placeholder %>" <% } %>
+      />
       <span class="add-on">
         <input type="checkbox"<% if (checked){ %> checked <% } %>>
       </span>
