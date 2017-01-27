@@ -18,7 +18,7 @@ define(function(require) {
   , prependedcheckbox        = require('text!templates/snippet/prependedcheckbox.html')
   , prependedtext            = require('text!templates/snippet/prependedtext.html')
   , searchinput              = require('text!templates/snippet/searchinput.html')
-  , selectbasic              = require('text!templates/snippet/selectbasic.html')
+  , select                   = require('text!templates/snippet/select.html')
   , selectmultiple           = require('text!templates/snippet/selectmultiple.html')
   , textarea                 = require('text!templates/snippet/textarea.html')
   , textinput                = require('text!templates/snippet/textinput.html');
@@ -43,7 +43,7 @@ define(function(require) {
     , prependedcheckbox        : prependedcheckbox
     , prependedtext            : prependedtext
     , searchinput              : searchinput
-    , selectbasic              : selectbasic
+    , select                   : select
     , selectmultiple           : selectmultiple
     , textarea                 : textarea
     , textinput                : textinput

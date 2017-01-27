@@ -1,5 +1,5 @@
 -
-  title  : Select Basic
+  title  : Select
   fields :
     field_guid:
       label  : ID / Name
