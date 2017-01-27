@@ -33,10 +33,12 @@ define([
         title: "Radios / Checkboxes"
         , collection: radioSnippets
       });
+      */
       new TabView({
         title: "Select"
         , collection: selectSnippets
       });
+      /*
       new TabView({
         title: "Buttons"
         , collection: buttonSnippets
