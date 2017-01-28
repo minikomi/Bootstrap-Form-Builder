@@ -12,11 +12,20 @@
         "type": "input",
         "value": "Dropdown Input"
       },
+      "placeholder": {
+        "label": "Default",
+        "type": "input",
+        "value": "Select An Option"
+      },
+      "required": {
+        "label": "Required",
+        "type": "checkbox",
+        "value": true
+      },
       "options": {
         "label": "Options",
         "type": "textarea-split",
         "value": [
-          "Default Option",
           "Option one",
           "Option two"
         ]
