@@ -2,7 +2,6 @@ define(function(require) {
   var formname               = require('text!templates/snippet/formname.html')
   , prependedtext            = require('text!templates/snippet/prependedtext.html')
   , search                   = require('text!templates/snippet/searchinput.html')
-  , textinput                = require('text!templates/snippet/textinput.html')
   , appendedcheckbox         = require('text!templates/snippet/appendedcheckbox.html')
   , appendedtext             = require('text!templates/snippet/appendedtext.html')
   , filebutton               = require('text!templates/snippet/filebutton.html')
@@ -14,6 +13,7 @@ define(function(require) {
   , multiplecheckboxesinline = require('text!templates/snippet/multiplecheckboxesinline.html')
   , multipleradios           = require('text!templates/snippet/multipleradios.html')
   , multipleradiosinline     = require('text!templates/snippet/multipleradiosinline.html')
+  , numericinput             = require('text!templates/snippet/numericinput.html')
   , passwordinput            = require('text!templates/snippet/passwordinput.html')
   , prependedcheckbox        = require('text!templates/snippet/prependedcheckbox.html')
   , prependedtext            = require('text!templates/snippet/prependedtext.html')
@@ -27,7 +27,6 @@ define(function(require) {
     formname                   : formname
     , prependedtext            : prependedtext
     , search                   : search
-    , textinput                : textinput
     , appendedcheckbox         : appendedcheckbox
     , appendedtext             : appendedtext
     , filebutton               : filebutton
@@ -39,6 +38,7 @@ define(function(require) {
     , multiplecheckboxesinline : multiplecheckboxesinline
     , multipleradios           : multipleradios
     , multipleradiosinline     : multipleradiosinline
+    , numericinput             : numericinput
     , passwordinput            : passwordinput
     , prependedcheckbox        : prependedcheckbox
     , prependedtext            : prependedtext
