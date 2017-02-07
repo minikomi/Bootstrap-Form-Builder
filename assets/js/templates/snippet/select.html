@@ -1,8 +1,10 @@
 <!-- Select Basic -->
 <div class="control-group">
-  <label class="control-label" for="<%= field_guid %>"><%= label %></label>
+  <label class="control-label <% if(required) {%>required<% } %>"
+   for="<%= field_guid %>"><%= label %></label>
   <div class="controls">
-    <select id="<%= field_guid %>" name="<%= field_guid %>"><% _.each(options, function(option) { %>
+    <select id="<%= field_guid %>" name="<%= field_guid %>"
+     ><% _.each(options, function(option) { %>
       <option><%= option %></option><% }); %>
     </select>
   </div>

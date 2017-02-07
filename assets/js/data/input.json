@@ -15,7 +15,32 @@
       "placeholder": {
         "label": "Example",
         "type": "input",
-        "value": "0.07"
+        "value": "ABC"
+      },
+      "required": {
+        "label": "Required",
+        "type": "checkbox",
+        "value": true
+      }
+    }
+  },
+  {
+    "title": "Numeric Input",
+    "fields": {
+      "field_guid": {
+        "label": "ID / Name",
+        "type": "hidden",
+        "value": "temporary-id"
+      },
+      "label": {
+        "label": "Label",
+        "type": "input",
+        "value": "Numeric Input"
+      },
+      "placeholder": {
+        "label": "Example",
+        "type": "input",
+        "value": "123"
       },
       "required": {
         "label": "Required",
