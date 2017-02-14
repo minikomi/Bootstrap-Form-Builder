@@ -36,6 +36,39 @@
       label  : Required
       type   : checkbox
       value  : true
+    limit_decimals:
+      label  : Limit Decimals
+      type   : checkbox
+      value  : true
+    decimals:
+      label  : Decimals
+      type   : number
+      value  : 0
+      min    : 0
+      max    : 8
+      step   : 1
+    limit_min:
+      label  : Limit Minimum
+      type   : checkbox
+      value  : false
+    min:
+      label  : Minimum
+      type   : number
+      value  : 0
+      min    : null
+      max    : null
+      step   : any
+    limit_max:
+      label  : Limit Maximum
+      type   : checkbox
+      value  : false
+    max:
+      label  : Maximum
+      type   : number
+      value  : 100
+      min    : null
+      max    : null
+      step   : any
 -
 #  title  : Password Input
 #  fields :

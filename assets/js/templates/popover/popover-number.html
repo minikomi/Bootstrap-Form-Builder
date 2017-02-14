@@ -1,0 +1,7 @@
+<label class='control-label'> <%= label %> </label>
+<input class='input-large field' data-type="<%= type %>" type='number' name='<%= name %>' id='<%= name %>' value ='<%= value %>' 
+<% if (min !== null) { %> min='<%= min %>' <% } %>
+<% if (max !== null) { %> max='<%= max %>' <% } %>
+step='<%= step %>'
+<% if (label == 'Label' || label == 'Example') { %> maxlength="70" <% } %>>
+

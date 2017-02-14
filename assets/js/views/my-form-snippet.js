@@ -67,6 +67,9 @@ define([
             case "input":
               boundContext.model.setField(name, $e.val());
               break;
+            case "number":
+              boundContext.model.setField(name, $e.val());
+              break;
             case "textarea":
               boundContext.model.setField(name, $e.val());
               break;
