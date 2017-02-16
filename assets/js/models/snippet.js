@@ -4,10 +4,19 @@ define([
   return Backbone.Model.extend({
     getValues: function(){
       var reduced = _.reduce(this.get("fields"), function(o, v, k){
+        var tmpVal;
         if (v["type"] == "select") {
-          o[k] = _.find(v["value"], function(o){return o.selected})["value"];
+          tmpVal = _.find(v["value"], function(o){return o.selected})["value"];
         } else {
-          o[k]  = v["value"];
+          tmpVal = v["value"];
+        }
+        if (v.hasOwnProperty("auxiliary") && v["auxiliary"]) {
+          if (!o.hasOwnProperty("options")) {
+             o.options = {};
+          }
+          o.options[k] = tmpVal;
+        } else {
+           o[k] = tmpVal;
         }
         return o;
       }, {});
@@ -27,7 +36,7 @@ define([
       return this.get("title").replace(/\W/g,'').toLowerCase();
     }
     , setField: function(name, value) {
-      var fields = this.get("fields")
+      var fields = this.get("fields");
       fields[name]["value"] = value;
       this.set("fields", fields);
     }

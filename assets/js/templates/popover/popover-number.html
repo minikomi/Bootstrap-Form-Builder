@@ -3,5 +3,6 @@
 <% if (min !== null) { %> min='<%= min %>' <% } %>
 <% if (max !== null) { %> max='<%= max %>' <% } %>
 step='<%= step %>'
+<% if (typeof auxiliary !== 'undefined' && auxiliary) { %> data-auxiliary="auxiliary" <% } %>
 <% if (label == 'Label' || label == 'Example') { %> maxlength="70" <% } %>>
 

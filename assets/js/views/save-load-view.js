@@ -44,7 +44,16 @@ define([
             }
 
             for (var field in fieldInfo) {
-               if (field != 'field_type') {
+               if (curSnippet2.get('hasAuxiliary') && field === 'options') {
+                  // We stuff all auxiliary fields in the options section when saving
+                  // some data types like numeric fields.
+                  // This unpacks them.
+                  for (var auxiliaryField in fieldInfo[field]) {
+                     if (!_.isUndefined(fields[auxiliaryField])) {
+                        fields[auxiliaryField].value = fieldInfo['options'][auxiliaryField];
+                     }
+                  }
+               } else if (field != 'field_type') {
                   // This is kind of weird. We're changing a nested object inside a model.
                   // To do this the backbone way, the simplest way seems to be to get the
                   // whole object, change it, then put it back. This ensures that we still

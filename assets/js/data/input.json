@@ -26,6 +26,7 @@
   },
   {
     "title": "Numeric Input",
+    "hasAuxiliary": true,
     "fields": {
       "field_guid": {
         "label": "ID / Name",
@@ -50,7 +51,8 @@
       "limit_decimals": {
         "label": "Limit Decimals",
         "type": "checkbox",
-        "value": true
+        "value": true,
+        "auxiliary": true
       },
       "decimals": {
         "label": "Decimals",
@@ -58,12 +60,14 @@
         "value": 0,
         "min": 0,
         "max": 8,
-        "step": 1
+        "step": 1,
+        "auxiliary": true
       },
       "limit_min": {
         "label": "Limit Minimum",
         "type": "checkbox",
-        "value": false
+        "value": false,
+        "auxiliary": true
       },
       "min": {
         "label": "Minimum",
@@ -71,12 +75,14 @@
         "value": 0,
         "min": null,
         "max": null,
-        "step": "any"
+        "step": "any",
+        "auxiliary": true
       },
       "limit_max": {
         "label": "Limit Maximum",
         "type": "checkbox",
-        "value": false
+        "value": false,
+        "auxiliary": true
       },
       "max": {
         "label": "Maximum",
@@ -84,7 +90,8 @@
         "value": 100,
         "min": null,
         "max": null,
-        "step": "any"
+        "step": "any",
+        "auxiliary": true
       }
     }
   },

@@ -1,4 +1,7 @@
 <label class="checkbox control-group">
-  <input type="checkbox" data-type="<%= type %>" class="input-inline field" name="<%= name %>" id="<%= name %>"<% if(value) {%> checked="checked" <% } %>>
+  <input type="checkbox" data-type="<%= type %>" class="input-inline field"
+   name="<%= name %>" id="<%= name %>"<% if(value) {%> checked="checked" <% } %>
+   <% if (typeof auxiliary !== 'undefined' && auxiliary) { %> data-auxiliary="auxiliary" <% } %>
+   >
   <%= label %>
 </label>
