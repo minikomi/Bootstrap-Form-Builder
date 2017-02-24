@@ -1,6 +1,6 @@
 -
   title  : Multiple Radios
-  fields : 
+  fields :
     name:
       label  : Group Name
       type   : input
@@ -13,48 +13,48 @@
       label  : Radios
       type   : textarea-split
       value  : ["Option one", "Option two"]
--
-  title  : Multiple Radios Inline
-  fields : 
-    name:
-      label  : Group Name
-      type   : input
-      value  : radios
-    label:
-      label  : Label Text
-      type   : input
-      value  : Inline Radios
-    radios:
-      label  : Radios
-      type   : textarea-split
-      value  : [1,2,3,4]
--
-  title  : Multiple Checkboxes
-  fields : 
-    name:
-      label  : Group Name
-      type   : input
-      value  : checkboxes
-    label:
-      label  : Label Text
-      type   : input
-      value  : Multiple Checkboxes
-    checkboxes:
-      label  : Checkboxes
-      type   : textarea-split
-      value  : ["Option one", "Option two"]
--
-  title  : Multiple Checkboxes Inline
-  fields : 
-    name:
-      label  : Group Name
-      type   : input
-      value  : checkboxes
-    label:
-      label  : Label Text
-      type   : input
-      value  : Inline Checkboxes
-    checkboxes:
-      label  : Checkboxes
-      type   : textarea-split
-      value  : [1,2,3,4]
+#  -
+#    title  : Multiple Radios Inline
+#    fields :
+#      name:
+#        label  : Group Name
+#        type   : input
+#        value  : radios
+#      label:
+#        label  : Label Text
+#        type   : input
+#        value  : Inline Radios
+#      radios:
+#        label  : Radios
+#        type   : textarea-split
+#        value  : [1,2,3,4]
+#  -
+#    title  : Multiple Checkboxes
+#    fields :
+#      name:
+#        label  : Group Name
+#        type   : input
+#        value  : checkboxes
+#      label:
+#        label  : Label Text
+#        type   : input
+#        value  : Multiple Checkboxes
+#      checkboxes:
+#        label  : Checkboxes
+#        type   : textarea-split
+#        value  : ["Option one", "Option two"]
+#  -
+#    title  : Multiple Checkboxes Inline
+#    fields :
+#      name:
+#        label  : Group Name
+#        type   : input
+#        value  : checkboxes
+#      label:
+#        label  : Label Text
+#        type   : input
+#        value  : Inline Checkboxes
+#      checkboxes:
+#        label  : Checkboxes
+#        type   : textarea-split
+#        value  : [1,2,3,4]
