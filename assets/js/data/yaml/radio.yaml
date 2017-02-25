@@ -1,16 +1,16 @@
 -
   title  : Multiple Radios
   fields :
-    name:
-      label  : Group Name
-      type   : input
-      value  : radios
+    field_guid:
+      label  : Name
+      type   : hidden
+      value  : temporary-id
     label:
-      label  : Label Text
+      label  : Label
       type   : input
-      value  : Multiple Radios
-    radios:
-      label  : Radios
+      value  : Radio Buttons
+    options:
+      label  : Options
       type   : textarea-split
       value  : ["Option one", "Option two"]
 #  -
