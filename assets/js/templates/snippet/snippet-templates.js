@@ -11,7 +11,7 @@ define(function(require) {
   , multiplecheckboxes       = require('text!templates/snippet/multiplecheckboxes.html')
   , checkbox                 = require('text!templates/snippet/checkbox.html')
   , multiplecheckboxesinline = require('text!templates/snippet/multiplecheckboxesinline.html')
-  , multipleradios           = require('text!templates/snippet/multipleradios.html')
+  , radios                   = require('text!templates/snippet/radios.html')
   , multipleradiosinline     = require('text!templates/snippet/multipleradiosinline.html')
   , numericinput             = require('text!templates/snippet/numericinput.html')
   , passwordinput            = require('text!templates/snippet/passwordinput.html')
@@ -36,7 +36,7 @@ define(function(require) {
     , checkbox                 : checkbox
     , multiplecheckboxes       : multiplecheckboxes
     , multiplecheckboxesinline : multiplecheckboxesinline
-    , multipleradios           : multipleradios
+    , radios                   : radios
     , multipleradiosinline     : multipleradiosinline
     , numericinput             : numericinput
     , passwordinput            : passwordinput
