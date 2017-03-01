@@ -1,96 +1,23 @@
 [
   {
-    "title": "Multiple Radios",
+    "title": "Radios",
     "fields": {
-      "name": {
-        "label": "Group Name",
-        "type": "input",
-        "value": "radios"
+      "field_guid": {
+        "label": "Name",
+        "type": "hidden",
+        "value": "temporary-id"
       },
       "label": {
-        "label": "Label Text",
+        "label": "Label",
         "type": "input",
-        "value": "Multiple Radios"
+        "value": "Radio Buttons"
       },
-      "radios": {
-        "label": "Radios",
+      "options": {
+        "label": "Options",
         "type": "textarea-split",
         "value": [
           "Option one",
           "Option two"
-        ]
-      }
-    }
-  },
-  {
-    "title": "Multiple Radios Inline",
-    "fields": {
-      "name": {
-        "label": "Group Name",
-        "type": "input",
-        "value": "radios"
-      },
-      "label": {
-        "label": "Label Text",
-        "type": "input",
-        "value": "Inline Radios"
-      },
-      "radios": {
-        "label": "Radios",
-        "type": "textarea-split",
-        "value": [
-          1,
-          2,
-          3,
-          4
-        ]
-      }
-    }
-  },
-  {
-    "title": "Multiple Checkboxes",
-    "fields": {
-      "name": {
-        "label": "Group Name",
-        "type": "input",
-        "value": "checkboxes"
-      },
-      "label": {
-        "label": "Label Text",
-        "type": "input",
-        "value": "Multiple Checkboxes"
-      },
-      "checkboxes": {
-        "label": "Checkboxes",
-        "type": "textarea-split",
-        "value": [
-          "Option one",
-          "Option two"
-        ]
-      }
-    }
-  },
-  {
-    "title": "Multiple Checkboxes Inline",
-    "fields": {
-      "name": {
-        "label": "Group Name",
-        "type": "input",
-        "value": "checkboxes"
-      },
-      "label": {
-        "label": "Label Text",
-        "type": "input",
-        "value": "Inline Checkboxes"
-      },
-      "checkboxes": {
-        "label": "Checkboxes",
-        "type": "textarea-split",
-        "value": [
-          1,
-          2,
-          3,
-          4
         ]
       }
     }

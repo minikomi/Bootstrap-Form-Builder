@@ -28,12 +28,12 @@ define([
         title: "Input"
         , collection: inputSnippets
       });
-      /*
+
       new TabView({
         title: "Radios / Checkboxes"
         , collection: radioSnippets
       });
-      */
+
       new TabView({
         title: "Select"
         , collection: selectSnippets
