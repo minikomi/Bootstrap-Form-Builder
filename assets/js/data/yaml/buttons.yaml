@@ -1,14 +1,18 @@
 -
   title  : File Button
   fields :
-    id:
+    field_guid:
       label  : ID / Name
-      type   : input
-      value  : filebutton
+      type   : hidden
+      value  : temporary-id
     label:
       label  : Label Text
       type   : input
-      value  : File Button
+      value  : Image Input
+    required:
+      label  : Required
+      type   : checkbox
+      value  : true
 #-
 #  title  : Single Button
 #  fields :
