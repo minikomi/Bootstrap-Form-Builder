@@ -38,11 +38,12 @@ define([
         title: "Select"
         , collection: selectSnippets
       });
-      /*
+
       new TabView({
         title: "Buttons"
         , collection: buttonSnippets
       });
+      /*
       new TabView({
         title: "Rendered"
         , content: renderTab

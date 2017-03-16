@@ -4,7 +4,7 @@ define(function(require) {
   , search                   = require('text!templates/snippet/searchinput.html')
   , appendedcheckbox         = require('text!templates/snippet/appendedcheckbox.html')
   , appendedtext             = require('text!templates/snippet/appendedtext.html')
-  , filebutton               = require('text!templates/snippet/filebutton.html')
+  , image                    = require('text!templates/snippet/image.html')
   , button                   = require('text!templates/snippet/button.html')
   , buttondouble             = require('text!templates/snippet/buttondouble.html')
   , buttondropdown           = require('text!templates/snippet/buttondropdown.html')
@@ -29,7 +29,7 @@ define(function(require) {
     , search                   : search
     , appendedcheckbox         : appendedcheckbox
     , appendedtext             : appendedtext
-    , filebutton               : filebutton
+    , image                    : image
     , singlebutton             : button
     , doublebutton             : buttondouble
     , buttondropdown           : buttondropdown
