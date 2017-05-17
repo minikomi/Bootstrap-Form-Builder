@@ -3,12 +3,14 @@ define([
        , "collections/snippets" , "collections/my-form-snippets"
        , "views/tab" , "views/my-form"
        , "text!data/input.json", "text!data/radio.json", "text!data/select.json", "text!data/buttons.json"
+       , "text!data/minimizables.json"
        , "text!templates/app/render.html",  "text!templates/app/about.html", 
 ], function(
   $, _, Backbone
   , SnippetsCollection, MyFormSnippetsCollection
   , TabView, MyFormView
   , inputJSON, radioJSON, selectJSON, buttonsJSON
+  , minimizablesJSON
   , renderTab, aboutTab
 ){
   return {
@@ -30,6 +32,10 @@ define([
       new TabView({
         title: "Buttons"
         , collection: new SnippetsCollection(JSON.parse(buttonsJSON))
+      });
+      new TabView({
+        title: "Minimizable"
+        , collection: new SnippetsCollection(JSON.parse(minimizablesJSON))
       });
       new TabView({
         title: "Rendered"

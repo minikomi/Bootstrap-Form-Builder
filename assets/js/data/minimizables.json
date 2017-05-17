@@ -1,0 +1,130 @@
+[
+    {
+        "title": "Minimized Login",
+        "minimized": true,
+        "fields": {
+            "id": {
+                "label": "ID / Name",
+                "type": "input",
+                "value": "MinimizedLogin"
+            },
+            "MinimizedLogin_label": {
+                "label": "MinimizedLogin Text",
+                "type": "input",
+                "value": "Minimized login"
+            },
+            "Username_label": {
+                "label": "Username Text",
+                "type": "input",
+                "value": "Username"
+            },
+            "Username_placeholder": {
+                "label": "Placeholder",
+                "type": "input",
+                "value": "Username"
+            },
+            "Username_helptext": {
+                "label": "Help Text",
+                "type": "input",
+                "value": ""
+            },
+            "Username_required": {
+                "label": "Required",
+                "type": "checkbox",
+                "value": false
+            },
+            "Username_inputsize": {
+                "label": "Input Size",
+                "type": "select",
+                "value": [
+                    {
+                        "value": "input-mini",
+                        "label": "Mini",
+                        "selected": false
+                    },
+                    {
+                        "value": "input-small",
+                        "label": "Small",
+                        "selected": false
+                    },
+                    {
+                        "value": "input-medium",
+                        "label": "Medium",
+                        "selected": true
+                    },
+                    {
+                        "value": "input-large",
+                        "label": "Large",
+                        "selected": false
+                    },
+                    {
+                        "value": "input-xlarge",
+                        "label": "Xlarge",
+                        "selected": false
+                    },
+                    {
+                        "value": "input-xxlarge",
+                        "label": "Xxlarge",
+                        "selected": false
+                    }
+                ]
+            },
+            "Password_label": {
+                "label": "Password Text",
+                "type": "input",
+                "value": "Password"
+            },
+            "Password_placeholder": {
+                "label": "Placeholder",
+                "type": "input",
+                "value": "Password"
+            },
+            "Password_helptext": {
+                "label": "Help Text",
+                "type": "input",
+                "value": ""
+            },
+            "Password_required": {
+                "label": "Required",
+                "type": "checkbox",
+                "value": false
+            },
+            "Password_inputsize": {
+                "label": "Input Size",
+                "type": "select",
+                "value": [
+                    {
+                        "value": "input-mini",
+                        "label": "Mini",
+                        "selected": false
+                    },
+                    {
+                        "value": "input-small",
+                        "label": "Small",
+                        "selected": false
+                    },
+                    {
+                        "value": "input-medium",
+                        "label": "Medium",
+                        "selected": true
+                    },
+                    {
+                        "value": "input-large",
+                        "label": "Large",
+                        "selected": false
+                    },
+                    {
+                        "value": "input-xlarge",
+                        "label": "Xlarge",
+                        "selected": false
+                    },
+                    {
+                        "value": "input-xxlarge",
+                        "label": "Xxlarge",
+                        "selected": false
+                    }
+                ]
+            }
+        }
+    }
+]

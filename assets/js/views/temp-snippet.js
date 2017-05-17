@@ -44,6 +44,11 @@ define([
     }
     , mouseUpHandler: function(mouseEvent){
       mouseEvent.preventDefault();
+
+      if (typeof (this.model.attributes.minimized) !== "undefined") {
+          this.model.attributes.minimized = false;
+      }
+
       PubSub.trigger("tempDrop", mouseEvent, this.model);
       this.remove();
     }
